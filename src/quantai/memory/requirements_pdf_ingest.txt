@@ -1,0 +1,7 @@
+faiss-cpu
+PyMuPDF
+sentence-transformers
+langchain-text-splitters
+openvino
+optimum-intel[openvino]
+onnxruntime

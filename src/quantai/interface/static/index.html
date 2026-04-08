@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>QuantAI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" title="Refresh">QuantAI</a>
+    </header>
+
+    <main class="page">
+        <section class="hero" id="hero">
+            <div class="hero-stack">
+                <h1 class="headline">What are you working on?</h1>
+
+                <div class="composer-wrap" id="composerWrap">
+                    <form class="composer" id="composer" autocomplete="off">
+                        <div class="mode-cluster">
+                            <button class="mode-button" id="modeButton" type="button" aria-label="Choose mode">
+                                <span id="modeLabel">Auto</span>
+                                <span class="mode-chevron">▾</span>
+                            </button>
+
+                            <div class="mode-menu hidden" id="modeMenu">
+                                <button type="button" data-mode="auto">Auto</button>
+                                <button type="button" data-mode="evidence">Evidence</button>
+                                <button type="button" data-mode="theorem">Theorem</button>
+                                <button type="button" data-mode="options_surface_memory">Surface</button>
+                                <button type="button" data-mode="market_memory">Memory</button>
+                                <button type="button" data-mode="market_live_snapshot">Live</button>
+                                <button type="button" data-mode="market_calibration">Calibration</button>
+                            </div>
+                        </div>
+
+                        <textarea id="promptInput" class="prompt-input" rows="1" placeholder="Ask anything"
+                            aria-label="Ask anything"></textarea>
+
+                        <button class="send-button" id="sendButton" type="submit" aria-label="Send">↑</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="conversation" id="conversation"></section>
+    </main>
+
+    <template id="userMessageTemplate">
+        <article class="message message-user">
+            <div class="message-inner message-inner-user"></div>
+        </article>
+    </template>
+
+    <template id="assistantMessageTemplate">
+        <article class="message message-assistant">
+            <div class="message-inner message-inner-assistant"></div>
+            <details class="details hidden">
+                <summary>Details</summary>
+                <div class="details-body"></div>
+            </details>
+        </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quantai"
+version = "1.1.0"
+description = "Apex Quantitative Intelligence: local book-memory RAG, symbolic math, and market-data adapters."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "sympy>=1.12",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    "langchain-text-splitters>=0.2.0",
+    "PyMuPDF>=1.24.0",
+]
+
+[project.optional-dependencies]
+# OpenVINO is mainly aimed at Intel hardware, while Sentence Transformers also supports
+# torch and ONNX backends. Install these if you want the ingestion benchmark to test them.
+cpu_accel = [
+    "onnxruntime>=1.18.0",
+    "optimum-intel[openvino]>=1.20.0",
+]
+
+# Bloomberg's official Python API is usually installed from Bloomberg's own package source / SDK setup.
+# Keep this extra empty here so normal pip installs do not fail on machines without Bloomberg access.
+bloomberg = []
+
+dev = [
+    "pytest>=8.2.0",
+    "ruff>=0.6.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quantai"]
+
+[tool.ruff]
+line-length = 100

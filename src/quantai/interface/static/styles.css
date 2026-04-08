@@ -1,0 +1,353 @@
+:root {
+    --bg: #212121;
+    --bg-2: #1f1f1f;
+    --surface: #2b2b2b;
+    --text: #ececec;
+    --muted: #a7a7a7;
+    --border: rgba(255, 255, 255, .08);
+    --shadow: 0 18px 48px rgba(0, 0, 0, .22);
+    --composer-width: min(820px, calc(100vw - 28px));
+    --topbar-height: 56px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, .035), transparent 18%),
+        linear-gradient(180deg, #212121 0%, #1f1f1f 100%);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden
+}
+
+body.chat-started {
+    padding-bottom: 118px
+}
+
+.topbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: rgba(33, 33, 33, .72);
+    backdrop-filter: blur(14px);
+    z-index: 30;
+}
+
+.brand {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -.02em;
+}
+
+.page {
+    width: min(920px, calc(100vw - 28px));
+    margin: 0 auto;
+    padding-top: var(--topbar-height);
+}
+
+.hero {
+    min-height: calc(100vh - var(--topbar-height));
+    display: grid;
+    place-items: center;
+}
+
+body.chat-started .hero {
+    min-height: auto;
+    display: block;
+}
+
+.hero-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+body.chat-started .hero-stack {
+    gap: 0
+}
+
+.headline {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.65rem);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    text-align: center;
+}
+
+body.chat-started .headline {
+    display: none
+}
+
+.composer-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body.chat-started .composer-wrap {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: var(--composer-width);
+    z-index: 25;
+}
+
+.composer {
+    position: relative;
+    width: var(--composer-width);
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(48, 48, 48, .96);
+    box-shadow: var(--shadow);
+}
+
+.mode-cluster {
+    position: relative;
+    flex: 0 0 auto
+}
+
+.mode-button {
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .05);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.mode-button:hover {
+    background: rgba(255, 255, 255, .08)
+}
+
+.mode-chevron {
+    opacity: .72
+}
+
+.mode-menu {
+    position: absolute;
+    left: 0;
+    bottom: 58px;
+    width: 194px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: rgba(42, 42, 42, .98);
+    box-shadow: var(--shadow);
+}
+
+.mode-menu.hidden {
+    display: none
+}
+
+.mode-menu button {
+    text-align: left;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.mode-menu button:hover {
+    background: rgba(255, 255, 255, .06)
+}
+
+.prompt-input {
+    flex: 1 1 auto;
+    min-height: 44px;
+    max-height: 220px;
+    resize: none;
+    padding: 10px 2px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    line-height: 1.5;
+}
+
+.prompt-input::placeholder {
+    color: var(--muted)
+}
+
+.send-button {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 999px;
+    background: #ececec;
+    color: #1d1d1d;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background: #ffffff
+}
+
+.send-button:disabled {
+    opacity: .45;
+    cursor: not-allowed
+}
+
+.conversation {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-user {
+    align-items: flex-end
+}
+
+.message-assistant {
+    align-items: stretch
+}
+
+.message-inner {
+    max-width: 760px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.72;
+    font-size: 1rem;
+}
+
+.message-inner-user {
+    padding: 14px 18px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: rgba(52, 52, 52, .9);
+    box-shadow: var(--shadow);
+}
+
+.message-inner-assistant {
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.details {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: rgba(47, 47, 47, .92);
+}
+
+.details.hidden {
+    display: none
+}
+
+.details summary {
+    color: var(--muted);
+    cursor: pointer;
+    user-select: none;
+}
+
+.details-body {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(59, 59, 59, .84);
+}
+
+.card .title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card .meta {
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: .82rem;
+}
+
+.card .text {
+    color: #d9d9d9;
+    font-size: .92rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 640px) {
+    .topbar {
+        padding: 0 16px
+    }
+
+    .page {
+        width: calc(100vw - 18px)
+    }
+
+    .conversation {
+        width: 100%
+    }
+
+    .composer,
+    body.chat-started .composer-wrap {
+        width: calc(100vw - 18px);
+    }
+
+    .composer {
+        gap: 8px;
+        padding: 8px
+    }
+
+    .mode-button {
+        padding: 0 12px;
+        height: 42px
+    }
+
+    .send-button {
+        width: 42px;
+        height: 42px
+    }
+}

@@ -1,0 +1,23 @@
+@"
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+data/
+rag_ingest_state/
+faiss_db_vault/
+books_vault/
+*.sqlite
+*.db
+*.faiss
+*.bin
+*.pt
+*.pth
+
+.git_old/
+"@ | Set-Content .gitignore
