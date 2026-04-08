@@ -1,6 +1,4 @@
-Replace your current `src/quantai/interface/app.py` with this full file. It keeps your existing backend flow, but reworks the frontend into a cleaner ChatGPT-like layout with a hover-expanding left rail, slightly larger top-left `QuantAI`, top-right action buttons, and a better-centered hero/composer. It is based on the Streamlit file you pasted. 
 
-```python
 from __future__ import annotations
 
 import sys
