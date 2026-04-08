@@ -1,0 +1,127 @@
+# spy_volatility_universe_spx_index_spy_roughness_scaling
+
+- Created at: 2026-03-27T23:01:45+00:00
+- Securities: SPX Index
+- Core query: Propose a theorem linking rough-volatility roughness to realized variance scaling for SPX Index.
+
+## Summary
+```json
+{
+  "task_name": "spy_volatility_universe_spx_index_spy_roughness_scaling",
+  "securities": [
+    "SPX Index"
+  ],
+  "coverage_ok": false,
+  "evidence_ok": true,
+  "theorem_ok": true,
+  "market_memory_ok": true,
+  "market_calibration_ok": false,
+  "market_live_snapshot_ok": false,
+  "selected_theorem_title": "Rough-variance scaling identification theorem",
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_edcb119573d44012",
+    "artifact_hash": "e7f929f2313d4f2c4ec69f1f9938815ce9497f03388e0341170c1c9dacbcbb39",
+    "status": "unverified_hypothesis",
+    "title": "Rough-variance scaling identification theorem"
+  }
+}
+```
+
+## Coverage
+```json
+{
+  "db_exists": true,
+  "securities": {
+    "SPX Index": {
+      "history_rows": 0,
+      "feature_rows": 0,
+      "memory_rows": 0
+    }
+  }
+}
+```
+
+## Warnings
+- SPX Index: no rows in bloomberg_daily_history.
+- SPX Index: no rows in bloomberg_daily_features.
+- SPX Index: no rows in bloomberg_research_memory.
+
+## Evidence
+```json
+{
+  "ok": true,
+  "mode_used": "evidence",
+  "selected_title": null,
+  "response": "Best supported answer:\nRegularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 .\n\nFused research memory:\n- [book] Rough Volatility.pdf | page 77 | chunk 1 | score=0.513\n  Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX. The rBe\n- [book] Rough Volatility.pdf | page 122 | chunk 1 | score=0.507\n  Rough Heston 4.5.3 The quadratic rough Heston model and the joint SPX-VIX options calibration problem The rough Heston model is known to provide excellent fits of the implied volatility surface of the SPX. Finding a model which jointly calibrates the prices of SPX and VIX options is known to be very challenging, especially for short maturities. The VIX index is, in fact, by definition a derivative of the SPX index S , which can be represented as VIXt = p\u22122E[log(S t+\u2206/S t)|Ft] \u00d7 100 , (4.31) wher\n- [book] Rough Volatility.pdf | page 31 | chunk 1 | score=0.506\n  Volatility is rough 1.2.3 S&P and NASDAQ indices We report in Figures 1.6 and 1.7 similar results for the S&P and NASDAQ indices. The variance proxies used here are the precomputed five-minute realized variance estimates for the whole trading day made publicly available by the Oxford-Man Institute of Quantitative Finance. Once again, we do expect these smoothness estimates to be biased high because we are using whole-day realized variance estimates, as explained earlier in Section 1.2. We observ\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.502\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.403\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. - Underlying attempted: SPX Index Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Securities represented: QQQ US Equity, TSLA US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.403\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. - Underlying attempted: SPX Index Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n\nSupporting excerpts:\n[S1] Rough Volatility.pdf p.224: Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ).\n[S2] Rough Volatility.pdf p.230: Regularity structure for rough volatility From W we now construct the fBm bW in the Riemann\u2013Liouville sense with Hurst index 1 H \u2208(0, 2] as \u221a Z t := \u02d9W \u22c6K(t) = 2H |t \u2212r|H\u221212 dWr, bWt 0 \u221a 2 denotes the Volterra kernel. We also write K(s, t) := K(t \u2212s).where K(t) = 2H 1t>0 tH\u22121 To give meaning to the product terms \u039eI(\u039e)k we follow the ideas from rough paths and define an \u201citerated integral\u201d for s, t \u2208R, s \u2264t, as Z t Wm s,t := ( bWr \u2212bWs)m dWr.\n[S3] Rough Volatility.pdf p.223: This approach requires (sufficiently) smooth coefficients, but comes with no growth restrictions, which is indeed quite suitable for financial modeling: we improve the Forde\u2013 Zhang short-time large deviations [138] for simple rough volatility models so as to include f of exponential type, a defining feature in the works of Gatheral and coauthors [166, 39]. Description of main results 205 The second set of results concerns large deviations for rough volatility models.\n\nNote: this answer is limited to the retrieved evidence and fused research memory, and avoids unsupported extrapolation.",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": null,
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Theorem
+```json
+{
+  "ok": true,
+  "mode_used": "theorem",
+  "selected_title": "Rough-variance scaling identification theorem",
+  "response": "Research artifact: Rough-variance scaling identification theorem\nStatus: unverified_hypothesis\nScore: 0.283\n\nStatement:\nConjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPX Index inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).\n\nFused research memory:\n- [book] Rough Volatility.pdf | page 77 | chunk 1 | score=0.513\n  Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX. The rBe\n- [book] Rough Volatility.pdf | page 122 | chunk 1 | score=0.507\n  Rough Heston 4.5.3 The quadratic rough Heston model and the joint SPX-VIX options calibration problem The rough Heston model is known to provide excellent fits of the implied volatility surface of the SPX. Finding a model which jointly calibrates the prices of SPX and VIX options is known to be very challenging, especially for short maturities. The VIX index is, in fact, by definition a derivative of the SPX index S , which can be represented as VIXt = p\u22122E[log(S t+\u2206/S t)|Ft] \u00d7 100 , (4.31) wher\n- [book] Rough Volatility.pdf | page 31 | chunk 1 | score=0.506\n  Volatility is rough 1.2.3 S&P and NASDAQ indices We report in Figures 1.6 and 1.7 similar results for the S&P and NASDAQ indices. The variance proxies used here are the precomputed five-minute realized variance estimates for the whole trading day made publicly available by the Oxford-Man Institute of Quantitative Finance. Once again, we do expect these smoothness estimates to be biased high because we are using whole-day realized variance estimates, as explained earlier in Section 1.2. We observ\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.502\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.403\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. - Underlying attempted: SPX Index Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Securities represented: QQQ US Equity, TSLA US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.403\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. - Underlying attempted: SPX Index Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n\nAssumptions:\n- H > 0 and H < 1/2.\n- The volatility driver admits a Volterra representation with local singularity exponent H-1/2.\n- The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.\n- Empirical scope anchored to SPX Index.\n\nNext actions:\n- Strengthen or revise the symbolic assumptions before trusting the conjecture.\n- Refine the candidate so the implied empirical signature is sharper and testable.\n- Resolve failed symbolic check: variance_constant_nonnegative.\n- Resolve failed symbolic check: realized_variance_nonnegative.\n- Resolve failed empirical check: roughness_from_variance_scaling.\n- Resolve failed empirical check: volatility_clustering_consistency.\n\nTheorem registry:\n- action: inserted\n- entry_id: thm_edcb119573d44012\n- status: unverified_hypothesis",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_edcb119573d44012",
+    "artifact_hash": "e7f929f2313d4f2c4ec69f1f9938815ce9497f03388e0341170c1c9dacbcbb39",
+    "status": "unverified_hypothesis",
+    "title": "Rough-variance scaling identification theorem"
+  },
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPX Index": {
+      "security": "SPX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market memory
+```json
+{
+  "ok": true,
+  "mode_used": "market_memory",
+  "selected_title": null,
+  "response": "Bloomberg empirical memory summary\n\nSecurities:\n- SPX Index\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-26)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-27)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\nFeature-store summaries:\n- SPX Index: {\"security\": \"SPX Index\", \"status\": \"no_data\"}\n\nUse theorem mode for new conjectures. Use evidence mode for exact book statements.",
+  "n_sources": 0,
+  "n_fusion_hits": 0,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPX Index": {
+      "security": "SPX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market calibration
+None
+
+## Market live snapshot
+None

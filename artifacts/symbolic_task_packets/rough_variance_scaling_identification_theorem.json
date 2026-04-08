@@ -1,0 +1,69 @@
+{
+  "title": "Rough-variance scaling identification theorem",
+  "family": "rough_variance_scaling",
+  "securities": [
+    "SPY US Equity"
+  ],
+  "assumptions": [
+    "H > 0 and H < 1/2.",
+    "The volatility driver admits a Volterra representation with local singularity exponent H-1/2.",
+    "The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.",
+    "Empirical scope anchored to SPY US Equity.",
+    "Delta > 0",
+    "0 < H < 1/2",
+    "C_X >= 0",
+    "a1 >= 0",
+    "Higher-order remainder is lower order than Delta^(2H)"
+  ],
+  "tasks": [
+    {
+      "name": "variance_scaling_factorization",
+      "kind": "verify_identity",
+      "payload": {
+        "lhs": "C_X*Delta**(2*H) + a0 + a1*Delta**(2*H)",
+        "rhs": "a0 + (C_X + a1)*Delta**(2*H)"
+      },
+      "rationale": "Checks algebraic coherence of the scaling-law form used in the theorem candidate."
+    },
+    {
+      "name": "variance_term_nonnegative",
+      "kind": "verify_nonnegative",
+      "payload": {
+        "expression": "a1*Delta**(2*H)"
+      },
+      "rationale": "Under positive coefficient and positive scale assumptions, the scaling contribution should remain nonnegative."
+    },
+    {
+      "name": "increment_variance_nonnegative",
+      "kind": "verify_nonnegative",
+      "payload": {
+        "expression": "C_X*Delta**(2*H)"
+      },
+      "rationale": "Variance contribution must remain nonnegative under the roughness scaling ansatz."
+    },
+    {
+      "name": "scaling_at_origin_consistency",
+      "kind": "verify_derivative_zero",
+      "payload": {
+        "expression": "Delta**(2*H + 1)",
+        "variable": "Delta",
+        "point": 0
+      },
+      "rationale": "Checks a simple origin-consistency proxy for higher-order remainder terms in the small-scale expansion."
+    },
+    {
+      "name": "exponent_additivity",
+      "kind": "verify_identity",
+      "payload": {
+        "lhs": "Delta**(2*H) * Delta**(2*K)",
+        "rhs": "Delta**(2*(H + K))"
+      },
+      "rationale": "Provides a reusable exponent-composition identity for scaling arguments."
+    }
+  ],
+  "notes": [
+    "These tasks do not prove the full theorem.",
+    "They turn the current scaling-law candidate into executable symbolic consistency checks.",
+    "The next layer should connect these tasks to verification_engine and theorem_refinement_engine."
+  ]
+}

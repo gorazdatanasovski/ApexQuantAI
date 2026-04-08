@@ -1,0 +1,242 @@
+# spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage
+
+- Created at: 2026-03-27T23:05:14+00:00
+- Securities: SPY US Equity, VIX Index
+- Core query: Propose a theorem linking SPY US Equity and VIX Index through spot-volatility coupling, realized variance scaling, and regime transitions.
+
+## Summary
+```json
+{
+  "task_name": "spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+  "securities": [
+    "SPY US Equity",
+    "VIX Index"
+  ],
+  "coverage_ok": false,
+  "evidence_ok": true,
+  "theorem_ok": true,
+  "market_memory_ok": true,
+  "market_calibration_ok": true,
+  "market_live_snapshot_ok": false,
+  "selected_theorem_title": "Evidence-anchored structural conjecture",
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_70b866f563ec43d4",
+    "artifact_hash": "fd3f6d986bb71ccc004bcbd72664a31bf69f2635522c7212030d5e6dd7b51b3a",
+    "status": "speculative_candidate",
+    "title": "Evidence-anchored structural conjecture"
+  }
+}
+```
+
+## Coverage
+```json
+{
+  "db_exists": true,
+  "securities": {
+    "SPY US Equity": {
+      "history_rows": 41730,
+      "feature_rows": 8346,
+      "memory_rows": 1
+    },
+    "VIX Index": {
+      "history_rows": 0,
+      "feature_rows": 0,
+      "memory_rows": 0
+    }
+  }
+}
+```
+
+## Warnings
+- VIX Index: no rows in bloomberg_daily_history.
+- VIX Index: no rows in bloomberg_daily_features.
+- VIX Index: no rows in bloomberg_research_memory.
+
+## Evidence
+```json
+{
+  "ok": true,
+  "mode_used": "evidence",
+  "selected_title": null,
+  "response": "Best supported answer:\nWe now show how a straightforward application of Theorem 9.2 gives a model-free expres- sion for the mgf of log S , the variance swap, and the forward-starting variance swap. As for the practical interest, if S = S 0eX represents the SPX index, and \u2206is 30 days, we get the joint mgf of SPX, the variance swap, and VIX2. Forward variances are tradable assets (unlike spot variance), constituting a family of martingales indexed by their individual time horizons T.\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=0.735\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. - Volatility regime classification: **compressed_volatility** Test whether roughness estimates co-move with realized-volatility regimes. - Volatility regime: compressed_volatility - Hurst variance scaling 63: 0.0180497 - Hurst variance scaling\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.500\n  - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain. Route market-state questions to \n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.475\n  To calibrate VIX option smiles via rough volatility, we consider extended lognormal models by adding volatility modulation through an independent stochastic factor in the Volterra integral which preserves part of the analytical tractability of the lognormal setting by extending it through an affine structure, which makes it possible to develop approximate option pricing and calibration algorithms based on Fourier transform techniques.\n- [book] Rough Volatility.pdf | page 77 | chunk 4 | score=0.472\n  The CBOE Volatility Index (VIX) is given by a computation that approximates the square-root of the fair strike of a one-month variance swap on the S&P index The variance swap is a forward contract on realized variance, the fair strike of which is given by Z T Vt(T) = \u03bet(u)du. t Volatility is the square-root of variance so, for example, instantaneous volatility is the square- root of instantaneous variance.\n- [book] Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf | page 60 | chunk 2 | score=0.471\n  Moreover, traders would rather purchase the SPY than acquiring all the 500 assets in the index, since it is (much) cheaper to do so, and removes the costs associated with constantly rebalancing one's portfolio to match changes in the weights the different assets represent in the S&P500. Another variable is the volatility index VIX: the VIX is an index continu\u00ad ously published by the Chicago Board of Options Exchange which is designed to measure the market's expectation on future short-term volat\n- [book] Rough Volatility.pdf | page 203 | chunk 3 | score=0.470\n  We now show how a straightforward application of Theorem 9.2 gives a model-free expres- sion for the mgf of log S , the variance swap, and the forward-starting variance swap. As for the practical interest, if S = S 0eX represents the SPX index, and \u2206is 30 days, we get the joint mgf of SPX, the variance swap, and VIX2. Forward variances are tradable assets (unlike spot variance), constituting a family of martingales indexed by their individual time horizons T.\n\nSupporting excerpts:\n[S1] Rough Volatility.pdf p.203: We now show how a straightforward application of Theorem 9.2 gives a model-free expres- sion for the mgf of log S , the variance swap, and the forward-starting variance swap. As for the practical interest, if S = S 0eX represents the SPX index, and \u2206is 30 days, we get the joint mgf of SPX, the variance swap, and VIX2.\n[S2] Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf p.394: A+Bxm Then, substitution into the beta model Theorem 87, and algebra gives the \ufb01nal result cov[Rj, \u03b7rm] cov[Rj, rm] E[Rj] = E [\u03b7rm] = E [rm] . 17.8 Notes There has been much written on the static CAPM and the mean-variance ef\ufb01cient frontier.\n[S3] Rough Volatility.pdf p.139: 0 S t This means a model-free replication of the weighted variance swap payoff is given as a static portfolio of call and put options with weight h\u2032\u2032(K) = 2/ f(K)2. A natural choice of the two would be the underlying asset and the weighted variance swap (with a fixed maturity)\n\nNote: this answer is limited to the retrieved evidence and fused research memory, and avoids unsupported extrapolation.",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": null,
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Theorem
+```json
+{
+  "ok": true,
+  "mode_used": "theorem",
+  "selected_title": "Evidence-anchored structural conjecture",
+  "response": "Research artifact: Evidence-anchored structural conjecture\nStatus: speculative_candidate\nScore: 0.444\n\nStatement:\nConjecture: the objects propose, theorem, linking admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=0.735\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. - Volatility regime classification: **compressed_volatility** Test whether roughness estimates co-move with realized-volatility regimes. - Volatility regime: compressed_volatility - Hurst variance scaling 63: 0.0180497 - Hurst variance scaling\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.500\n  - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain. Route market-state questions to \n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.475\n  To calibrate VIX option smiles via rough volatility, we consider extended lognormal models by adding volatility modulation through an independent stochastic factor in the Volterra integral which preserves part of the analytical tractability of the lognormal setting by extending it through an affine structure, which makes it possible to develop approximate option pricing and calibration algorithms based on Fourier transform techniques.\n- [book] Rough Volatility.pdf | page 77 | chunk 4 | score=0.472\n  The CBOE Volatility Index (VIX) is given by a computation that approximates the square-root of the fair strike of a one-month variance swap on the S&P index The variance swap is a forward contract on realized variance, the fair strike of which is given by Z T Vt(T) = \u03bet(u)du. t Volatility is the square-root of variance so, for example, instantaneous volatility is the square- root of instantaneous variance.\n- [book] Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf | page 60 | chunk 2 | score=0.471\n  Moreover, traders would rather purchase the SPY than acquiring all the 500 assets in the index, since it is (much) cheaper to do so, and removes the costs associated with constantly rebalancing one's portfolio to match changes in the weights the different assets represent in the S&P500. Another variable is the volatility index VIX: the VIX is an index continu\u00ad ously published by the Chicago Board of Options Exchange which is designed to measure the market's expectation on future short-term volat\n- [book] Rough Volatility.pdf | page 203 | chunk 3 | score=0.470\n  We now show how a straightforward application of Theorem 9.2 gives a model-free expres- sion for the mgf of log S , the variance swap, and the forward-starting variance swap. As for the practical interest, if S = S 0eX represents the SPX index, and \u2206is 30 days, we get the joint mgf of SPX, the variance swap, and VIX2. Forward variances are tradable assets (unlike spot variance), constituting a family of martingales indexed by their individual time horizons T.\n\nAssumptions:\n- Empirical scope anchored to SPY US Equity.\n\nNext actions:\n- Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.\n- Refine the candidate so the implied empirical signature is sharper and testable.\n- Collect stronger exact excerpts from the book-memory layer.\n- Add a formal symbolic derivation or export the candidate to Lean for proof work.\n\nTheorem registry:\n- action: inserted\n- entry_id: thm_70b866f563ec43d4\n- status: speculative_candidate",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_70b866f563ec43d4",
+    "artifact_hash": "fd3f6d986bb71ccc004bcbd72664a31bf69f2635522c7212030d5e6dd7b51b3a",
+    "status": "speculative_candidate",
+    "title": "Evidence-anchored structural conjecture"
+  },
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPY US Equity": {
+      "security": "SPY US Equity",
+      "status": "ok",
+      "n_obs": 8346,
+      "start_date": "1993-01-29",
+      "end_date": "2026-03-26",
+      "last_price": 645.09,
+      "last_log_return": -0.018020166399113968,
+      "last_drawdown": -0.07246689384462746,
+      "hurst_proxy": 0.018049720336195372,
+      "ou_beta_21": 0.9209418841954747,
+      "ou_kappa_21": 0.08235834548272408,
+      "realized_vol_21": 0.04263732804924681,
+      "jump_share_21": 0.11418863724935152,
+      "acf_abs_return_21": -0.2916127204870938,
+      "avg_volume_21": 97006914.14285715
+    },
+    "VIX Index": {
+      "security": "VIX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market memory
+```json
+{
+  "ok": true,
+  "mode_used": "market_memory",
+  "selected_title": null,
+  "response": "Bloomberg empirical memory summary\n\nSecurities:\n- SPY US Equity\n- VIX Index\n\n[SPY US Equity] SPY US Equity empirical research memory (2026-03-26)\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-26)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-27)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\nFeature-store summaries:\n- SPY US Equity: {\"security\": \"SPY US Equity\", \"status\": \"ok\", \"n_obs\": 8346, \"start_date\": \"1993-01-29\", \"end_date\": \"2026-03-26\", \"last_price\": 645.09, \"last_log_return\": -0.018020166399113968, \"last_drawdown\": -0.07246689384462746, \"hurst_proxy\": 0.018049720336195372, \"ou_beta_21\": 0.9209418841954747, \"ou_kappa_21\": 0.08235834548272408, \"realized_vol_21\": 0.04263732804924681, \"jump_share_21\": 0.11418863724935152, \"acf_abs_return_21\": -0.2916127204870938, \"avg_volume_21\": 97006914.14285715}\n- VIX Index: {\"security\": \"VIX Index\", \"status\": \"no_data\"}\n\nUse theorem mode for new conjectures. Use evidence mode for exact book statements.",
+  "n_sources": 0,
+  "n_fusion_hits": 0,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPY US Equity": {
+      "security": "SPY US Equity",
+      "status": "ok",
+      "n_obs": 8346,
+      "start_date": "1993-01-29",
+      "end_date": "2026-03-26",
+      "last_price": 645.09,
+      "last_log_return": -0.018020166399113968,
+      "last_drawdown": -0.07246689384462746,
+      "hurst_proxy": 0.018049720336195372,
+      "ou_beta_21": 0.9209418841954747,
+      "ou_kappa_21": 0.08235834548272408,
+      "realized_vol_21": 0.04263732804924681,
+      "jump_share_21": 0.11418863724935152,
+      "acf_abs_return_21": -0.2916127204870938,
+      "avg_volume_21": 97006914.14285715
+    },
+    "VIX Index": {
+      "security": "VIX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market calibration
+```json
+{
+  "ok": true,
+  "mode_used": "market_calibration",
+  "selected_title": null,
+  "response": "Market calibration / empirical-estimation lane\n\nLive diagnostics:\n{\"status\": \"ok\", \"ping\": {\"host\": \"localhost\", \"port\": 8194, \"client_mode\": \"AUTO\", \"services\": [\"//blp/refdata\"], \"started\": true}, \"snapshot_fields\": [\"PX_LAST\", \"BID\", \"ASK\", \"VOLUME\"], \"snapshot\": [{\"security\": \"SPY US Equity\", \"sequence_number\": 0, \"errors\": null, \"PX_LAST\": 634.09, \"BID\": 634.07, \"ASK\": 634.08, \"VOLUME\": 102765064.0}, {\"security\": \"VIX Index\", \"sequence_number\": 1, \"errors\": null, \"PX_LAST\": 31.05, \"BID\": NaN, \"ASK\": NaN, \"VOLUME\": NaN}]}\n\nFeature-store summaries:\n{\"SPY US Equity\": {\"security\": \"SPY US Equity\", \"status\": \"ok\", \"n_obs\": 8346, \"start_date\": \"1993-01-29\", \"end_date\": \"2026-03-26\", \"last_price\": 645.09, \"last_log_return\": -0.018020166399113968, \"last_drawdown\": -0.07246689384462746, \"hurst_proxy\": 0.018049720336195372, \"ou_beta_21\": 0.9209418841954747, \"ou_kappa_21\": 0.08235834548272408, \"realized_vol_21\": 0.04263732804924681, \"jump_share_21\": 0.11418863724935152, \"acf_abs_return_21\": -0.2916127204870938, \"avg_volume_21\": 97006914.14285715}, \"VIX Index\": {\"security\": \"VIX Index\", \"status\": \"no_data\"}}\n\nExact/theoretical support:\n[S1] Rough Volatility.pdf p.203: As for the practical interest, if S = S 0eX represents the SPX index, and \u2206is 30 days, we get the joint mgf of SPX, the variance swap, and VIX2. We now show how a straightforward application of Theorem 9.2 gives a model-free expres- sion for the mgf of log S , the variance swap, and the forward-starting variance swap.\n[S2] Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf p.394: A+Bxm Then, substitution into the beta model Theorem 87, and algebra gives the \ufb01nal result cov[Rj, \u03b7rm] cov[Rj, rm] E[Rj] = E [\u03b7rm] = E [rm] . 378 17 Epilogue (The Fundamental Theorems and the CAPM) Proof De\ufb01ne Xm = N \u00b7 \u03be and xm = N \u00b7 s.\n[S3] Rough Volatility.pdf p.139: 0 S t This means a model-free replication of the weighted variance swap payoff is given as a static portfolio of call and put options with weight h\u2032\u2032(K) = 2/ f(K)2. A theoretical framework 119 and by an integration-by-parts formula, h(S t+\u03b8) = h(S t) + h\u2032(S t)(S t+\u03b8 \u2212S t) Z S t Z \u221e + (K \u2212S t+\u03b8)+h\u2032\u2032(K)dK + (S t+\u03b8 \u2212K)+h\u2032\u2032(K)dK.\n\nInterpretation: QuantAI treated this as a live empirical calibration request. No specialized estimator path matched strongly enough, so it returned live diagnostics, feature summaries, and exact theoretical support.",
+  "n_sources": 10,
+  "n_fusion_hits": 0,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPY US Equity": {
+      "security": "SPY US Equity",
+      "status": "ok",
+      "n_obs": 8346,
+      "start_date": "1993-01-29",
+      "end_date": "2026-03-26",
+      "last_price": 645.09,
+      "last_log_return": -0.018020166399113968,
+      "last_drawdown": -0.07246689384462746,
+      "hurst_proxy": 0.018049720336195372,
+      "ou_beta_21": 0.9209418841954747,
+      "ou_kappa_21": 0.08235834548272408,
+      "realized_vol_21": 0.04263732804924681,
+      "jump_share_21": 0.11418863724935152,
+      "acf_abs_return_21": -0.2916127204870938,
+      "avg_volume_21": 97006914.14285715
+    },
+    "VIX Index": {
+      "security": "VIX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": {
+    "status": "ok",
+    "ping": {
+      "host": "localhost",
+      "port": 8194,
+      "client_mode": "AUTO",
+      "services": [
+        "//blp/refdata"
+      ],
+      "started": true
+    },
+    "snapshot_fields": [
+      "PX_LAST",
+      "BID",
+      "ASK",
+      "VOLUME"
+    ],
+    "snapshot": [
+      {
+        "security": "SPY US Equity",
+        "sequence_number": 0,
+        "errors": null,
+        "PX_LAST": 634.09,
+        "BID": 634.07,
+        "ASK": 634.08,
+        "VOLUME": 102765064.0
+      },
+      {
+        "security": "VIX Index",
+        "sequence_number": 1,
+        "errors": null,
+        "PX_LAST": 31.05,
+        "BID": NaN,
+        "ASK": NaN,
+        "VOLUME": NaN
+      }
+    ]
+  },
+  "resolved_snapshot": null
+}
+```
+
+## Market live snapshot
+None

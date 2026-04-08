@@ -1,0 +1,52 @@
+{
+  "entry_id": "thm_04146b78e2eb455e",
+  "title": "Evidence-anchored structural conjecture",
+  "status": "speculative_candidate",
+  "score": 0.44364050249892173,
+  "statement": "Conjecture: the objects propose, theorem, linking admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+  "assumptions": [
+    "Empirical scope anchored to SPY US Equity."
+  ],
+  "variables": {
+    "propose": "query-driven variable",
+    "theorem": "query-driven variable",
+    "linking": "query-driven variable",
+    "spy": "query-driven variable"
+  },
+  "tags": [
+    "generic",
+    "general_quant"
+  ],
+  "securities": [
+    "SPY US Equity",
+    "SPX Index"
+  ],
+  "benchmark_security": "SPY US Equity",
+  "empirical_signature": [
+    "default_volatility_persistence"
+  ],
+  "symbolic_agenda": [],
+  "failure_conditions": [
+    "Retrieved evidence remains too dispersed across unrelated mathematical families.",
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable."
+  ],
+  "next_actions": [
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable.",
+    "Collect stronger exact excerpts from the book-memory layer.",
+    "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+  ],
+  "source_kind": "theorem_lab",
+  "source_ref": "Propose a theorem linking SPY US Equity and SPX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+  "created_at": "2026-03-27T23:02:59+00:00",
+  "updated_at": "2026-03-27T23:02:59+00:00",
+  "artifact_hash": "1e4d587632ce67e7f9c4b15486c8399b82fbbcff38828be41d9505a925a9913f",
+  "metadata": {
+    "query": "Propose a theorem linking SPY US Equity and SPX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+    "lab_status": null,
+    "lab_score": null,
+    "selected_status": "speculative_candidate",
+    "selected_score": 0.44364050249892173
+  }
+}

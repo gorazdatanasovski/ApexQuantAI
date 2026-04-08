@@ -1,0 +1,52 @@
+{
+  "entry_id": "thm_dc1dc81df5c14018",
+  "title": "Evidence-anchored structural conjecture",
+  "status": "speculative_candidate",
+  "score": 0.44364050249892173,
+  "statement": "Conjecture: the objects retrieve, spy, qqq admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+  "assumptions": [
+    "Empirical scope anchored to SPY US Equity."
+  ],
+  "variables": {
+    "retrieve": "query-driven variable",
+    "spy": "query-driven variable",
+    "qqq": "query-driven variable",
+    "spread": "query-driven variable"
+  },
+  "tags": [
+    "generic",
+    "general_quant"
+  ],
+  "securities": [
+    "SPY US Equity",
+    "QQQ US Equity"
+  ],
+  "benchmark_security": null,
+  "empirical_signature": [
+    "default_volatility_persistence"
+  ],
+  "symbolic_agenda": [],
+  "failure_conditions": [
+    "Retrieved evidence remains too dispersed across unrelated mathematical families.",
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable."
+  ],
+  "next_actions": [
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable.",
+    "Collect stronger exact excerpts from the book-memory layer.",
+    "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+  ],
+  "source_kind": "theorem_lab",
+  "source_ref": "Retrieve the SPY and QQQ spread over the last 60 minutes and compute the maximum likelihood estimation for the OU mean-reversion speed kappa.",
+  "created_at": "2026-03-27T21:46:39+00:00",
+  "updated_at": "2026-03-27T21:46:39+00:00",
+  "artifact_hash": "b3ac785eeb585188221ee245852df423ec23be08e5a7fd5dd63aa9362fc17388",
+  "metadata": {
+    "query": "Retrieve the SPY and QQQ spread over the last 60 minutes and compute the maximum likelihood estimation for the OU mean-reversion speed kappa.",
+    "lab_status": null,
+    "lab_score": null,
+    "selected_status": "speculative_candidate",
+    "selected_score": 0.44364050249892173
+  }
+}

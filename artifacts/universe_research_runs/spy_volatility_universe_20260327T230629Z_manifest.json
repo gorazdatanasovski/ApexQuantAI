@@ -1,0 +1,196 @@
+{
+  "created_at": "2026-03-27T23:06:29+00:00",
+  "universe": {
+    "name": "spy_volatility_universe",
+    "securities": [
+      "SPY US Equity",
+      "SPX Index",
+      "VIX Index",
+      "VIX3M Index",
+      "VVIX Index",
+      "SKEW Index",
+      "ES1 Index"
+    ],
+    "benchmark_security": "SPY US Equity",
+    "metadata": {
+      "anchor_asset": "SPY US Equity",
+      "index_anchor": "SPX Index",
+      "implied_vol_anchor": "VIX Index",
+      "term_structure_anchor": "VIX3M Index",
+      "vol_of_vol_anchor": "VVIX Index",
+      "tail_risk_anchor": "SKEW Index",
+      "futures_anchor": "ES1 Index",
+      "research_focus": [
+        "rough volatility",
+        "realized variance scaling",
+        "spot-volatility coupling",
+        "term structure state",
+        "tail-risk regime shifts",
+        "execution under volatility state"
+      ]
+    }
+  },
+  "templates": [
+    {
+      "name": "spy_vix_linkage",
+      "query_template": "Propose a theorem linking {primary} and {secondary} through spot-volatility coupling, realized variance scaling, and regime transitions.",
+      "use_all_securities": false,
+      "min_securities": 2,
+      "include_evidence": true,
+      "include_theorem": true,
+      "include_market_memory": true,
+      "include_market_calibration": true,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.83
+    },
+    {
+      "name": "vix_vvix_linkage",
+      "query_template": "Propose a theorem linking {primary} and {secondary} through implied volatility, vol-of-vol, and jump-intensity style state dependence.",
+      "use_all_securities": false,
+      "min_securities": 2,
+      "include_evidence": true,
+      "include_theorem": true,
+      "include_market_memory": true,
+      "include_market_calibration": true,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.83
+    },
+    {
+      "name": "spy_vix_term_state",
+      "query_template": "Summarize the empirical state of {primary}, {secondary}, and {universe_name}, with emphasis on roughness, mean reversion, skew, and term structure.",
+      "use_all_securities": true,
+      "min_securities": 1,
+      "include_evidence": false,
+      "include_theorem": false,
+      "include_market_memory": true,
+      "include_market_calibration": false,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.8
+    }
+  ],
+  "results": [
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+      "security_scope": [
+        "SPY US Equity",
+        "SPX Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+        "securities": [
+          "SPY US Equity",
+          "SPX Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": true,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Evidence-anchored structural conjecture",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_04146b78e2eb455e",
+          "artifact_hash": "1e4d587632ce67e7f9c4b15486c8399b82fbbcff38828be41d9505a925a9913f",
+          "status": "speculative_candidate",
+          "title": "Evidence-anchored structural conjecture"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage.md",
+        "bytes_json": 20522,
+        "bytes_markdown": 19814
+      },
+      "warnings": [
+        "SPX Index: no rows in bloomberg_daily_history.",
+        "SPX Index: no rows in bloomberg_daily_features.",
+        "SPX Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+      "security_scope": [
+        "SPY US Equity",
+        "VIX Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+        "securities": [
+          "SPY US Equity",
+          "VIX Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": true,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Evidence-anchored structural conjecture",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_70b866f563ec43d4",
+          "artifact_hash": "fd3f6d986bb71ccc004bcbd72664a31bf69f2635522c7212030d5e6dd7b51b3a",
+          "status": "speculative_candidate",
+          "title": "Evidence-anchored structural conjecture"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage.md",
+        "bytes_json": 20276,
+        "bytes_markdown": 19568
+      },
+      "warnings": [
+        "VIX Index: no rows in bloomberg_daily_history.",
+        "VIX Index: no rows in bloomberg_daily_features.",
+        "VIX Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+      "security_scope": [
+        "SPY US Equity",
+        "VIX3M Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+        "securities": [
+          "SPY US Equity",
+          "VIX3M Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": true,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Evidence-anchored structural conjecture",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_91145bf65d5d4f7f",
+          "artifact_hash": "de9a223c8aab0ac055d518e65d5e5e4c6d5c21a3cc0daeb40f6f249ef687c12e",
+          "status": "speculative_candidate",
+          "title": "Evidence-anchored structural conjecture"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage.md",
+        "bytes_json": 20035,
+        "bytes_markdown": 19327
+      },
+      "warnings": [
+        "VIX3M Index: no rows in bloomberg_daily_history.",
+        "VIX3M Index: no rows in bloomberg_daily_features.",
+        "VIX3M Index: no rows in bloomberg_research_memory."
+      ]
+    }
+  ]
+}

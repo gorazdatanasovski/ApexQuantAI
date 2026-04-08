@@ -1,0 +1,302 @@
+{
+  "security": "GLOBAL",
+  "note_type": "global_bloomberg_note",
+  "title": "Global Bloomberg learning snapshot",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: Global Snapshot\n\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n## Local warehouse status\n- History rows written: 96320\n- Feature rows written: 19264\n- Securities represented: ES1 Index, SKEW Index, SPX Index, VIX Index, VIX3M Index, VVIX Index\n\n## Options diagnostics\n- Underlying attempted: SPX Index\n- Chain field used: OPT_CHAIN\n- Chain rows: 8000\n- Snapshot rows: 300\n- Surface rows: 0\n\n## Interpretation\nQuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain.\n\n## Next research actions\n1. Convert these memory notes into retrieval-ready empirical evidence.\n2. Route market-state questions to this Bloomberg memory before invoking theorem synthesis.\n3. Strengthen options contract selection so put/call filters do not collapse to zero usable rows.\n4. Build calibration-specific memory notes once surface extraction is stable.\n",
+  "metadata": {
+    "as_of_date": "2026-03-27",
+    "securities": [
+      "ES1 Index",
+      "SKEW Index",
+      "SPX Index",
+      "VIX Index",
+      "VIX3M Index",
+      "VVIX Index"
+    ],
+    "history_rows": 306390,
+    "feature_rows": 61278,
+    "capability_report": {
+      "blpapi_available": true,
+      "bql_available": false,
+      "options_surface_available": true,
+      "market_db_path": "data\\market_history.sqlite",
+      "notes": [
+        "BQL unavailable: Bloomberg BQL Python object model is not available in this environment. Use BQuant/Desktop or an environment where the `bql` package is installed."
+      ]
+    },
+    "options_summary": {
+      "underlying": "SPX Index",
+      "valuation_date": "2026-03-27",
+      "chain_field_used": "OPT_CHAIN",
+      "n_chain_rows": 8000,
+      "n_chain_tickers": 300,
+      "n_snapshot_rows": 300,
+      "n_surface_rows": 0,
+      "diagnostics": {
+        "spot": 6477.16,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 300,
+        "rows_chain": 8000,
+        "rows_chain_meta": 300,
+        "rows_raw": 300,
+        "rows_surface": 0,
+        "valuation_date": "2026-03-27",
+        "expiry_min": null,
+        "expiry_max": null,
+        "option_types": [],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C6235 Index",
+            "sequence_number": 200,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6235.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.61242,
+            "IVOL_BID": 26.48901,
+            "IVOL_ASK": 30.67428,
+            "PX_MID": 345.85,
+            "PX_BID": 335.3,
+            "PX_ASK": 356.4,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6240 Index",
+            "sequence_number": 201,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6240.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.52856,
+            "IVOL_BID": 26.42103,
+            "IVOL_ASK": 30.58974,
+            "PX_MID": 341.65,
+            "PX_BID": 331.1,
+            "PX_ASK": 352.2,
+            "PX_LAST": 360.0,
+            "VOLUME": 6.0,
+            "OPEN_INT": 11
+          },
+          {
+            "security": "SPXW US 04/17/26 C6245 Index",
+            "sequence_number": 202,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6245.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.5364,
+            "IVOL_BID": 26.70422,
+            "IVOL_ASK": 30.37213,
+            "PX_MID": 337.95,
+            "PX_BID": 328.5,
+            "PX_ASK": 347.4,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6250 Index",
+            "sequence_number": 203,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6250.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.35371,
+            "IVOL_BID": 26.30312,
+            "IVOL_ASK": 30.36231,
+            "PX_MID": 333.8,
+            "PX_BID": 323.4,
+            "PX_ASK": 344.2,
+            "PX_LAST": 672.48,
+            "VOLUME": 2.0,
+            "OPEN_INT": 2
+          },
+          {
+            "security": "SPXW US 04/17/26 C6255 Index",
+            "sequence_number": 204,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6255.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.32639,
+            "IVOL_BID": 26.64559,
+            "IVOL_ASK": 30.12287,
+            "PX_MID": 329.95,
+            "PX_BID": 320.6,
+            "PX_ASK": 339.3,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6260 Index",
+            "sequence_number": 205,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6260.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.41379,
+            "IVOL_BID": 26.69351,
+            "IVOL_ASK": 30.11128,
+            "PX_MID": 326.5,
+            "PX_BID": 317.6,
+            "PX_ASK": 335.4,
+            "PX_LAST": 438.32,
+            "VOLUME": 3.0,
+            "OPEN_INT": 3
+          },
+          {
+            "security": "SPXW US 04/17/26 C6265 Index",
+            "sequence_number": 206,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6265.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.94532,
+            "IVOL_BID": 26.55776,
+            "IVOL_ASK": 29.32072,
+            "PX_MID": 320.55,
+            "PX_BID": 313.0,
+            "PX_ASK": 328.1,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6270 Index",
+            "sequence_number": 207,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6270.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.25862,
+            "IVOL_BID": 26.54141,
+            "IVOL_ASK": 29.9507,
+            "PX_MID": 318.7,
+            "PX_BID": 309.7,
+            "PX_ASK": 327.7,
+            "PX_LAST": 402.41,
+            "VOLUME": 1.0,
+            "OPEN_INT": 1
+          },
+          {
+            "security": "SPXW US 04/17/26 C6275 Index",
+            "sequence_number": 208,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6275.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.24255,
+            "IVOL_BID": 26.48968,
+            "IVOL_ASK": 29.97474,
+            "PX_MID": 315.15,
+            "PX_BID": 305.9,
+            "PX_ASK": 324.4,
+            "PX_LAST": 593.56,
+            "VOLUME": 2.0,
+            "OPEN_INT": 10
+          },
+          {
+            "security": "SPXW US 04/17/26 C6280 Index",
+            "sequence_number": 209,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6280.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.08309,
+            "IVOL_BID": 26.43468,
+            "IVOL_ASK": 29.71539,
+            "PX_MID": 310.85,
+            "PX_BID": 302.1,
+            "PX_ASK": 319.6,
+            "PX_LAST": 299.6,
+            "VOLUME": 9.0,
+            "OPEN_INT": 2
+          }
+        ],
+        "surface_nulls": {}
+      },
+      "surface_preview": [],
+      "surface_columns": [
+        "valuation_date",
+        "underlying",
+        "option_ticker",
+        "expiry",
+        "tau_years",
+        "option_type",
+        "strike",
+        "spot",
+        "implied_vol",
+        "mid_price",
+        "volume",
+        "open_interest"
+      ]
+    },
+    "windows": [
+      5,
+      21,
+      63
+    ]
+  }
+}

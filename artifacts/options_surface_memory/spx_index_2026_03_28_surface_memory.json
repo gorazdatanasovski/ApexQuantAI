@@ -1,0 +1,12 @@
+{
+  "underlying": "SPX Index",
+  "valuation_date": "2026-03-28",
+  "n_surface_rows": 1500,
+  "n_expiries": 1,
+  "atm_iv": 0.2743693183837236,
+  "atm_skew": -0.9843119659280163,
+  "method": "iv_vs_log_moneyness",
+  "summary_text": "SPX Index options surface repaired and persisted for 2026-03-28. Recovered 1500 surface rows across 1 expiries. Primary calibration method: iv_vs_log_moneyness. ATM implied volatility: 0.2743693183837236. ATM skew: -0.9843119659280163.",
+  "source_csv": "artifacts\\options_surface_repairs\\spx_index_surface_repair.csv",
+  "source_json": "artifacts\\options_surface_repairs\\spx_index_surface_repair.json"
+}

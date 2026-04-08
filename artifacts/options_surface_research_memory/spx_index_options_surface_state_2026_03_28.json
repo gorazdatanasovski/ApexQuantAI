@@ -1,0 +1,56 @@
+{
+  "security": "SPX Index",
+  "note_type": "options_surface_state",
+  "title": "SPX Index options surface state",
+  "as_of_date": "2026-03-28",
+  "content_markdown": "# Bloomberg Research Memory: SPX Index Options Surface\n\n- Valuation date: 2026-03-28\n- Surface rows: 1500\n- Rows with IV: 1423\n- Calls: 963\n- Puts: 537\n- Expiries: 1\n\n## Primary current interpretations\n- Short-dated ATM skew is strongly negative, consistent with pronounced downside equity skew.\n- OTM put wing carries richer implied volatility than the OTM call wing.\n- Term-structure slope is currently unavailable or under-identified from stored calibration slices.\n\n## Calibration state\n- ATM IV: 0.2743693183837236\n- ATM skew: -0.9843119659280163\n- Method: iv_vs_log_moneyness\n- Calibration rows: 1\n\n## QuantAI usage\n- Use this note when the query concerns SPX skew, smile, short-dated surface state, or implied-volatility structure.\n- This note is suitable for theorem generation, calibration support, and empirical falsification.",
+  "metadata": {
+    "source": "options_surface_memory",
+    "underlying": "SPX Index",
+    "valuation_date": "2026-03-28",
+    "derived_features": {
+      "rows_total": 1500,
+      "rows_with_iv": 1423,
+      "rows_calls": 963,
+      "rows_puts": 537,
+      "expiries": [
+        "2026-04-17"
+      ],
+      "atm_call_iv": 0.2772008631578947,
+      "atm_put_iv": 0.2773471539473684,
+      "atm_put_minus_call_iv": 0.000146290789473702,
+      "otm_put_iv": 0.4467275670886076,
+      "otm_call_iv": 0.2334725225609756,
+      "wing_put_minus_call_iv": 0.21325504452763203,
+      "calibration_rows": 1,
+      "term_structure_expiries": 1,
+      "term_structure_slope": null,
+      "snapshot_atm_iv": 0.2743693183837236,
+      "snapshot_atm_skew": -0.9843119659280163,
+      "snapshot_method": "iv_vs_log_moneyness"
+    },
+    "diagnostics": {
+      "n_surface_rows": 1500,
+      "n_expiries": 1,
+      "atm_iv": 0.2743693183837236,
+      "atm_skew": -0.9843119659280163,
+      "method": "iv_vs_log_moneyness",
+      "summary_text": "SPX Index options surface repaired and persisted for 2026-03-28. Recovered 1500 surface rows across 1 expiries. Primary calibration method: iv_vs_log_moneyness. ATM implied volatility: 0.2743693183837236. ATM skew: -0.9843119659280163.",
+      "n_calibration_rows": 1,
+      "n_preview_rows": 400
+    },
+    "calibration_rows": [
+      {
+        "expiry": "2026-04-17",
+        "tau_years": 0.0547945205479452,
+        "n_points": 612,
+        "atm_iv": 0.2743693183837236,
+        "skew": -0.9843119659280163,
+        "intercept": 0.2743693183837236,
+        "r_squared": 0.9917850629201106,
+        "method": "iv_vs_log_moneyness",
+        "raw_json": null
+      }
+    ]
+  }
+}

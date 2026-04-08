@@ -1,0 +1,327 @@
+{
+  "created_at": "2026-03-27T23:02:01+00:00",
+  "universe": {
+    "name": "spy_volatility_universe",
+    "securities": [
+      "SPY US Equity",
+      "SPX Index",
+      "VIX Index",
+      "VIX3M Index",
+      "VVIX Index",
+      "SKEW Index",
+      "ES1 Index"
+    ],
+    "benchmark_security": "SPY US Equity",
+    "metadata": {
+      "anchor_asset": "SPY US Equity",
+      "index_anchor": "SPX Index",
+      "implied_vol_anchor": "VIX Index",
+      "term_structure_anchor": "VIX3M Index",
+      "vol_of_vol_anchor": "VVIX Index",
+      "tail_risk_anchor": "SKEW Index",
+      "futures_anchor": "ES1 Index",
+      "research_focus": [
+        "rough volatility",
+        "realized variance scaling",
+        "spot-volatility coupling",
+        "term structure state",
+        "tail-risk regime shifts",
+        "execution under volatility state"
+      ]
+    }
+  },
+  "templates": [
+    {
+      "name": "spy_roughness_scaling",
+      "query_template": "Propose a theorem linking rough-volatility roughness to realized variance scaling for {primary}.",
+      "use_all_securities": false,
+      "min_securities": 1,
+      "include_evidence": true,
+      "include_theorem": true,
+      "include_market_memory": true,
+      "include_market_calibration": false,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.8
+    },
+    {
+      "name": "spy_execution_under_vol_state",
+      "query_template": "Pull the live Bloomberg snapshot for {primary} and formulate the precise Almgren-Chriss liquidating trajectory for 10^5 shares over T=1 hour, conditioning on the current volatility state.",
+      "use_all_securities": false,
+      "min_securities": 1,
+      "include_evidence": true,
+      "include_theorem": false,
+      "include_market_memory": true,
+      "include_market_calibration": false,
+      "include_market_live_snapshot": true,
+      "acceptance_score": 0.8
+    },
+    {
+      "name": "pair_ou_spread",
+      "query_template": "Retrieve the {primary} and {secondary} spread over the last 60 minutes and compute the maximum likelihood estimation for the OU mean-reversion speed kappa.",
+      "use_all_securities": false,
+      "min_securities": 2,
+      "include_evidence": true,
+      "include_theorem": true,
+      "include_market_memory": true,
+      "include_market_calibration": true,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.8
+    },
+    {
+      "name": "spot_vol_linkage_theorem",
+      "query_template": "Propose a theorem describing the empirical and theoretical linkage between {primary} and {secondary}, emphasizing volatility transmission, roughness, and regime dependence.",
+      "use_all_securities": false,
+      "min_securities": 2,
+      "include_evidence": true,
+      "include_theorem": true,
+      "include_market_memory": true,
+      "include_market_calibration": true,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.82
+    },
+    {
+      "name": "universe_state_summary",
+      "query_template": "Summarize the current Bloomberg empirical memory, roughness signatures, term-structure state, and tail-risk state for {universe_name}.",
+      "use_all_securities": true,
+      "min_securities": 1,
+      "include_evidence": false,
+      "include_theorem": false,
+      "include_market_memory": true,
+      "include_market_calibration": false,
+      "include_market_live_snapshot": false,
+      "acceptance_score": 0.8
+    }
+  ],
+  "results": [
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_spy_us_equity_spy_roughness_scaling",
+      "security_scope": [
+        "SPY US Equity"
+      ],
+      "ok": true,
+      "summary": {
+        "task_name": "spy_volatility_universe_spy_us_equity_spy_roughness_scaling",
+        "securities": [
+          "SPY US Equity"
+        ],
+        "coverage_ok": true,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_dea68dae778b423d",
+          "artifact_hash": "14b0cb4f1415b71a2f6ff53b3b09f10d3aa0af1003d6dd65d319ad36f3625f80",
+          "status": "speculative_candidate",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_spy_roughness_scaling.md",
+        "bytes_json": 16271,
+        "bytes_markdown": 15735
+      },
+      "warnings": []
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_spx_index_spy_roughness_scaling",
+      "security_scope": [
+        "SPX Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_spx_index_spy_roughness_scaling",
+        "securities": [
+          "SPX Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_edcb119573d44012",
+          "artifact_hash": "e7f929f2313d4f2c4ec69f1f9938815ce9497f03388e0341170c1c9dacbcbb39",
+          "status": "unverified_hypothesis",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spx_index_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_spx_index_spy_roughness_scaling.md",
+        "bytes_json": 15163,
+        "bytes_markdown": 14676
+      },
+      "warnings": [
+        "SPX Index: no rows in bloomberg_daily_history.",
+        "SPX Index: no rows in bloomberg_daily_features.",
+        "SPX Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_vix_index_spy_roughness_scaling",
+      "security_scope": [
+        "VIX Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_vix_index_spy_roughness_scaling",
+        "securities": [
+          "VIX Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_f02eb1ee14c04238",
+          "artifact_hash": "4795619efe1241d92d10c4f2932a4dccd6dc5ac74fb8a595d5a88347e7b0667e",
+          "status": "unverified_hypothesis",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix_index_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix_index_spy_roughness_scaling.md",
+        "bytes_json": 14513,
+        "bytes_markdown": 14026
+      },
+      "warnings": [
+        "VIX Index: no rows in bloomberg_daily_history.",
+        "VIX Index: no rows in bloomberg_daily_features.",
+        "VIX Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_vix3m_index_spy_roughness_scaling",
+      "security_scope": [
+        "VIX3M Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_vix3m_index_spy_roughness_scaling",
+        "securities": [
+          "VIX3M Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_e818056ac7c74ce7",
+          "artifact_hash": "ad462f735e7fe95154c44adfb0fb9428c93e0e8e577b0ef640a58bc9fb8d8ae4",
+          "status": "unverified_hypothesis",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix3m_index_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix3m_index_spy_roughness_scaling.md",
+        "bytes_json": 14465,
+        "bytes_markdown": 13978
+      },
+      "warnings": [
+        "VIX3M Index: no rows in bloomberg_daily_history.",
+        "VIX3M Index: no rows in bloomberg_daily_features.",
+        "VIX3M Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_vvix_index_spy_roughness_scaling",
+      "security_scope": [
+        "VVIX Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_vvix_index_spy_roughness_scaling",
+        "securities": [
+          "VVIX Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_b4bdbb0eceee4565",
+          "artifact_hash": "5be2a87d5d9711264395a3675185bae6d1117ede3a43342a7014cbf74667e26c",
+          "status": "unverified_hypothesis",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vvix_index_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_vvix_index_spy_roughness_scaling.md",
+        "bytes_json": 14455,
+        "bytes_markdown": 13968
+      },
+      "warnings": [
+        "VVIX Index: no rows in bloomberg_daily_history.",
+        "VVIX Index: no rows in bloomberg_daily_features.",
+        "VVIX Index: no rows in bloomberg_research_memory."
+      ]
+    },
+    {
+      "universe_name": "spy_volatility_universe",
+      "task_name": "spy_volatility_universe_skew_index_spy_roughness_scaling",
+      "security_scope": [
+        "SKEW Index"
+      ],
+      "ok": false,
+      "summary": {
+        "task_name": "spy_volatility_universe_skew_index_spy_roughness_scaling",
+        "securities": [
+          "SKEW Index"
+        ],
+        "coverage_ok": false,
+        "evidence_ok": true,
+        "theorem_ok": true,
+        "market_memory_ok": true,
+        "market_calibration_ok": false,
+        "market_live_snapshot_ok": false,
+        "selected_theorem_title": "Rough-variance scaling identification theorem",
+        "theorem_registry": {
+          "action": "inserted",
+          "entry_id": "thm_47fcbcb7cf68433a",
+          "artifact_hash": "350c3cb580e30954e4c6f745fd28574f9d79c12cf6387d40007af17072ba46a6",
+          "status": "unverified_hypothesis",
+          "title": "Rough-variance scaling identification theorem"
+        }
+      },
+      "files": {
+        "json_path": "artifacts\\universe_research_runs\\spy_volatility_universe_skew_index_spy_roughness_scaling.json",
+        "markdown_path": "artifacts\\universe_research_runs\\spy_volatility_universe_skew_index_spy_roughness_scaling.md",
+        "bytes_json": 15028,
+        "bytes_markdown": 14541
+      },
+      "warnings": [
+        "SKEW Index: no rows in bloomberg_daily_history.",
+        "SKEW Index: no rows in bloomberg_daily_features.",
+        "SKEW Index: no rows in bloomberg_research_memory."
+      ]
+    }
+  ]
+}

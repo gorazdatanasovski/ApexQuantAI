@@ -1,0 +1,458 @@
+{
+  "query": "Propose a theorem linking rough-volatility roughness to realized variance scaling for SPY.",
+  "problem_kind": "hypothesis",
+  "topics": [
+    "general_quant"
+  ],
+  "selected": {
+    "title": "Evidence-aligned structural conjecture",
+    "status": "research_conjecture",
+    "statement": "The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.",
+    "assumptions": [
+      "Retrieved evidence identifies the correct mathematical family.",
+      "The empirical feature layer contains a proxy for the latent theoretical object.",
+      "Empirical scope anchored to SPY US Equity."
+    ],
+    "variables": {
+      "T": "target mathematical object",
+      "E": "retrieved evidence family",
+      "F": "empirical feature proxy"
+    },
+    "motivation": "Generic fallback when the query is research-like but not yet mapped to a specialized topic family.",
+    "empirical_signature": [
+      "select the most relevant persisted features and test the implied monotonicity or scaling relation."
+    ],
+    "symbolic_agenda": [
+      "Convert retrieved definitions into an explicit operator identity.",
+      "Differentiate or integrate under the required regularity assumptions."
+    ],
+    "failure_conditions": [
+      "Retrieved evidence belongs to incompatible mathematical families.",
+      "No empirical proxy exists for the target object.",
+      "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+    ],
+    "evidence": [
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.7598751465479533,
+        "excerpt": "Chapter 2 Pricing under rough volatility24 Christian Bayer, Peter K. Friz, Jim Gatheral 2.1 Introduction From an analysis of the time series of realized variance using recent high frequency data, Gatheral, Jaisson, and Rosenbaum [166] showed that the logarithm of realized variance behaves essentially as a fractional Brownian motion (fBm) with Hurst exponent H of order 0.1, at any reasonable time scale. The following stationary rough fractional stochastic volatility (RFSV) model was proposed: dS t = µtdt + VtdZt, S t Vt = exp{Xt}, t ∈[0, T], (2.1) where µt is a suitable drift term, Zt is a standard Brownian motion, Xt is a fractional Ornstein– Uhlenbeck process (fOU process for short) satisfying dXt = νdWHt −α(Xt −m)dt, where m ∈R, and ν and α are positive parameters (see [92]), with Z and WH correlated in general",
+        "metadata": {
+          "page_no": 53,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.790309993426005,
+        "excerpt": "olatility underpins financial markets by encapsulating uncertainty about prices, individual behaviors, and decisions and has traditionally been modeled as a semimartingale, with consequent scaling properties. The mathematical description of the volatility process has been an active topic ofVresearch for decades; however, driven by empirical estimates of the scaling behavior of volatility, a new paradigm has emerged, whereby paths of volatility are rougher than those of semimartingales. According to this perspective, volatility behaves as a fractional Brownian motion with a small Hurst parameter.privacy The first book to offer a comprehensive exploration of the subject, Rough Volatility contributes to the understanding and application of rough volatility models by • equipping readers with the tools and insights needed to delve into the topic, ROUGH • exploring the motivation for rough volatility modeling and providing a toolbox for computation and practical implementation, and • organizing the material to reflect the subject’s development and progression",
+        "metadata": {
+          "page_no": 282,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.7830743050575256,
+        "excerpt": ". To calibrate VIX option smiles via rough volatility, we consider extended lognormal models by adding volatility modulation through an independent stochastic factor in the Volterra integral which preserves part of the analytical tractability of the lognormal setting by extending it through an affine structure, which makes it possible to develop approximate option pricing and calibration algorithms based on Fourier transform techniques. In this chapter, we showcase these ideas in relatively transparent and illustrative settings. We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options. 6.2 A theoretical framework The purpose of this section is to illustrate an infinite-dimensional Markov nature of rough volatil- ity models, which enables us to hedge options without any “memory” of the past",
+        "metadata": {
+          "page_no": 137,
+          "chunk_no": 2
+        }
+      }
+    ],
+    "verification": {
+      "candidate_title": "Evidence-aligned structural conjecture",
+      "verdict": "partially_supported",
+      "overall_score": 0.8577207460162648,
+      "symbolic_checks": [],
+      "empirical_checks": [
+        {
+          "name": "select the most relevant persisted features and test the implied monotonicity or scaling relation.",
+          "kind": "empirical",
+          "passed": true,
+          "score": 0.8577207460162648,
+          "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+          "details": {
+            "hurst_estimate": 0.4288603730081324,
+            "column": "hurst_varscale_63"
+          }
+        }
+      ],
+      "warnings": [
+        "No symbolic checks were supplied; symbolic validity remains untested."
+      ],
+      "recommended_refinements": [
+        "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+      ]
+    },
+    "tags": [
+      "generic",
+      "research"
+    ],
+    "score": 0.7146132105921273,
+    "next_actions": [
+      "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+      "Collect stronger exact excerpts from the book-memory layer.",
+      "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+    ]
+  },
+  "trials": [
+    {
+      "round_index": 0,
+      "candidate_title": "Evidence-aligned structural conjecture",
+      "candidate_statement": "The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.",
+      "verification": {
+        "candidate_title": "Evidence-aligned structural conjecture",
+        "verdict": "partially_supported",
+        "overall_score": 0.8577207460162648,
+        "symbolic_checks": [],
+        "empirical_checks": [
+          {
+            "name": "select the most relevant persisted features and test the implied monotonicity or scaling relation.",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [
+          "No symbolic checks were supplied; symbolic validity remains untested."
+        ],
+        "recommended_refinements": [
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+        ]
+      },
+      "lab_score": 0.7146132105921273,
+      "notes": [
+        "Problem kind: hypothesis",
+        "Verdict: partially_supported",
+        "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+        "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+      ]
+    },
+    {
+      "round_index": 1,
+      "candidate_title": "Evidence-aligned structural conjecture",
+      "candidate_statement": "The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.",
+      "verification": {
+        "candidate_title": "Evidence-aligned structural conjecture",
+        "verdict": "partially_supported",
+        "overall_score": 0.8577207460162648,
+        "symbolic_checks": [],
+        "empirical_checks": [
+          {
+            "name": "select the most relevant persisted features and test the implied monotonicity or scaling relation.",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [
+          "No symbolic checks were supplied; symbolic validity remains untested."
+        ],
+        "recommended_refinements": [
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+        ]
+      },
+      "lab_score": 0.7146132105921273,
+      "notes": [
+        "Problem kind: hypothesis",
+        "Verdict: partially_supported",
+        "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+        "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+      ]
+    },
+    {
+      "round_index": 2,
+      "candidate_title": "Evidence-aligned structural conjecture",
+      "candidate_statement": "The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.",
+      "verification": {
+        "candidate_title": "Evidence-aligned structural conjecture",
+        "verdict": "partially_supported",
+        "overall_score": 0.8577207460162648,
+        "symbolic_checks": [],
+        "empirical_checks": [
+          {
+            "name": "select the most relevant persisted features and test the implied monotonicity or scaling relation.",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [
+          "No symbolic checks were supplied; symbolic validity remains untested."
+        ],
+        "recommended_refinements": [
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+        ]
+      },
+      "lab_score": 0.7146132105921273,
+      "notes": [
+        "Problem kind: hypothesis",
+        "Verdict: partially_supported",
+        "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+        "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+      ]
+    }
+  ],
+  "packet_metadata": {
+    "n_text_evidence": 10,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "market_context_keys": [
+      "SPY US Equity",
+      "securities"
+    ]
+  },
+  "lab_metadata": {
+    "db_path": "data\\market_history.sqlite",
+    "n_candidates": 1,
+    "n_trials": 3,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "benchmark_security": null,
+    "acceptance_score": 0.8
+  },
+  "securities": [
+    "SPY US Equity"
+  ],
+  "retrieved_sources": [
+    {
+      "score": 0.790309993426005,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 282,
+      "chunk_no": 1,
+      "text": "olatility underpins financial markets by encapsulating uncertainty about prices, individual behaviors, and decisions and has traditionally been modeled as a semimartingale, with consequent scaling properties. The mathematical description of the volatility process has been an active topic ofVresearch for decades; however, driven by empirical estimates of the scaling behavior of volatility, a new paradigm has emerged, whereby paths of volatility are rougher than those of semimartingales. According to this perspective, volatility behaves as a fractional Brownian motion with a small Hurst parameter.privacy The first book to offer a comprehensive exploration of the subject, Rough Volatility contributes to the understanding and application of rough volatility models by • equipping readers with the tools and insights needed to delve into the topic, ROUGH • exploring the motivation for rough volatility modeling and providing a toolbox for computation and practical implementation, and • organizing the material to reflect the subject’s development and progression",
+      "dense_score": 0.6986433267593384,
+      "lexical_score": 0.4166666666666667
+    },
+    {
+      "score": 0.7830743050575256,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 137,
+      "chunk_no": 2,
+      "text": ". To calibrate VIX option smiles via rough volatility, we consider extended lognormal models by adding volatility modulation through an independent stochastic factor in the Volterra integral which preserves part of the analytical tractability of the lognormal setting by extending it through an affine structure, which makes it possible to develop approximate option pricing and calibration algorithms based on Fourier transform techniques. In this chapter, we showcase these ideas in relatively transparent and illustrative settings. We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options. 6.2 A theoretical framework The purpose of this section is to illustrate an infinite-dimensional Markov nature of rough volatil- ity models, which enables us to hedge options without any “memory” of the past",
+      "dense_score": 0.6730743050575256,
+      "lexical_score": 0.5
+    },
+    {
+      "score": 0.779016641775767,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 23,
+      "chunk_no": 2,
+      "text": ". In other words, regardless of the specific problem in financial engineering involving volatility, rough volatility is likely to provide a reasonable and robust solution. While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. From a statistical testing perspective, these ideas can be framed as the statistical null hypoth- esis H0: “Volatility is rough.” Remarkably, it is exceedingly challenging to statistically reject this null hypothesis. This reinforces rough volatility as the fundamental paradigm, setting it apart from other approaches. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In contrast, the multifractal nature of rough volatility exhibits remarkable consistency with historical data",
+      "dense_score": 0.6873499751091003,
+      "lexical_score": 0.4166666666666667
+    },
+    {
+      "score": 0.764360294342041,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 77,
+      "chunk_no": 1,
+      "text": "2.9. Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX. A special case of this model, where we assume a deterministic change of measure between P and Q, turns out to be a non-Markovian extension of the well-known Bergomi model, which we consequently dub the rough Bergomi (or rBergomi) model. The rBergomi model is particularly tractable and seems to fit the SPX volatility surface very well, despite our lack at this stage of an efficient computational algorithm",
+      "dense_score": 0.654360294342041,
+      "lexical_score": 0.5
+    },
+    {
+      "score": 0.7598751465479533,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 53,
+      "chunk_no": 1,
+      "text": "Chapter 2 Pricing under rough volatility24 Christian Bayer, Peter K. Friz, Jim Gatheral 2.1 Introduction From an analysis of the time series of realized variance using recent high frequency data, Gatheral, Jaisson, and Rosenbaum [166] showed that the logarithm of realized variance behaves essentially as a fractional Brownian motion (fBm) with Hurst exponent H of order 0.1, at any reasonable time scale. The following stationary rough fractional stochastic volatility (RFSV) model was proposed: dS t = µtdt + VtdZt, S t Vt = exp{Xt}, t ∈[0, T], (2.1) where µt is a suitable drift term, Zt is a standard Brownian motion, Xt is a fractional Ornstein– Uhlenbeck process (fOU process for short) satisfying dXt = νdWHt −α(Xt −m)dt, where m ∈R, and ν and α are positive parameters (see [92]), with Z and WH correlated in general",
+      "dense_score": 0.6682084798812866,
+      "lexical_score": 0.4166666666666667
+    },
+    {
+      "score": 0.7448070923487345,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 27,
+      "chunk_no": 3,
+      "text": ". This smoothness parameter lies systematically between 0.08 and 0.2 (in the sense of Hölder regu- larity, for example). Furthermore, we find that increments of the log-volatility are approximately normally distributed and that their moments enjoy a remarkable monofractal scaling property. This leads us to model the log of volatility using an fBm with Hurst parameter H < 21 in Sec- tion 1.3. Specifically, we adopt the fractional stochastic volatility (FSV) model of Comte and Renault [99]. We call our model rough FSV (RFSV) to underline that, in contrast to FSV, we take H < 12. We also show in the same section that the RFSV model is remarkably consistent with volatility time series data. The issue of volatility persistence is considered through the lens",
+      "dense_score": 0.6531404256820679,
+      "lexical_score": 0.4166666666666667
+    },
+    {
+      "score": 0.7311632140477499,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 7,
+      "chunk_no": 1,
+      "text": "Contents List of Figures xi List of Tables xv Foreword Jean-Philippe Bouchaud xvii Foreword: Roughness versus Arbitrage Walter Schachermayer xxi Preface xxv 1 Volatility is rough 1 Jim Gatheral, Thibault Jaisson, Mathieu Rosenbaum 1.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.2 Smoothness of the volatility: Empirical results . . . . . . . . . . . . . . . . 5 1.3 A simple model compatible with the empirical scaling of the volatility . . . 10 1.4 Spurious long memory of volatility? . . . . . . . . . . . . . . . . . . . . . 17 1.5 Forecasting using the RFSV model . . . . . . . . . . . . . . . . . . . . . . 19 1.6 Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 1.7 Appendix . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24 2 Pricing under rough volatility 31 Christian Bayer, Peter K. Friz, Jim Gatheral 2.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31 2.2 Change of measure . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "dense_score": 0.6578298807144165,
+      "lexical_score": 0.3333333333333333
+    },
+    {
+      "score": 0.7275204761823019,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 16,
+      "chunk_no": 1,
+      "text": "Foreword xix papers, the Rough Volatility model is intimately related to the proximity of an instability that would justify the rough, multi-timescale nature of volatility. But what is the self-organizing mechanism through which all markets appear to settle close to such a critical point? Could this scenario allow one to understand why financial time series all look so much alike? Stocks, futures, commodities, exchange rates, etc. all share very similar statistical features, in particular in the tails. Beyond being the denouement of a 120-year odyssey, we may allow ourselves to believe that the final model is not only a figment of our mathematical imagination but also a robust, trustworthy framework for risk management and derivative pricing. In the meantime, I hope students and seasoned researchers alike will enjoy as much as I did the present collection of papers. This book embodies, in my view, quantitative finance at its best: cutting-edge mathematical tools developed not for their own sake but rather to describe, as best as possible, the real world.",
+      "dense_score": 0.6541871428489685,
+      "lexical_score": 0.3333333333333333
+    },
+    {
+      "score": 0.720403425693512,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 23,
+      "chunk_no": 3,
+      "text": ". In contrast, the multifractal nature of rough volatility exhibits remarkable consistency with historical data. In summary, our conviction may be succinctly stated as follows: any viable model describing the dynamics of volatility should exhibit a close resemblance to rough volatility. With this in mind, the objective of this book is to provide readers, whether they be graduate students, math- ematicians, or quantitative analysts, with the necessary insights to embrace this new paradigm. We firmly believe that adopting this point of view will empower readers to develop a more com- prehensive and fundamental understanding of volatility—its nature, its behavior, and the art of modeling it effectively. Berlin, London, New York, Christian Bayer, Peter K. Friz, Masaaki Fukasawa, Osaka, Paris, June 2023 Jim Gatheral, Antoine Jacquier, Mathieu Rosenbaum",
+      "dense_score": 0.665403425693512,
+      "lexical_score": 0.25
+    },
+    {
+      "score": 0.7110083627700806,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 23,
+      "chunk_no": 1,
+      "text": "xxviii Preface stable parameters. Most importantly, the rough volatility paradigm has microstructural founda- tions, so we know that volatility is indeed rough and why it has to be rough. To the delight of mathematicians, the study of rough volatility requires cutting-edge math- ematical tools and theories. These include fractional Brownian motion, Volterra equations, Hawkes point processes, and affine processes as well as elements from infinite-dimensional analysis, numerical analysis, rough paths, regularity structures, stochastic partial differential equations, and other studies. This multifaceted nature of the study of rough volatility only adds to its scientific allure. However, the most captivating aspect of rough volatility lies in its ability to translate scientific elegance into applied beauty. The editors firmly believe that the research results indicate a clear direction: rough volatility should be regarded as a fundamental and benchmark approach",
+      "dense_score": 0.6560083627700806,
+      "lexical_score": 0.25
+    }
+  ],
+  "run_metadata": {
+    "work_dir": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\rag_ingest_state",
+    "market_db_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\data\\market_history.sqlite",
+    "formal_root": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\formal",
+    "timestamp_utc": "2026-03-27T01:55:42.564634+00:00",
+    "retrieve_k": 10,
+    "max_candidates": 3,
+    "refinement_rounds": 2,
+    "acceptance_score": 0.8
+  },
+  "lean_export": {
+    "theorem_name": "EvidenceAlignedStructuralConjecture",
+    "lean_path": "formal\\QuantAIFormal\\QuantAI\\EvidenceAlignedStructuralConjecture.lean",
+    "metadata_path": "formal\\QuantAIFormal\\metadata\\EvidenceAlignedStructuralConjecture.json",
+    "namespace": "QuantAI",
+    "rendered_code": "import Mathlib\n\n/-!\nQuantAI theorem export: Evidence-aligned structural conjecture\nStatus: research_conjecture\nScore: 0.7146132105921273\n\nOriginal natural-language statement:\n  The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.\n\nTags:\n  - generic\n  - research\n\nFailure conditions:\n  - Retrieved evidence belongs to incompatible mathematical families.\n  - No empirical proxy exists for the target object.\n  - Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.\n\nNext actions:\n  - Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.\n  - Collect stronger exact excerpts from the book-memory layer.\n  - Add a formal symbolic derivation or export the candidate to Lean for proof work.\n-/'\n\nnamespace QuantAI\n\n/- Variable declarations inferred by QuantAI. Edit types as needed. -/\nvariable (T : ℝ) -- target mathematical object\nvariable (E : ℝ) -- retrieved evidence family\nvariable (F : ℝ) -- empirical feature proxy\n\n/-\nNatural-language assumptions carried over from QuantAI:\n* Retrieved evidence identifies the correct mathematical family.\n* The empirical feature layer contains a proxy for the latent theoretical object.\n* Empirical scope anchored to SPY US Equity.\n\nSymbolic agenda:\n* Convert retrieved definitions into an explicit operator identity.\n* Differentiate or integrate under the required regularity assumptions.\n-/\ntheorem EvidenceAlignedStructuralConjecture : Prop := by\n  /-\n  Original statement to formalize:\n  The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.\n  -/\n  sorry\n\nend QuantAI\n",
+    "metadata": {
+      "theorem_name": "EvidenceAlignedStructuralConjecture",
+      "namespace": "QuantAI",
+      "export_root": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\formal",
+      "artifact": {
+        "title": "Evidence-aligned structural conjecture",
+        "status": "research_conjecture",
+        "statement": "The mathematical object requested in the query should admit a structural representation that preserves the dominant operators, kernels, or state variables appearing most consistently across the retrieved evidence, and its empirical counterpart should be testable through the locally persisted Bloomberg feature panel.",
+        "assumptions": [
+          "Retrieved evidence identifies the correct mathematical family.",
+          "The empirical feature layer contains a proxy for the latent theoretical object.",
+          "Empirical scope anchored to SPY US Equity."
+        ],
+        "variables": {
+          "T": "target mathematical object",
+          "E": "retrieved evidence family",
+          "F": "empirical feature proxy"
+        },
+        "motivation": "Generic fallback when the query is research-like but not yet mapped to a specialized topic family.",
+        "empirical_signature": [
+          "select the most relevant persisted features and test the implied monotonicity or scaling relation."
+        ],
+        "symbolic_agenda": [
+          "Convert retrieved definitions into an explicit operator identity.",
+          "Differentiate or integrate under the required regularity assumptions."
+        ],
+        "failure_conditions": [
+          "Retrieved evidence belongs to incompatible mathematical families.",
+          "No empirical proxy exists for the target object.",
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+        ],
+        "evidence": [
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 0.7598751465479533,
+            "excerpt": "Chapter 2 Pricing under rough volatility24 Christian Bayer, Peter K. Friz, Jim Gatheral 2.1 Introduction From an analysis of the time series of realized variance using recent high frequency data, Gatheral, Jaisson, and Rosenbaum [166] showed that the logarithm of realized variance behaves essentially as a fractional Brownian motion (fBm) with Hurst exponent H of order 0.1, at any reasonable time scale. The following stationary rough fractional stochastic volatility (RFSV) model was proposed: dS t = µtdt + VtdZt, S t Vt = exp{Xt}, t ∈[0, T], (2.1) where µt is a suitable drift term, Zt is a standard Brownian motion, Xt is a fractional Ornstein– Uhlenbeck process (fOU process for short) satisfying dXt = νdWHt −α(Xt −m)dt, where m ∈R, and ν and α are positive parameters (see [92]), with Z and WH correlated in general",
+            "metadata": {
+              "page_no": 53,
+              "chunk_no": 1
+            }
+          },
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 0.790309993426005,
+            "excerpt": "olatility underpins financial markets by encapsulating uncertainty about prices, individual behaviors, and decisions and has traditionally been modeled as a semimartingale, with consequent scaling properties. The mathematical description of the volatility process has been an active topic ofVresearch for decades; however, driven by empirical estimates of the scaling behavior of volatility, a new paradigm has emerged, whereby paths of volatility are rougher than those of semimartingales. According to this perspective, volatility behaves as a fractional Brownian motion with a small Hurst parameter.privacy The first book to offer a comprehensive exploration of the subject, Rough Volatility contributes to the understanding and application of rough volatility models by • equipping readers with the tools and insights needed to delve into the topic, ROUGH • exploring the motivation for rough volatility modeling and providing a toolbox for computation and practical implementation, and • organizing the material to reflect the subject’s development and progression",
+            "metadata": {
+              "page_no": 282,
+              "chunk_no": 1
+            }
+          },
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 0.7830743050575256,
+            "excerpt": ". To calibrate VIX option smiles via rough volatility, we consider extended lognormal models by adding volatility modulation through an independent stochastic factor in the Volterra integral which preserves part of the analytical tractability of the lognormal setting by extending it through an affine structure, which makes it possible to develop approximate option pricing and calibration algorithms based on Fourier transform techniques. In this chapter, we showcase these ideas in relatively transparent and illustrative settings. We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options. 6.2 A theoretical framework The purpose of this section is to illustrate an infinite-dimensional Markov nature of rough volatil- ity models, which enables us to hedge options without any “memory” of the past",
+            "metadata": {
+              "page_no": 137,
+              "chunk_no": 2
+            }
+          }
+        ],
+        "verification": {
+          "candidate_title": "Evidence-aligned structural conjecture",
+          "verdict": "partially_supported",
+          "overall_score": 0.8577207460162648,
+          "symbolic_checks": [],
+          "empirical_checks": [
+            {
+              "name": "select the most relevant persisted features and test the implied monotonicity or scaling relation.",
+              "kind": "empirical",
+              "passed": true,
+              "score": 0.8577207460162648,
+              "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+              "details": {
+                "hurst_estimate": 0.4288603730081324,
+                "column": "hurst_varscale_63"
+              }
+            }
+          ],
+          "warnings": [
+            "No symbolic checks were supplied; symbolic validity remains untested."
+          ],
+          "recommended_refinements": [
+            "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+          ]
+        },
+        "tags": [
+          "generic",
+          "research"
+        ],
+        "score": 0.7146132105921273,
+        "next_actions": [
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+          "Collect stronger exact excerpts from the book-memory layer.",
+          "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+        ]
+      }
+    },
+    "check": {}
+  }
+}

@@ -1,0 +1,237 @@
+# Refinement: Evidence-anchored structural conjecture
+
+- Securities: SPY US Equity, VIX Index
+- Family: spot_vol_linkage
+- Rationale: Pair-linkage theorem exists but is still too generic; it should become a real SPY/VIX-specific theorem candidate with symbolic structure.
+- Query: Refine the SPY-volatility linkage theorem for SPY US Equity and VIX Index. Replace generic structural language with a sharper theorem candidate about spot-volatility coupling, roughness transmission, regime dependence, or term-structure state. State the core object, the sign or monotonicity prediction if supported, the empirical Bloomberg feature signature, explicit failure conditions, and a symbolic structure that can be checked through covariance symmetry, quadratic-form nonnegativity, or regime-difference identities. Avoid generic placeholder language.
+
+## Result
+```json
+{
+  "mode_used": "theorem",
+  "response": "Research artifact: Rough-variance scaling identification theorem\nStatus: research_conjecture\nScore: 0.696\n\nStatement:\nConjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=0.732\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Test whether roughness estimates co-move with realized-volatility regimes. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** - Roughness signature: rough_or_ant\n- [bloomberg_memory] VIX Index empirical research memory (VIX Index) | score=0.708\n  This note summarizes the local Bloomberg-derived empirical state for VIX Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Test whether roughness estimates co-move with realized-volatility regimes. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** # Bloomberg Research Memory: VIX Index - Roughness signature: rough_or_antipersist\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.543\n  QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. - Securities represented: AAPL US Equity, SPY US Equity Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested \n- [book] Rough Volatility.pdf | page 224 | chunk 1 | score=0.488\n  Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 .\n- [book] Trades, quotes and prices, financial markets under the microscope, Bouchaud.pdf | page 290 | chunk 2 | score=0.488\n  Once G(\u2113) has been calibrated, the propagator model leads to a precise prediction for the lag-dependent volatility D(\u2113) = V(\u2113)/\u2113in terms of G(\u2113) and C(\u2113), with the only further adjustable parameters arising from the variance \u03a32 of the news (or other types of events) contribution \u03bet (see Equation (13.7)). In this way, the propagator model makes a falsi\ufb01able prediction about the detailed structure of the signature plot (or lag-dependent volatility D(\u2113)). As the \ufb01gure reveals, the outcome is quite \n- [book] Rough Volatility.pdf | page 77 | chunk 2 | score=0.486\n  However, we do not see agreement between the rBergomi model and the term structure of VIX volatility (VVIX). 2.10 Appendix 2.10.1 Volatility, variance, and VIX Here we briefly recall some different notions of variance and volatility that are used throughout the chapter We computed terms of Bergomi\u2013Guyon expansion up to second order in volatility of volatility, but the expan- sion parameter \u03bb = \u03b7 \u03c4H \u22482 required to fit SPX option prices is too big for this asymptotic expansion to be valid. Last bu\n\nAssumptions:\n- H > 0 and H < 1/2.\n- The volatility driver admits a Volterra representation with local singularity exponent H-1/2.\n- The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.\n- Empirical scope anchored to SPY US Equity.\n\nNext actions:\n- Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.\n- Collect stronger exact excerpts from the book-memory layer.\n- Add a formal symbolic derivation or export the candidate to Lean for proof work.\n\nTheorem registry:\n- action: existing\n- entry_id: thm_396990ccdc8c4941\n- status: research_conjecture",
+  "sources": [
+    {
+      "score": 0.9694637429877502,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 221,
+      "chunk_no": 1,
+      "text": "10.0.3. Description of main results 203 Theorem 10.2. With C \u03b5 = C \u03b5(t) as in Theorem 10.1, define the renormalized integral approxi- mation Z T Z T I\u02dc \u03b5 := I\u02dcf\u03b5 (T) := f( t )dW\u03b5t \u2212 bW\u03b5 C \u03b5(t) f \u2032( bW\u03b5t )dt, (10.14) 0 0 and also the approximate total variance \u03b5 \u03b5 Z T t )dt. V := V f (T) := f 2( bW\u03b5 0 Then the price of a European call option, under the pricing model (10.1), (10.3), struck at K with time T to maturity, is given by E[(S T \u2212K)+] = lim E \u03a8( I\u02dc \u03b5, V \u03b5) , \u03b5\u21920 where \u03a8(I , V ) := CBS S 0 exp \u03f1I \u2212\u03f12 V , K, \u00af\u03f12V . (10.15) 2 Similar results hold for more general (\u201cnonsimple\u201d) rough volatility models. Let us discuss right away how to reduce the statements of Theorems 10.1 and 10.2 to the actual convergence statements that will occupy us in Section 10.2. First, note that Z t Z t 2 S t = S 0 exp f bWs dBs \u221212 f bWs ds . (10.16) 0 0 \u03b5The approximations W\u03b5, W \u03b5, and B\u03b5 := \u03f1W\u03b5 + \u00af\u03f1W converge uniformly to the obvious limits, so that it suffices to understand the convergence of the stochastic integral. Note that bW is heavily correlated with W but independent of W",
+      "dense_score": 0.6772719621658325,
+      "lexical_score": 0.1917808219178082
+    },
+    {
+      "score": 0.9671133179533971,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 224,
+      "chunk_no": 1,
+      "text": "206 Chapter 10. Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. Remark 10.0.4. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 . \u03f1u(z) cHtH\u22121 f(z) Following the approach of [40], Theorem 10.4 allows for not only rigorous justification of these formula, but also for the computation of higher-order smile features, though this is not pursued in this chapter",
+      "dense_score": 0.6928667426109314,
+      "lexical_score": 0.2465753424657534
+    },
+    {
+      "score": 0.9649308097525817,
+      "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "page_no": 89,
+      "chunk_no": 1,
+      "text": "66 2 The Fundamental Theorems b(t) = (b1(t), . . . , bn(t))\u2032 \u2208Rn is Ft-measurable (adapted) with 0T \u2225bt\u2225dt < \u221e where \u2225x\u22252 = x \u00b7 x = ni=1 x2i for x \u2208Rn, and \u23a1 \u23a4 \u03c311(t) \u00b7 \u00b7 \u00b7 \u03c31D(t) \u03c3t = \u03c3(t) = (2.30) \u23a2\u23a2\u23a2\u23a3 \u23a5\u23a5\u23a5\u23a6 ... ... \u03c3n1(t) \u00b7 \u00b7 \u00b7 \u03c3nD(t) n\u00d7D is an n\u00d7D matrix which is Ft-measurable (adapted) with nj=1 Dd=1 0T \u03c3jddt2 < \u221e. In vector notation, we can write the evolution of the stock price process as dSt = (bt \u2212rt1)dt + \u03c3tdWt (2.31) St \u2032 where dSt = dS1(t) , . . . , dSn(t) \u2208Rn and 1 = (1, . . . , 1)\u2032 \u2208Rn. St S1(t) Sn(t) This assumption implies that S has continuous sample paths. The quadratic variation is * + ( ) D D dSi(t), dSj(t) = Si(t)\u03c3id(t)dWd(t), Sj(t)\u03c3jk(t)dWk(t) d=1 k=1 D D ( ) D = Si(t)\u03c3id(t)dWd(t), Sj(t)\u03c3jk(t)dWk(t) = Si(t)Sj(t)\u03c3id(t)\u03c3jd(t)dt. d=1 k=1 d=1 (2.32) In vector notation ,dSt dSt - \u2032 , = \u03c3t\u03c3t dt. (2.33) St St n\u00d7n 2.8.2 NFLVR For pricing derivatives or searching for arbitrage opportunities we need to know when the risky asset price evolution in expression (2.29) satis\ufb01es NFLVR",
+      "dense_score": 0.6727390289306641,
+      "lexical_score": 0.1917808219178082
+    },
+    {
+      "score": 0.9647739335608808,
+      "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "page_no": 55,
+      "chunk_no": 1,
+      "text": "32 2 The Fundamental Theorems from the set of trading strategies before due to the modi\ufb01ed integrability conditions needed to guarantee that the relevant integrals exist. This section presents the new notation and the evolutions for the mma and the risky assets under this change of numeraire. Let Bt = BtBt = 1 for all t \u22650, this represents the normalized value of the money market account (mma). Let St = (S1(t), . . . , Sn(t))\u2032 \u2265 0 represent the risky asset prices when normalized by the value of the mma, i.e. Si(t) = Si(t)Bt . Then, dBt = 0 and (2.5) Bt dSt dSt = \u2212rtdt. (2.6) St St Proof Using the integration by parts formula Theorem 3 in Chap. 1, one obtains (dropping the t\u2019s) d BS = BdS1 + Sd B1 = dSS BS \u2212SB dBB . The \ufb01rst equality uses d S, B1 = 0, since B is continuous and of \ufb01nite variation (use Lemmas 2 and 7 in Chap. 1). Substitution yields dS = dSS S \u2212S dBB . Algebra completes the proof. Recall that L (S) is the set of predictable processes integrable with respect to S and O is the set of optional processes",
+      "dense_score": 0.6786095499992371,
+      "lexical_score": 0.1643835616438356
+    },
+    {
+      "score": 0.949344878555977,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 230,
+      "chunk_no": 1,
+      "text": "212 Chapter 10. Regularity structure for rough volatility From W we now construct the fBm bW in the Riemann\u2013Liouville sense with Hurst index 1 H \u2208(0, 2] as \u221a Z t := \u02d9W \u22c6K(t) = 2H |t \u2212r|H\u221212 dWr, bWt 0 \u221a 2 denotes the Volterra kernel. We also write K(s, t) := K(t \u2212s).where K(t) = 2H 1t>0 tH\u22121 To give meaning to the product terms \u039eI(\u039e)k we follow the ideas from rough paths and define an \u201citerated integral\u201d for s, t \u2208R, s \u2264t, as Z t Wm s,t := ( bWr \u2212bWs)m dWr. (10.28) s Wm(s, t) satisfies the following modification of Chen\u2019s relation. Lemma 10.6. Wm as defined in (10.28) satisfies m m Wm s,t = Wms,u + X u,t (10.29) ( bWu \u2212bWs)lWm\u2212l l l=0 for s, u, t \u2208R, s \u2264u \u2264t. Proof. This is a direct consequence of the binomial theorem. We extend the domain of Wm to all of R2 by imposing Chen\u2019s relation for all s, u, t \u2208R, i.e., for t, s \u2208R, t \u2264s, we set m m Wm s,t := \u2212 X t,s . (10.30) (bWt \u2212bWs)lWm\u2212l l l=0 We are now in position to define a model (\u03a0, \u0393) that gives rigorous meaning to the interpre- tation we gave above for \u039e, I(\u039e), \u039eI(\u039e), . . .",
+      "dense_score": 0.6811257004737854,
+      "lexical_score": 0.2191780821917808
+    },
+    {
+      "score": 0.9426769730162947,
+      "file_name": "NONLINEAR OPTION PRICING, GUYON .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\NONLINEAR OPTION PRICING, GUYON .pdf",
+      "page_no": 329,
+      "chunk_no": 1,
+      "text": "290 Calibration of Local Stochastic Volatility Models to Market Smiles We recover the Ho-Lee expressions when \u03ba \u21920. Then the simulation of (ftk+1, rtk+1 \u2212r0tk+1) boils down to simulating exactly the Gaussian vector T T Z tk+1 Z tk+1 1 \u2212e\u2212\u03ba(T \u2212t) W tk+1 \u2212W tk, e\u2212\u03ba(tk+1\u2212t) dBTt , dBTt tk tk \u03ba whose covariance matrix is (tk+1 \u2212tk)\u03a3k where \uf8eb 1 \u03c1J1k \u03c1I1k \uf8f6 \u03a3k = \u03c1J1k J2k Lk \uf8ed \uf8f8 \u03c1I1k Lk I2k with 1 Z tk+1 1 \u2212e\u2212\u03ba(tk+1\u2212tk) J1k = e\u2212\u03ba(tk+1\u2212t) dt = tk+1 \u2212tk tk \u03ba(tk+1 \u2212tk) 1 Z tk+1 1 \u2212e\u22122\u03ba(tk+1\u2212tk) J2k = e\u22122\u03ba(tk+1\u2212t) dt = tk+1 \u2212tk tk 2\u03ba(tk+1 \u2212tk) 1 Z tk+1 1 \u2212e\u2212\u03ba(T \u2212t) Lk = e\u2212\u03ba(tk+1\u2212t) dt tk+1 \u2212tk tk \u03ba J1k +tk+1) e2\u03batk+1 \u2212e2\u03batk = \u2212e\u2212\u03ba(T \u03ba 2\u03ba2(tk+1 \u2212tk) 11.7.6 Malliavin representation of the local volatility We now give another expression of the contribution of stochastic interest rates to local volatility: EQ[D0t rt \u2212r0t 1St>K] EQt[ rt \u2212r0t 1St>K] 1 \u2261P0t 1 2K\u22022KC(t, K) 2K\u22022KC(t, K) Numerical implementation of the particle algorithm using the alternative for- mula proves to produce a much more accurate and smooth estimation of the local volatility for strikes that are far from the money",
+      "dense_score": 0.6865125894546509,
+      "lexical_score": 0.1643835616438356
+    },
+    {
+      "score": 0.9400283745543596,
+      "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "page_no": 92,
+      "chunk_no": 1,
+      "text": "2.8 Finite Dimension Brownian Motion Market 69 Theorem 20 gives suf\ufb01cient conditions for the market to satisfy NFLVR. Condi- tion (1) is that the volatility matrix must be of full rank for all t. This omits risky assets that randomly change from risky to locally riskless (\ufb01nite variation) across time. Condition (2) removes redundant assets from the market (see Theorem 10). Finally, condition (3) is a necessary integrability condition for \u03b8t. For subsequent use we note that conditions (1) and (2) are true if and only if rank (\u03c3t) = n for all t a.s. P. Given Theorem 20, we can now characterize the set of local martingale measures Ml. Theorem 21 (Characterization of Ml) Assume that (1) rank (\u03c3t) = n for all t a.s. P and T \u2032 \u2032 \u22121 2(2) 0 ...\u03c3t \u03c3t\u03c3t (bt \u2212rt1) ... dy < \u221e. Then, = e\u2212 0T (\u03b8t+\u03bdt)\u00b7dWt\u221212 0T \u2225\u03b8t+\u03bdt\u22252dt > 0, Ml = {Q\u03bd : dQ\u03bddP dQ\u03bd E dP = 1, \u03bd \u2208K(\u03c3)} \u0338= \u2205 where \u2032 \u2032 \u22121 \u03b8t = \u03c3t \u03c3t\u03c3t (bt \u2212rt1) . Proof By Theorems 19 and 20, the market satis\ufb01es NFLVR and by the First Fundamental Theorem 13 of asset pricing Ml \u0338= \u2205",
+      "dense_score": 0.671809196472168,
+      "lexical_score": 0.2191780821917808
+    },
+    {
+      "score": 0.9383125388785583,
+      "file_name": "NONLINEAR OPTION PRICING, GUYON .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\NONLINEAR OPTION PRICING, GUYON .pdf",
+      "page_no": 272,
+      "chunk_no": 2,
+      "text": ". In the parametric approach, one directly parameterizes the optimal covariance matrix, regardless of the form of the Hamiltonian. As a consequence, this method works whether the path- dependent variables change continuously or only at discrete dates. 9.3.3 Choice of the parameterization The parameterization of the maximization set, i.e., the choice of relevant functions \u03bbti\u2019s, is a crucial step in our procedure. A wrong choice would lead to a bad estimate of the optimal volatilities and correlations, and hence to a bad lower bound price. To build a good parameterization, one can proceed as follows: \u2022 Choose some relevant path-dependent variables A = (A1, . . . , Aq). \u2022 For a grid of dates, asset values, and path-dependent values (t, X, A), compute Monte Carlo gammas \u0393(t, X, A) in the Black-Scholes model with some covariance matrix \u02c6\u03be. \u2022 For each point (t, X, A) in the grid, build the solution (\u03c3\u2217\u03b1(t, X, A), \u03c1\u2217\u03b1\u03b2(t, X, A))1\u2264\u03b1<\u03b2\u2264d to the problem d 1 H(X, \u0393(t, X, A)) = max X \u03c1\u03b1\u03b2\u03c3\u03b1\u03c3\u03b2X\u03b1X\u03b2\u0393\u03b1\u03b2(t, X, A) 2 (\u03c3\u03b1,\u03c1\u03b1\u03b2)1\u2264\u03b1<\u03b2\u2264d \u03b1,\u03b2=1",
+      "dense_score": 0.6761207580566406,
+      "lexical_score": 0.1917808219178082
+    },
+    {
+      "score": 0.9250849781950858,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 119,
+      "chunk_no": 1,
+      "text": "4.4. Asymptotics for the rough Heston model 97 volatility models, and we concentrate here on those pertaining to the rough Heston model, many of which rely of the specific affine structure of the latter. We mainly focus on small-maturity asymptotics here, which have been the most useful ones in practice. The affine structure of the model allows for asymptotic expressions that can be evaluated fairly easily, in particular without solving a variational problem. The natural small- time regime for rough Heston arises from strikes 1 n xt 2 \u2212Ho, for x fixed, (4.26) Kt = S 0 exp which converge to the spot as the maturity t tends to zero. This is mathematically convenient, as it allows one to translate small-time asymptotics to small-noise asymptotics, where the volatility is driven by \u03b5HB with \u03b5 \u21930 instead of B. In practice, the strike parameterization (4.26) fits well to available options data, as liquid strikes tend to concentrate around the spot when maturity decreases. Theorem 4.4 ([134])",
+      "dense_score": 0.6748110055923462,
+      "lexical_score": 0.273972602739726
+    },
+    {
+      "score": 0.924854160824867,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 238,
+      "chunk_no": 1,
+      "text": "220 Chapter 10. Regularity structure for rough volatility models (\u03a0, \u0393) and (\u03a0, \u0393) and two F, F : R 7\u2192T it is also useful to have the notion of a distance ||F; F||D\u03b3T (\u0393),D\u03b3T (\u0393) := sup |F(t) \u2212F(t)|\u03b2 A\u220b\u03b2<\u03b3, t\u2208[0,T] |F(t) \u2212\u0393tsF(s) \u2212(F(t) \u2212\u0393tsF(s))|\u03b2 + sup . A\u220b\u03b2<\u03b3, s,t\u2208[0,T], s,t |t \u2212s|\u03b3\u2212\u03b2 The reconstruction theorem now states that for \u03b3 > 0, a map F \u2208D\u03b3T(\u0393) can be uniquely identified with a distri
+```
+
+## Symbolic execution summary
+```json
+{
+  "title": "Rough-variance scaling identification theorem",
+  "family": "rough_variance_scaling",
+  "n_tasks": 5,
+  "n_ok": 3,
+  "n_fail": 2,
+  "results": [
+    {
+      "task": {
+        "name": "variance_scaling_factorization",
+        "kind": "verify_identity",
+        "payload": {
+          "lhs": "C_X*Delta**(2*H) + a0 + a1*Delta**(2*H)",
+          "rhs": "a0 + (C_X + a1)*Delta**(2*H)"
+        },
+        "rationale": "Checks algebraic coherence of the scaling-law form used in the theorem candidate."
+      },
+      "ok": true,
+      "result": {
+        "name": "identity",
+        "kind": "identity",
+        "passed": true,
+        "result": "proved_exactly",
+        "details": {
+          "lhs": "C_X*Delta**(2*H) + Delta**(2*H)*a",
+          "rhs": "Delta**(2*H)*(C_X + a)",
+          "difference": "0"
+        }
+      }
+    },
+    {
+      "task": {
+        "name": "variance_term_nonnegative",
+        "kind": "verify_nonnegative",
+        "payload": {
+          "expression": "a1*Delta**(2*H)"
+        },
+        "rationale": "Under positive coefficient and positive scale assumptions, the scaling contribution should remain nonnegative."
+      },
+      "ok": false,
+      "result": {
+        "name": "nonnegative",
+        "kind": "nonnegative",
+        "passed": false,
+        "result": "not_proved",
+        "details": {
+          "expression": "Delta**(2*H)*a",
+          "simplified": "Delta**(2*H)*a"
+        }
+      }
+    },
+    {
+      "task": {
+        "name": "increment_variance_nonnegative",
+        "kind": "verify_nonnegative",
+        "payload": {
+          "expression": "C_X*Delta**(2*H)"
+        },
+        "rationale": "Variance contribution must remain nonnegative under the roughness scaling ansatz."
+      },
+      "ok": false,
+      "result": {
+        "name": "nonnegative",
+        "kind": "nonnegative",
+        "passed": false,
+        "result": "not_proved",
+        "details": {
+          "expression": "C_X*Delta**(2*H)",
+          "simplified": "C_X*Delta**(2*H)"
+        }
+      }
+    },
+    {
+      "task": {
+        "name": "scaling_at_origin_consistency",
+        "kind": "verify_derivative_zero",
+        "payload": {
+          "expression": "Delta**(2*H + 1)",
+          "variable": "Delta",
+          "point": 0
+        },
+        "rationale": "Checks a simple origin-consistency proxy for higher-order remainder terms in the small-scale expansion."
+      },
+      "ok": true,
+      "result": {
+        "name": "derivative_zero",
+        "kind": "derivative_zero",
+        "passed": true,
+        "result": "proved",
+        "details": {
+          "expression": "Delta**(2*H + 1)",
+          "derivative": "0",
+          "point": "0",
+          "value": "0"
+        }
+      }
+    },
+    {
+      "task": {
+        "name": "exponent_additivity",
+        "kind": "verify_identity",
+        "payload": {
+          "lhs": "Delta**(2*H) * Delta**(2*K)",
+          "rhs": "Delta**(2*(H + K))"
+        },
+        "rationale": "Provides a reusable exponent-composition identity for scaling arguments."
+      },
+      "ok": true,
+      "result": {
+        "name": "identity",
+        "kind": "identity",
+        "passed": true,
+        "result": "proved_exactly",
+        "details": {
+          "lhs": "Delta**(2*H)*Delta**(2*K)",
+          "rhs": "Delta**(2*H + 2*K)",
+          "difference": "0"
+        }
+      }
+    }
+  ]
+}
+```

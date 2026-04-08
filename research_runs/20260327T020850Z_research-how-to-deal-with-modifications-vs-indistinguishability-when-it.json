@@ -1,0 +1,751 @@
+{
+  "query": "Research how to deal with modifications vs indistinguishability when it comes to integrals like Ito Integral, Stieltjes Integral, Fractional Ornstein-Uhlenbeck Integral and how they all connect to RFSV. If it doesnt exist, invent a theorem or find a way to connect it.",
+  "problem_kind": "comparison",
+  "topics": [
+    "rough_volatility",
+    "stochastic_calculus"
+  ],
+  "selected": {
+    "title": "Volterra modification-invariance bridge",
+    "status": "research_conjecture",
+    "statement": "Conjecture: Let X and X_tilde be indistinguishable modifications of a Gaussian Volterra state, and let deterministic kernels preserve the common path-regularity regime required by the integral in use. Then any admissible representation Y_t = ∫_0^t G(t,s) dX_s is modification-invariant up to indistinguishability on the common domain of definition. When G combines exponential damping with a rough singular factor, the resulting state interpolates between a fractional Ornstein–Uhlenbeck representation and the log-volatility backbone used in RFSV-type models.",
+    "assumptions": [
+      "X and X_tilde are indistinguishable versions of the same underlying Gaussian Volterra state.",
+      "The chosen integral notion is well defined under the joint regularity of integrand and integrator.",
+      "Kernel G preserves the regularity class required for the target process.",
+      "Empirical scope anchored to SPY US Equity."
+    ],
+    "variables": {
+      "X": "latent Gaussian Volterra driver",
+      "X_tilde": "indistinguishable modification of X",
+      "G": "transfer kernel",
+      "Y": "transformed state",
+      "H": "roughness exponent",
+      "lambda_": "OU-style damping parameter",
+      "CovXY": "generic covariance term"
+    },
+    "motivation": "Connect Itô / Stieltjes / Volterra viewpoints through a common modification-invariant state representation.",
+    "empirical_signature": [
+      "ou_style_reversion_signal",
+      "rough_persistence_under_transformation"
+    ],
+    "symbolic_agenda": [
+      "{'kind': 'positivity', 'name': 'damping_positive', 'expr': 'lambda_'}",
+      "{'kind': 'identity', 'name': 'covariance_symmetry', 'lhs': 'CovXY', 'rhs': 'CovXY'}"
+    ],
+    "failure_conditions": [
+      "Integral notions require incompatible regularity classes on the same path space.",
+      "Empirical features suggest no stable coexistence of roughness and mean reversion.",
+      "The retrieved evidence does not support a common Volterra state representation.",
+      "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+      "Resolve failed symbolic check: damping_positive."
+    ],
+    "evidence": [
+      {
+        "source_type": "book",
+        "source_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "support_score": 0.7795310294337389,
+        "excerpt": ". Deﬁnition 14 (Ito-Stieltjes Integrals) Let X be an adapted process of ﬁnite variation. Let Y be an adapted cadlag process. Then, t Ys(ω)dXs(ω), 0 the pathwise Lebesgue-Stieltjes integral exists for all t ≥0 and ω ∈Ω a.s. P (Medvegyev [143, Proposition 2.9, p. 115]). This pathwise integral is called the Ito-Stieltjes integral. For a deﬁnition of the Lebesgue-Stieltjes integral see Royden [167, p. 263]. For future use, let L(X) denote the set of optional processes that are Ito-Stieltjes integrable with respect to X. We next start the process of deﬁning a stochastic integral for semimartingales. Deﬁnition 15 (Simple Predictable Processes) A stochastic process αt(ω) is a simple predictable process if it has a representation n αt = α0 + αi1(Ti,Ti+1](t) i=1",
+        "metadata": {
+          "page_no": 33,
+          "chunk_no": 2
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Stochastic Integration and Differential Equations, Protter.pdf",
+        "support_score": 0.7549358079491593,
+        "excerpt": "82 II Semimartingales and Stochastic Integrals The stochastic integral calculus, as revealed by Theorems 32 and 33, is different from the classical Lebesgue-Stieltjes calculus. By restricting the class of integrands to semimartingales made left continuous (instead of L), one candefine a stochastic integral that obeys the traditional rules of the Lebesgue­ Stieltjes calculus. Definition. Let be semimartingales. Define the Fisk-Stratonovich X, Y by denoted JƩ Ys- o dX8,integral of Y with respect to X, Y8_ o dXs = t Y8_dX8 + å[Y, X]æ. 2 lo lo t The Fisk-Stratonovich integral is often referred to as simply the Stratono­ vich integral. The notation \"o\" is called Ito's circle. Note that we have defined the Fisk-Stratonovich integral in terms of the semimartingale integral. With some work one can slightly enlarge the domain of the definition and we do so in Sect. 5 of Chap. V. In particular, Theorem 34 below is proved with the weaker hypothesis that (Theorem 20 of Chap. V). We will write f E C2the F-S integral as an abbreviation for the Fisk-Stratonovich integral. Theorem 34",
+        "metadata": {
+          "page_no": 97,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Stochastic Integration and Differential Equations, Protter .pdf",
+        "support_score": 0.7612842492940949,
+        "excerpt": "82 II Semimartingales and Stochastic Integrals The stoehastie integral ealculus, as revealed by Theorems 32 and 33, is different from the dassical Lebesgue-Stieltjes ealculus. By restrieting the dass of integrands to semimartingales made left eontinuous (instead of lL), one can define a stochastic integral that obeys the traditional mles of the Lebesgue- Stieltjes calculus. Definition. Let X, Y be semimartingales. Define the Fisk-8tratonovich integral of Y with respeet to X, denoted J~ Ys - 0 dXs , by t Ys- odXs == t Ys_dXs + ~[Y,X]~. Jo Jo 2 The Fisk-Stratonovieh integral is often referred to as simply the 8tratono- vieh integral. The notation \"0\" is ealled Itö's circle. Note that we have defined the Fisk-Stratonovieh integral in terms of the semimartingale integral. With some work one ean slightly enlarge the domain of the definition and we do so in Seet. 5 of Chap. V. In particular, Theorem 34 below is proved with the weaker hypothesis that f E C2 (Theorem 20 of Chap. V). We will write the F -8 integral as an abbreviation for the Fisk-Stratonovieh integral. Theorem 34",
+        "metadata": {
+          "page_no": 93,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.7825828519681605,
+        "excerpt": ". (10.9) 0 0 0 | {z } In essence, the trouble is due to the underbraced, innocent looking Itô integral. Indeed, any naive attempt to put it in Stratonovich form, Z t Z t “ f(bWs) ◦dWs := f( bWs)dWs + (Itô–Stratonovich correction),” (10.10) 0 0 or, in the spirit of Wong–Zakai approximations, Z t Z t “ s )dWεs ,” (10.11) 0 f(bWs) ◦dWs := ε→0lim 0 f( bWε must fail for H < 12. The Itô–Stratonovich correction is given by the quadratic covariation, defined (whenever possible) as the limit, in probability, of X ( f( bWv) −f( bWu))(Wv −Wu), (10.12) [u,v]∈π along any sequence (πn) of partitions with mesh-size tending to zero. Disregarding trivial sit- uations we see that this limit does not exist. For instance, when f(x) = x, fractional scaling immediately gives divergence (at rate H −12) of the expression (10.12). This issue also arises in the context of option pricing (Theorem 10.2 and Section 10.5). All theses problems remain present, of course, for the more complicated situation of “nonsimple” rough volatility, as dis- cussed in Section 10.4.",
+        "metadata": {
+          "page_no": 219,
+          "chunk_no": 3
+        }
+      }
+    ],
+    "verification": {
+      "candidate_title": "Volterra modification-invariance bridge",
+      "verdict": "partially_supported",
+      "overall_score": 0.6929871678536597,
+      "symbolic_checks": [
+        {
+          "name": "damping_positive",
+          "kind": "symbolic",
+          "passed": false,
+          "score": 0.0,
+          "summary": "Could not prove nonnegativity under the supplied assumptions.",
+          "details": {
+            "expression": "lambda_",
+            "simplified": "lambda_"
+          }
+        },
+        {
+          "name": "covariance_symmetry",
+          "kind": "symbolic",
+          "passed": true,
+          "score": 1.0,
+          "summary": "Symbolic identity simplified exactly to zero.",
+          "details": {
+            "lhs": "CovXY",
+            "rhs": "CovXY",
+            "difference": "0"
+          }
+        }
+      ],
+      "empirical_checks": [
+        {
+          "name": "ou_style_reversion_signal",
+          "kind": "empirical",
+          "passed": true,
+          "score": 1.0,
+          "summary": "OU-style calibration indicates mean reversion.",
+          "details": {
+            "beta_col": "ou_beta_21",
+            "kappa_col": "ou_kappa_21",
+            "median_metric": 0.7905706788379718
+          }
+        },
+        {
+          "name": "rough_persistence_under_transformation",
+          "kind": "empirical",
+          "passed": true,
+          "score": 0.8577207460162648,
+          "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+          "details": {
+            "hurst_estimate": 0.4288603730081324,
+            "column": "hurst_varscale_63"
+          }
+        }
+      ],
+      "warnings": [],
+      "recommended_refinements": [
+        "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+        "Resolve failed symbolic check: damping_positive."
+      ]
+    },
+    "tags": [
+      "volterra",
+      "modification",
+      "indistinguishability",
+      "fou",
+      "rfsv"
+    ],
+    "score": 0.7697923007121958,
+    "next_actions": [
+      "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+      "Resolve failed symbolic check: damping_positive.",
+      "Collect stronger exact excerpts from the book-memory layer.",
+      "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+    ]
+  },
+  "trials": [
+    {
+      "round_index": 0,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: rejected_or_unverified"
+      ]
+    },
+    {
+      "round_index": 1,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: rejected_or_unverified"
+      ]
+    },
+    {
+      "round_index": 2,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: rejected_or_unverified"
+      ]
+    },
+    {
+      "round_index": 0,
+      "candidate_title": "Volterra modification-invariance bridge",
+      "candidate_statement": "Conjecture: Let X and X_tilde be indistinguishable modifications of a Gaussian Volterra state, and let deterministic kernels preserve the common path-regularity regime required by the integral in use. Then any admissible representation Y_t = ∫_0^t G(t,s) dX_s is modification-invariant up to indistinguishability on the common domain of definition. When G combines exponential damping with a rough singular factor, the resulting state interpolates between a fractional Ornstein–Uhlenbeck representation and the log-volatility backbone used in RFSV-type models.",
+      "verification": {
+        "candidate_title": "Volterra modification-invariance bridge",
+        "verdict": "partially_supported",
+        "overall_score": 0.6929871678536597,
+        "symbolic_checks": [
+          {
+            "name": "damping_positive",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "lambda_",
+              "simplified": "lambda_"
+            }
+          },
+          {
+            "name": "covariance_symmetry",
+            "kind": "symbolic",
+            "passed": true,
+            "score": 1.0,
+            "summary": "Symbolic identity simplified exactly to zero.",
+            "details": {
+              "lhs": "CovXY",
+              "rhs": "CovXY",
+              "difference": "0"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "ou_style_reversion_signal",
+            "kind": "empirical",
+            "passed": true,
+            "score": 1.0,
+            "summary": "OU-style calibration indicates mean reversion.",
+            "details": {
+              "beta_col": "ou_beta_21",
+              "kappa_col": "ou_kappa_21",
+              "median_metric": 0.7905706788379718
+            }
+          },
+          {
+            "name": "rough_persistence_under_transformation",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: damping_positive."
+        ]
+      },
+      "lab_score": 0.7697923007121958,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: partially_supported"
+      ]
+    },
+    {
+      "round_index": 1,
+      "candidate_title": "Volterra modification-invariance bridge",
+      "candidate_statement": "Conjecture: Let X and X_tilde be indistinguishable modifications of a Gaussian Volterra state, and let deterministic kernels preserve the common path-regularity regime required by the integral in use. Then any admissible representation Y_t = ∫_0^t G(t,s) dX_s is modification-invariant up to indistinguishability on the common domain of definition. When G combines exponential damping with a rough singular factor, the resulting state interpolates between a fractional Ornstein–Uhlenbeck representation and the log-volatility backbone used in RFSV-type models.",
+      "verification": {
+        "candidate_title": "Volterra modification-invariance bridge",
+        "verdict": "partially_supported",
+        "overall_score": 0.6929871678536597,
+        "symbolic_checks": [
+          {
+            "name": "damping_positive",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "lambda_",
+              "simplified": "lambda_"
+            }
+          },
+          {
+            "name": "covariance_symmetry",
+            "kind": "symbolic",
+            "passed": true,
+            "score": 1.0,
+            "summary": "Symbolic identity simplified exactly to zero.",
+            "details": {
+              "lhs": "CovXY",
+              "rhs": "CovXY",
+              "difference": "0"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "ou_style_reversion_signal",
+            "kind": "empirical",
+            "passed": true,
+            "score": 1.0,
+            "summary": "OU-style calibration indicates mean reversion.",
+            "details": {
+              "beta_col": "ou_beta_21",
+              "kappa_col": "ou_kappa_21",
+              "median_metric": 0.7905706788379718
+            }
+          },
+          {
+            "name": "rough_persistence_under_transformation",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: damping_positive."
+        ]
+      },
+      "lab_score": 0.7697923007121958,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: partially_supported"
+      ]
+    },
+    {
+      "round_index": 2,
+      "candidate_title": "Volterra modification-invariance bridge",
+      "candidate_statement": "Conjecture: Let X and X_tilde be indistinguishable modifications of a Gaussian Volterra state, and let deterministic kernels preserve the common path-regularity regime required by the integral in use. Then any admissible representation Y_t = ∫_0^t G(t,s) dX_s is modification-invariant up to indistinguishability on the common domain of definition. When G combines exponential damping with a rough singular factor, the resulting state interpolates between a fractional Ornstein–Uhlenbeck representation and the log-volatility backbone used in RFSV-type models.",
+      "verification": {
+        "candidate_title": "Volterra modification-invariance bridge",
+        "verdict": "partially_supported",
+        "overall_score": 0.6929871678536597,
+        "symbolic_checks": [
+          {
+            "name": "damping_positive",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "lambda_",
+              "simplified": "lambda_"
+            }
+          },
+          {
+            "name": "covariance_symmetry",
+            "kind": "symbolic",
+            "passed": true,
+            "score": 1.0,
+            "summary": "Symbolic identity simplified exactly to zero.",
+            "details": {
+              "lhs": "CovXY",
+              "rhs": "CovXY",
+              "difference": "0"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "ou_style_reversion_signal",
+            "kind": "empirical",
+            "passed": true,
+            "score": 1.0,
+            "summary": "OU-style calibration indicates mean reversion.",
+            "details": {
+              "beta_col": "ou_beta_21",
+              "kappa_col": "ou_kappa_21",
+              "median_metric": 0.7905706788379718
+            }
+          },
+          {
+            "name": "rough_persistence_under_transformation",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: damping_positive."
+        ]
+      },
+      "lab_score": 0.7697923007121958,
+      "notes": [
+        "Problem kind: comparison",
+        "Verdict: partially_supported"
+      ]
+    }
+  ],
+  "packet_metadata": {
+    "n_text_evidence": 10,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "market_context_keys": [
+      "SPY US Equity",
+      "securities"
+    ]
+  },
+  "lab_metadata": {
+    "db_path": "data\\market_history.sqlite",
+    "n_candidates": 2,
+    "n_trials": 6,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "benchmark_security": null,
+    "acceptance_score": 0.8
+  },
+  "securities": [
+    "SPY US Equity"
+  ],
+  "retrieved_sources": [
+    {
+      "score": 0.7825828519681605,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 219,
+      "chunk_no": 3,
+      "text": ". (10.9) 0 0 0 | {z } In essence, the trouble is due to the underbraced, innocent looking Itô integral. Indeed, any naive attempt to put it in Stratonovich form, Z t Z t “ f(bWs) ◦dWs := f( bWs)dWs + (Itô–Stratonovich correction),” (10.10) 0 0 or, in the spirit of Wong–Zakai approximations, Z t Z t “ s )dWεs ,” (10.11) 0 f(bWs) ◦dWs := ε→0lim 0 f( bWε must fail for H < 12. The Itô–Stratonovich correction is given by the quadratic covariation, defined (whenever possible) as the limit, in probability, of X ( f( bWv) −f( bWu))(Wv −Wu), (10.12) [u,v]∈π along any sequence (πn) of partitions with mesh-size tending to zero. Disregarding trivial sit- uations we see that this limit does not exist. For instance, when f(x) = x, fractional scaling immediately gives divergence (at rate H −12) of the expression (10.12). This issue also arises in the context of option pricing (Theorem 10.2 and Section 10.5). All theses problems remain present, of course, for the more complicated situation of “nonsimple” rough volatility, as dis- cussed in Section 10.4.",
+      "dense_score": 0.685997486114502,
+      "lexical_score": 0.43902439024390244
+    },
+    {
+      "score": 0.7795310294337389,
+      "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+      "page_no": 33,
+      "chunk_no": 2,
+      "text": ". Deﬁnition 14 (Ito-Stieltjes Integrals) Let X be an adapted process of ﬁnite variation. Let Y be an adapted cadlag process. Then, t Ys(ω)dXs(ω), 0 the pathwise Lebesgue-Stieltjes integral exists for all t ≥0 and ω ∈Ω a.s. P (Medvegyev [143, Proposition 2.9, p. 115]). This pathwise integral is called the Ito-Stieltjes integral. For a deﬁnition of the Lebesgue-Stieltjes integral see Royden [167, p. 263]. For future use, let L(X) denote the set of optional processes that are Ito-Stieltjes integrable with respect to X. We next start the process of deﬁning a stochastic integral for semimartingales. Deﬁnition 15 (Simple Predictable Processes) A stochastic process αt(ω) is a simple predictable process if it has a representation n αt = α0 + αi1(Ti,Ti+1](t) i=1",
+      "dense_score": 0.6883115172386169,
+      "lexical_score": 0.4146341463414634
+    },
+    {
+      "score": 0.7749210869975206,
+      "file_name": "Stochastic Integration and Differential Equations, Protter.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter.pdf",
+      "page_no": 80,
+      "chunk_no": 2,
+      "text": ". 0 We consider here another example. We have already seen at the end of Sect. 4 that if B is a standard Wiener process, then 1 1 = B8dBs -B'f - -t, 0 2 2 1t showing that the semimartingale calculus does not formally generalize the Riemann-Stieltjes calculus. We have seen as well that the stochastic integral agrees with the Lebesgue­ Stieltjes integral when possible (Theorems 17 and 18) and that the stochastic integral also preserves the martingale property (Theorem 20; at least for lo­ cally square integrable local martingales). The following example shows that the restriction of integrands to is not as innocent as it may seem if we want Lto have both of these properties. =Example. Let Mt Nt - >.t, a compensated Poisson process (and hence a pmartingale with Mt E LP for all t > 0 and all > 1). Let (Ti)i>l be the jump = The Lebesgue-Stieltjes integral 1[o,T,)(t). Then H Etimes of M. Let Ht ID>.lS",
+      "dense_score": 0.6837015748023987,
+      "lexical_score": 0.4146341463414634
+    },
+    {
+      "score": 0.7742193019099352,
+      "file_name": "Stochastic Integration and Differential Equations, Protter .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter .pdf",
+      "page_no": 76,
+      "chunk_no": 2,
+      "text": ". 0 We consider here another example. We have already seen at the end of Sect. 4 that if Bis a standard Wiener process, then t 1 1 BsdBs = -B~ - -t, lo 2 2 showing that the semimartingale calculus does not formally generalize the Riemann-Stieltjes calculus. We have seen as well that the stochastic integral agrees with the Lebesgue- Stieltjes integral when possible (Theorems 17 and 18) and that the stochastic integral also preserves the martingale property (Theorem 20; at least for 10- cally square integrable local martingales). The following example shows that the restrietion of integrands to lL is not as innocent as it may seem if we want to have both of these properties. Example. Let Mt = Nt - At, a compensated Poisson process (and hence a martingale with Mt E LV for all t ~ 0 and all p ~ 1). Let (Tik~l be the jump times of M. Let H t = l[O,Tl)(t). Then H E JD). The Lebesgue-Stieltjes integral is",
+      "dense_score": 0.6829997897148132,
+      "lexical_score": 0.4146341463414634
+    },
+    {
+      "score": 0.7741737588440499,
+      "file_name": "Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf",
+      "page_no": 333,
+      "chunk_no": 2,
+      "text": ". This condition is necessary, because certainly if we modify the Brownian motion at say an exponential time T and make it equal zero there, then the marginal properties remain the same, but it will fail to satisfy the continuity requirement. In fact, Paul Levy proves (Jacod & Shiryaev (1987)) that indeed there is no contradiction and such processes do in fact exist. A.1.2 Stochastic Integrals Stochastic integration with respect to Brownian motion can be most easily viewed through the lens of Ito integrals. Let II1, II2, ... denote an infinite se­ quence of refining partitions of the interval O, T], so that each Ilk represents an = T, and the L00 norm increasing sequence O = t½k) < tik) < t;k) < · · · < ( l> \\\\IIkll = max (t¾l , m=l, ... ,n(k). -t¿À1) tends to zero as k tends to infinity. DEFINITION A.2 The Ito integral of an Fi-adapted stochastic process g = (gt)o::;t:s;T which is lP'-square integrable, i.e",
+      "dense_score": 0.6883201003074646,
+      "lexical_score": 0.3902439024390244
+    },
+    {
+      "score": 0.7612842492940949,
+      "file_name": "Stochastic Integration and Differential Equations, Protter .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter .pdf",
+      "page_no": 93,
+      "chunk_no": 1,
+      "text": "82 II Semimartingales and Stochastic Integrals The stoehastie integral ealculus, as revealed by Theorems 32 and 33, is different from the dassical Lebesgue-Stieltjes ealculus. By restrieting the dass of integrands to semimartingales made left eontinuous (instead of lL), one can define a stochastic integral that obeys the traditional mles of the Lebesgue- Stieltjes calculus. Definition. Let X, Y be semimartingales. Define the Fisk-8tratonovich integral of Y with respeet to X, denoted J~ Ys - 0 dXs , by t Ys- odXs == t Ys_dXs + ~[Y,X]~. Jo Jo 2 The Fisk-Stratonovieh integral is often referred to as simply the 8tratono- vieh integral. The notation \"0\" is ealled Itö's circle. Note that we have defined the Fisk-Stratonovieh integral in terms of the semimartingale integral. With some work one ean slightly enlarge the domain of the definition and we do so in Seet. 5 of Chap. V. In particular, Theorem 34 below is proved with the weaker hypothesis that f E C2 (Theorem 20 of Chap. V). We will write the F -8 integral as an abbreviation for the Fisk-Stratonovieh integral. Theorem 34",
+      "dense_score": 0.6807964444160461,
+      "lexical_score": 0.36585365853658536
+    },
+    {
+      "score": 0.7601422787875665,
+      "file_name": "Stochastic Integration and Differential Equations, Protter .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter .pdf",
+      "page_no": 71,
+      "chunk_no": 2,
+      "text": ". We will establish in this section several elementary properties of the stochastic integral. These properties will help us to understand the integral and to examine examples at the end of the section. Recall that two processes Y and Z are indistinguishable if P{w: t f-+ Xt(w) and t f-+ yt(w) are the same functions} = l. Theorem 12. Let T be a stopping time. Then (H . X)T = Hl[o,Tj . X = H. (X T ). Theorem 13. Thejump process ß(H·X)s is indistinguishablefram Hs(!~\"Xs). Proofs. Both properties are clear when H E S, and they follow when HElL by passing to the limit. Indeed, we take convergence in ucp for each t, then a.s. convergence by taking a subsequence, and then we choose the rationals (which of course are countable and dense, so the union of null sets is still a null set), and then use the path regularity to get indistinguishability. 0 Let Q denote another probability law, and let HQ·X denote the stochastic integral of H with respect to X computed under the law Q. Theorem 14. Let Q« P. Then H Q · X is Q indistinguishable fram Hp· X.",
+      "dense_score": 0.6850203275680542,
+      "lexical_score": 0.34146341463414637
+    },
+    {
+      "score": 0.7549358079491593,
+      "file_name": "Stochastic Integration and Differential Equations, Protter.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter.pdf",
+      "page_no": 97,
+      "chunk_no": 1,
+      "text": "82 II Semimartingales and Stochastic Integrals The stochastic integral calculus, as revealed by Theorems 32 and 33, is different from the classical Lebesgue-Stieltjes calculus. By restricting the class of integrands to semimartingales made left continuous (instead of L), one candefine a stochastic integral that obeys the traditional rules of the Lebesgue­ Stieltjes calculus. Definition. Let be semimartingales. Define the Fisk-Stratonovich X, Y by denoted JƩ Ys- o dX8,integral of Y with respect to X, Y8_ o dXs = t Y8_dX8 + å[Y, X]æ. 2 lo lo t The Fisk-Stratonovich integral is often referred to as simply the Stratono­ vich integral. The notation \"o\" is called Ito's circle. Note that we have defined the Fisk-Stratonovich integral in terms of the semimartingale integral. With some work one can slightly enlarge the domain of the definition and we do so in Sect. 5 of Chap. V. In particular, Theorem 34 below is proved with the weaker hypothesis that (Theorem 20 of Chap. V). We will write f E C2the F-S integral as an abbreviation for the Fisk-Stratonovich integral. Theorem 34",
+      "dense_score": 0.6851797103881836,
+      "lexical_score": 0.3170731707317073
+    },
+    {
+      "score": 0.7467253822233619,
+      "file_name": "Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Algorithmic and High-Frequency Trading, Mathematics, Finance, Cartea.pdf",
+      "page_no": 334,
+      "chunk_no": 3,
+      "text": ". We will be concerned with only strong solutions of SDEs. Another interesting property of Ito integrals is that they are in fact martin­ gales. 1 There are other approaches to stochastic integration, such as the Stratonovich integral, which is often used in quantum field theory in physics and instead evaluates g at the midpoint of the interval.",
+      "dense_score": 0.6823351383209229,
+      "lexical_score": 0.2926829268292683
+    },
+    {
+      "score": 0.73636834458607,
+      "file_name": "Stochastic Integration and Differential Equations, Protter .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Stochastic Integration and Differential Equations, Protter .pdf",
+      "page_no": 428,
+      "chunk_no": 3,
+      "text": "statistical eommunication theory 142 FV proeesses, integrands in lL 63 Stieltjes integral see Riemann-Stieltjes eontinuous loeal martingales 175 integral loeal martingales 129, 173, 176 stoehastic area formula 89 loeally square integrable loeal stoehastic area proeess martingales 63, 173 definition of 89 semimartingales 63 density 91 sigma martingales 238 Levy's formula 89 square integrable martingales 161, properties 92 173 refieetion principle 92 right 325 stoehastie differential equation 261, said to exist 165 328 stoehastie proeess explicit solutions 290 adapted 3 fiow of 307 deeomposable 55, 101 fiow of solution 390 definition of 3 weak solution 204, 246 finite variation 39,101 weak uniqueness 204 inereasing 39 stoehastic exponential indistinguishable 3,60 appproximation of 276 loeally bounded 166 as a diffusion 305 loeally integrable 367 definition of 85 modifieation of 3",
+      "dense_score": 0.6880756616592407,
+      "lexical_score": 0.21951219512195122
+    }
+  ],
+  "run_metadata": {
+    "work_dir": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\rag_ingest_state",
+    "market_db_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\data\\market_history.sqlite",
+    "formal_root": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\formal",
+    "timestamp_utc": "2026-03-27T02:08:50.051843+00:00",
+    "retrieve_k": 10,
+    "max_candidates": 3,
+    "refinement_rounds": 2,
+    "acceptance_score": 0.8
+  },
+  "lean_export": null
+}

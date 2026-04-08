@@ -1,0 +1,43 @@
+{
+  "security": "GLOBAL",
+  "note_type": "options_surface_global_state",
+  "title": "Global options surface snapshot",
+  "as_of_date": "2026-03-28",
+  "content_markdown": "# Bloomberg Research Memory: Global Options Surface Snapshot\n\n- Anchor surface: SPX Index\n- Valuation date: 2026-03-28\n\n## Current stored options-surface state\n- Surface rows: 1500\n- Rows with IV: 1423\n- ATM IV: 0.2743693183837236\n- ATM skew: -0.9843119659280163\n- Method: iv_vs_log_moneyness\n- Expiries represented: 1\n\n## Current interpretation\n- Options-surface memory is now persisted and can be routed directly by the engine.\n- Use this global note to bias QuantAI toward persisted implied-volatility structure instead of rebuilding live surfaces unnecessarily.",
+  "metadata": {
+    "source": "options_surface_memory",
+    "underlying": "SPX Index",
+    "valuation_date": "2026-03-28",
+    "derived_features": {
+      "rows_total": 1500,
+      "rows_with_iv": 1423,
+      "rows_calls": 963,
+      "rows_puts": 537,
+      "expiries": [
+        "2026-04-17"
+      ],
+      "atm_call_iv": 0.2772008631578947,
+      "atm_put_iv": 0.2773471539473684,
+      "atm_put_minus_call_iv": 0.000146290789473702,
+      "otm_put_iv": 0.4467275670886076,
+      "otm_call_iv": 0.2334725225609756,
+      "wing_put_minus_call_iv": 0.21325504452763203,
+      "calibration_rows": 1,
+      "term_structure_expiries": 1,
+      "term_structure_slope": null,
+      "snapshot_atm_iv": 0.2743693183837236,
+      "snapshot_atm_skew": -0.9843119659280163,
+      "snapshot_method": "iv_vs_log_moneyness"
+    },
+    "diagnostics": {
+      "n_surface_rows": 1500,
+      "n_expiries": 1,
+      "atm_iv": 0.2743693183837236,
+      "atm_skew": -0.9843119659280163,
+      "method": "iv_vs_log_moneyness",
+      "summary_text": "SPX Index options surface repaired and persisted for 2026-03-28. Recovered 1500 surface rows across 1 expiries. Primary calibration method: iv_vs_log_moneyness. ATM implied volatility: 0.2743693183837236. ATM skew: -0.9843119659280163.",
+      "n_calibration_rows": 1,
+      "n_preview_rows": 400
+    }
+  }
+}

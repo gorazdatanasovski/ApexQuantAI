@@ -1,0 +1,555 @@
+{
+  "query": "Extract the real-time implied volatility surface for SPX options expiring in $T=30$ days via the Bloomberg API. Retrieve the theoretical derivation of the rough Bergomi model from the FAISS vault, and utilize the live at-the-money skew term structure to empirically calibrate the Hurst parameter $H$ using the asymptotic relation $\\frac{\\partial}{\\partial k} \\sigma_{BS}(k, T) \\approx c T^{H - 1/2}$.",
+  "problem_kind": "research",
+  "topics": [
+    "rough_volatility",
+    "term_structure"
+  ],
+  "selected": {
+    "title": "Rough-variance scaling identification theorem",
+    "status": "speculative_candidate",
+    "statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+    "assumptions": [
+      "H > 0 and H < 1/2.",
+      "The volatility driver admits a Volterra representation with local singularity exponent H-1/2.",
+      "The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.",
+      "Empirical scope anchored to SPY US Equity."
+    ],
+    "variables": {
+      "H": "roughness exponent",
+      "Delta": "observation scale Δ",
+      "K": "Volterra kernel",
+      "X": "latent log-volatility state",
+      "RV_Delta": "realized-variance proxy at scale Δ",
+      "C_X": "latent scaling constant",
+      "a_0": "noise/intercept term",
+      "a_1": "leading realized-variance scaling coefficient"
+    },
+    "motivation": "Connect latent rough-volatility regularity to an empirically estimable variance-scaling slope.",
+    "empirical_signature": [
+      "roughness_from_variance_scaling",
+      "volatility_clustering_consistency",
+      "range_variance_alignment"
+    ],
+    "symbolic_agenda": [
+      "{'kind': 'positivity', 'name': 'variance_constant_nonnegative', 'expr': 'C_X'}",
+      "{'kind': 'positivity', 'name': 'realized_variance_nonnegative', 'expr': 'a_1*Delta**(2*H)'}"
+    ],
+    "failure_conditions": [
+      "Estimated scaling slope is unstable across windows or frequencies.",
+      "Jump-share dominates the short-horizon variance proxy.",
+      "No persistent roughness signal appears in the Bloomberg feature panel.",
+      "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+      "Resolve failed symbolic check: variance_constant_nonnegative.",
+      "Resolve failed symbolic check: realized_variance_nonnegative."
+    ],
+    "evidence": [
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.8501330718659518,
+        "excerpt": "100 Chapter 4. Rough Heston 4.5.3 The quadratic rough Heston model and the joint SPX-VIX options calibration problem The rough Heston model is known to provide excellent fits of the implied volatility surface of the SPX. However, it does not lead to reasonable calibration when we consider VIX options. The VIX index is, in fact, by definition a derivative of the SPX index S , which can be represented as VIXt = p−2E[log(S t+∆/S t)|Ft] × 100 , (4.31) where ∆= 30 days and E is the risk-neutral expectation. Consequently, VIX options are also derivatives of SPX. Finding a model which jointly calibrates the prices of SPX and VIX options is known to be very challenging, especially for short maturities. As indicated by Guyon [186, Section 1, page 1]: The very large negative skew of short-term SPX options, which in classical contin- uous SV models implies a very large volatility of volatility, seems inconsistent with the comparatively low levels of VIX implied volatilities",
+        "metadata": {
+          "page_no": 122,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.8565614128949349,
+        "excerpt": ". As explained in [167], combining rough volatility and the Zumbach effect can be key to solving the joint calibration problem with continuous-time models with continuous sample paths. As a matter of fact, it is shown in [167, 265] that the quadratic rough Heston model enables us to obtain the following with only six parameters: - VIX smiles in the bid-ask spread, - a global shape of the implied volatility surface of the SPX that is very well reproduced, in particular the ATM skew, which can be exactly matched, - model SPX skews typically of orders −1.5 (shortest maturities) to −1 (longer maturities) as for market data. An example of such joint calibration is given in Figures 4.3 and 4.4. 1.4 T=0.033 1.3 T=0.052 1.3 1.2 1.2 1.1 1.1 1.0 1.0 0.9 0.9 0.8 0.8 0.7 0.7 0.6 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 1.2 T=0.071 1.1 T=0.090 1.1 1.0 1.0 0.9 0.9 0.8 0.8 0.7 0.7 0.6 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 Figure 4.3: Implied volatility on VIX options for May 19, 2017",
+        "metadata": {
+          "page_no": 122,
+          "chunk_no": 2
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.8451419378163522,
+        "excerpt": "2.9. Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX. A special case of this model, where we assume a deterministic change of measure between P and Q, turns out to be a non-Markovian extension of the well-known Bergomi model, which we consequently dub the rough Bergomi (or rBergomi) model. The rBergomi model is particularly tractable and seems to fit the SPX volatility surface very well, despite our lack at this stage of an efficient computational algorithm",
+        "metadata": {
+          "page_no": 77,
+          "chunk_no": 1
+        }
+      },
+      {
+        "source_type": "book",
+        "source_name": "Rough Volatility.pdf",
+        "support_score": 0.8523077572856033,
+        "excerpt": ". We computed terms of Bergomi–Guyon expansion up to second order in volatility of volatility, but the expan- sion parameter λ = η τH ≈2 required to fit SPX option prices is too big for this asymptotic expansion to be valid. However, we do not see agreement between the rBergomi model and the term structure of VIX volatility (VVIX). Taken together, the present work and the econometric analysis of [166] offer a (perhaps even the first) promising paradigm for the understanding of asset price formation all the way from a basic microstructure description at the order book level to option pricing. Last but not least, our framework allows for accurate prediction of the volatility surface from high frequency price data. More efficient computational methods and a more thorough investigation of the market implied change of measure dQ/dP are left for future research. 2.10 Appendix 2.10.1 Volatility, variance, and VIX Here we briefly recall some different notions of variance and volatility that are used throughout the chapter",
+        "metadata": {
+          "page_no": 77,
+          "chunk_no": 2
+        }
+      }
+    ],
+    "verification": {
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "verdict": "rejected_or_unverified",
+      "overall_score": 0.2644493689271948,
+      "symbolic_checks": [
+        {
+          "name": "variance_constant_nonnegative",
+          "kind": "symbolic",
+          "passed": false,
+          "score": 0.0,
+          "summary": "Could not prove nonnegativity under the supplied assumptions.",
+          "details": {
+            "expression": "C_X",
+            "simplified": "C_X"
+          }
+        },
+        {
+          "name": "realized_variance_nonnegative",
+          "kind": "symbolic",
+          "passed": false,
+          "score": 0.0,
+          "summary": "Could not prove nonnegativity under the supplied assumptions.",
+          "details": {
+            "expression": "Delta**(2*H)*a_1",
+            "simplified": "Delta**(2*H)*a_1"
+          }
+        }
+      ],
+      "empirical_checks": [
+        {
+          "name": "roughness_from_variance_scaling",
+          "kind": "empirical",
+          "passed": true,
+          "score": 0.8577207460162648,
+          "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+          "details": {
+            "hurst_estimate": 0.4288603730081324,
+            "column": "hurst_varscale_63"
+          }
+        },
+        {
+          "name": "volatility_clustering_consistency",
+          "kind": "empirical",
+          "passed": true,
+          "score": 0.29940083749820284,
+          "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+          "details": {
+            "abs_return_autocorr_lag1": 0.2795988581448398,
+            "abs_return_autocorr_lag5": 0.3192028168515659
+          }
+        },
+        {
+          "name": "range_variance_alignment",
+          "kind": "empirical",
+          "passed": true,
+          "score": 0.6058742093334977,
+          "summary": "High-low range is positively related to realized volatility.",
+          "details": {
+            "corr_range_vol": 0.6058742093334977,
+            "range_column": "log_hl_range",
+            "rv_column": "realized_var_21"
+          }
+        }
+      ],
+      "warnings": [],
+      "recommended_refinements": [
+        "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+        "Resolve failed symbolic check: variance_constant_nonnegative.",
+        "Resolve failed symbolic check: realized_variance_nonnegative."
+      ]
+    },
+    "tags": [
+      "rough_volatility",
+      "variance_scaling",
+      "rfsv",
+      "empirical_identification"
+    ],
+    "score": 0.5016696213563169,
+    "next_actions": [
+      "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+      "Resolve failed symbolic check: variance_constant_nonnegative.",
+      "Resolve failed symbolic check: realized_variance_nonnegative.",
+      "Collect stronger exact excerpts from the book-memory layer.",
+      "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+    ]
+  },
+  "trials": [
+    {
+      "round_index": 0,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: research",
+        "Verdict: rejected_or_unverified"
+      ]
+    },
+    {
+      "round_index": 1,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: research",
+        "Verdict: rejected_or_unverified"
+      ]
+    },
+    {
+      "round_index": 2,
+      "candidate_title": "Rough-variance scaling identification theorem",
+      "candidate_statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + ∫_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as Δ ↓ 0, the increment variance satisfies E[(X_{t+Δ}-X_t)^2] = C_X Δ^{2H} + o(Δ^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_Δ] = a_0 + a_1 Δ^{2H} + o(Δ^{2H}).",
+      "verification": {
+        "candidate_title": "Rough-variance scaling identification theorem",
+        "verdict": "rejected_or_unverified",
+        "overall_score": 0.2644493689271948,
+        "symbolic_checks": [
+          {
+            "name": "variance_constant_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "C_X",
+              "simplified": "C_X"
+            }
+          },
+          {
+            "name": "realized_variance_nonnegative",
+            "kind": "symbolic",
+            "passed": false,
+            "score": 0.0,
+            "summary": "Could not prove nonnegativity under the supplied assumptions.",
+            "details": {
+              "expression": "Delta**(2*H)*a_1",
+              "simplified": "Delta**(2*H)*a_1"
+            }
+          }
+        ],
+        "empirical_checks": [
+          {
+            "name": "roughness_from_variance_scaling",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.8577207460162648,
+            "summary": "Hurst-style estimate is finite and lies in the admissible range (0,1).",
+            "details": {
+              "hurst_estimate": 0.4288603730081324,
+              "column": "hurst_varscale_63"
+            }
+          },
+          {
+            "name": "volatility_clustering_consistency",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.29940083749820284,
+            "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+            "details": {
+              "abs_return_autocorr_lag1": 0.2795988581448398,
+              "abs_return_autocorr_lag5": 0.3192028168515659
+            }
+          },
+          {
+            "name": "range_variance_alignment",
+            "kind": "empirical",
+            "passed": true,
+            "score": 0.6058742093334977,
+            "summary": "High-low range is positively related to realized volatility.",
+            "details": {
+              "corr_range_vol": 0.6058742093334977,
+              "range_column": "log_hl_range",
+              "rv_column": "realized_var_21"
+            }
+          }
+        ],
+        "warnings": [],
+        "recommended_refinements": [
+          "Strengthen or revise the symbolic assumptions before trusting the conjecture.",
+          "Resolve failed symbolic check: variance_constant_nonnegative.",
+          "Resolve failed symbolic check: realized_variance_nonnegative."
+        ]
+      },
+      "lab_score": 0.5016696213563169,
+      "notes": [
+        "Problem kind: research",
+        "Verdict: rejected_or_unverified"
+      ]
+    }
+  ],
+  "packet_metadata": {
+    "n_text_evidence": 10,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "market_context_keys": [
+      "SPY US Equity",
+      "securities"
+    ]
+  },
+  "lab_metadata": {
+    "db_path": "data\\market_history.sqlite",
+    "n_candidates": 1,
+    "n_trials": 3,
+    "securities": [
+      "SPY US Equity"
+    ],
+    "benchmark_security": null,
+    "acceptance_score": 0.8
+  },
+  "securities": [
+    "SPY US Equity"
+  ],
+  "retrieved_sources": [
+    {
+      "score": 0.8585182234278896,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 72,
+      "chunk_no": 1,
+      "text": "50 Chapter 2. Pricing under rough volatility −0.05 −0.10skew −0.15volatility ATM −0.20 −0.25 0.0 0.5 1.0 1.5 2.0 2.5 Expiry Figure 2.10: The Bergomi–Guyon second-order ATM skew approximation is in green; ATM skews from Monte Carlo simulation are in red. Parameters used were H = 0.1, η = 0.4, ϱ = −0.85, σ = 0.235. We thus conclude that both our Bergomi–Guyon computations and the simulation are likely to be correct. Sadly, however, the Bergomi–Guyon expansion does not converge with values of η consistent with the SPX volatility surface, so the Bergomi–Guyon expansion is not useful in practice for calibration of the rBergomi model. 2.8 Forecasting the variance swap curve Recall that in the RFSV model (2.1), log Vt ≈2 ν WHt + C for some constant C. In [254], it is shown, assuming H ∈(0, 12), ∆> 0, that WHt+∆is conditionally Gaussian with conditional expectation33 t cos(Hπ) Z WHs ∆H+ 12 1 ds E[WHt+∆|Ft] = π −∞ (t −s + ∆)(t −s)H+ 2 and conditional variance V[WHt+∆|Ft] = c ∆2H where Γ( 23 −H) c = 1 Γ(H + 2) Γ(2 −2H)",
+      "dense_score": 0.7736059427261353,
+      "lexical_score": 0.38596491228070173
+    },
+    {
+      "score": 0.8573302930279781,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 110,
+      "chunk_no": 3,
+      "text": ". The forward vari- ance curve, being a state variable in the model, is fixed to match at-the-money (ATM) volatilities. From Bloomberg, on May 19, 2017, there were 27 expirations from 1 day to over 2.5 years, for a total of 2,743 options quoted. For each such strike-expiration pair, we compute bid and ask implied volatilities σ±i := σ±BS(ki, Ti), where ki denotes the log-strike. Given model parameters {H, ν, ϱ}, we can obtain model implied volatilities σMi (H, ν, ϱ). We calibrate the parameters by minimizing39 X h σMi (H, ν, ϱ) −σ+i 2 + σMi (H, ν, ϱ) −σ−i 2i , i subject to the constraints 1 i H ∈ 0, , ν ≥0, ϱ ∈[−1, 1], 2 39Alternatively, the parameters of the rough Heston model may be efficiently calibrated to the term structure of leverage swaps using a closed-form formula [9].",
+      "dense_score": 0.7531197667121887,
+      "lexical_score": 0.47368421052631576
+    },
+    {
+      "score": 0.8565614128949349,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 122,
+      "chunk_no": 2,
+      "text": ". As explained in [167], combining rough volatility and the Zumbach effect can be key to solving the joint calibration problem with continuous-time models with continuous sample paths. As a matter of fact, it is shown in [167, 265] that the quadratic rough Heston model enables us to obtain the following with only six parameters: - VIX smiles in the bid-ask spread, - a global shape of the implied volatility surface of the SPX that is very well reproduced, in particular the ATM skew, which can be exactly matched, - model SPX skews typically of orders −1.5 (shortest maturities) to −1 (longer maturities) as for market data. An example of such joint calibration is given in Figures 4.3 and 4.4. 1.4 T=0.033 1.3 T=0.052 1.3 1.2 1.2 1.1 1.1 1.0 1.0 0.9 0.9 0.8 0.8 0.7 0.7 0.6 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 1.2 T=0.071 1.1 T=0.090 1.1 1.0 1.0 0.9 0.9 0.8 0.8 0.7 0.7 0.6 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 0.10 0.05 0.00 0.05 0.10 0.15 0.20 0.25 Figure 4.3: Implied volatility on VIX options for May 19, 2017",
+      "dense_score": 0.7677894830703735,
+      "lexical_score": 0.40350877192982454
+    },
+    {
+      "score": 0.8523077572856033,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 77,
+      "chunk_no": 2,
+      "text": ". We computed terms of Bergomi–Guyon expansion up to second order in volatility of volatility, but the expan- sion parameter λ = η τH ≈2 required to fit SPX option prices is too big for this asymptotic expansion to be valid. However, we do not see agreement between the rBergomi model and the term structure of VIX volatility (VVIX). Taken together, the present work and the econometric analysis of [166] offer a (perhaps even the first) promising paradigm for the understanding of asset price formation all the way from a basic microstructure description at the order book level to option pricing. Last but not least, our framework allows for accurate prediction of the volatility surface from high frequency price data. More efficient computational methods and a more thorough investigation of the market implied change of measure dQ/dP are left for future research. 2.10 Appendix 2.10.1 Volatility, variance, and VIX Here we briefly recall some different notions of variance and volatility that are used throughout the chapter",
+      "dense_score": 0.7519568800926208,
+      "lexical_score": 0.45614035087719296
+    },
+    {
+      "score": 0.850172500275729,
+      "file_name": "NONLINEAR OPTION PRICING, GUYON .pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\NONLINEAR OPTION PRICING, GUYON .pdf",
+      "page_no": 340,
+      "chunk_no": 1,
+      "text": "The particle method: Numerical tests 301 Figure 11.3: Implied volatilities of the DAX as of 30-May-11 for T = 4Y. Bergomi model parameters: σ = 350%, θ = 22.65%, kX = 4, kY = 12.5%, ρXY = 30%, ρSX = −50%, ρSY = −50%. Section 11.5) with a computational time around 12 seconds. In order to il- lustrate that we have used stressed parameters to check the eﬃciency of our algorithm, we have plotted the smile produced by the naked SVM, which signiﬁcantly diﬀers from the market smile. 11.8.3 Existence under question As highlighted in Section 11.3, the existence of LSV models for a given market smile is not at all obvious, although this seems to be a common belief in the quant community. In order to illustrate this mathematical question, we have decided to check our algorithm with a volatility-of-volatility σ = 350% (see Figure 11.3). This large value of volatility-of-volatility is sometimes needed in order to generate typical levels of forward skew for indices, in a model where skew is generated by volatility-of-volatility only",
+      "dense_score": 0.7652602195739746,
+      "lexical_score": 0.38596491228070173
+    },
+    {
+      "score": 0.8501330718659518,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 122,
+      "chunk_no": 1,
+      "text": "100 Chapter 4. Rough Heston 4.5.3 The quadratic rough Heston model and the joint SPX-VIX options calibration problem The rough Heston model is known to provide excellent fits of the implied volatility surface of the SPX. However, it does not lead to reasonable calibration when we consider VIX options. The VIX index is, in fact, by definition a derivative of the SPX index S , which can be represented as VIXt = p−2E[log(S t+∆/S t)|Ft] × 100 , (4.31) where ∆= 30 days and E is the risk-neutral expectation. Consequently, VIX options are also derivatives of SPX. Finding a model which jointly calibrates the prices of SPX and VIX options is known to be very challenging, especially for short maturities. As indicated by Guyon [186, Section 1, page 1]: The very large negative skew of short-term SPX options, which in classical contin- uous SV models implies a very large volatility of volatility, seems inconsistent with the comparatively low levels of VIX implied volatilities",
+      "dense_score": 0.7536418437957764,
+      "lexical_score": 0.43859649122807015
+    },
+    {
+      "score": 0.8451419378163522,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 77,
+      "chunk_no": 1,
+      "text": "2.9. Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX. A special case of this model, where we assume a deterministic change of measure between P and Q, turns out to be a non-Markovian extension of the well-known Bergomi model, which we consequently dub the rough Bergomi (or rBergomi) model. The rBergomi model is particularly tractable and seems to fit the SPX volatility surface very well, despite our lack at this stage of an efficient computational algorithm",
+      "dense_score": 0.7563700079917908,
+      "lexical_score": 0.40350877192982454
+    },
+    {
+      "score": 0.8408111139765957,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 197,
+      "chunk_no": 1,
+      "text": "8.5. Rough volatility at criticality: H = 0 179 8.5.1 Skew flattening in the rough Bergomi model as H ↓0 Unfortunately, this is not the case with the standard rough stochastic volatility models of rough Bergomi type. Indeed, [133] shows that the ATM skew converges to zero as H tends to zero. More precisely, the authors of that paper show that the implied volatility smile becomes symmet- ric as H ↓0, and, using the usual normalization of the kernel, the rough Bergomi model actually weakly converges to the Black–Scholes model as H ↓0; see [133, Section 2.2]. Superficially, this means that the constant cH ↓0 “wins” over the steepening of the power law, but, in fact, the flattening of the skew is a consequence of a decorrelation phenomenon: When H ↓0, the martingale part R 0t √VsdWs of the log-price X weakly converges to a time-change Bξ([0,t]) of an independent Brownian motion B [133, Theorem 2.1], where ξ denotes a Gaussian multiplicative chaos [259]",
+      "dense_score": 0.7558988332748413,
+      "lexical_score": 0.38596491228070173
+    },
+    {
+      "score": 0.8363904758921841,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 186,
+      "chunk_no": 2,
+      "text": ". For any k ∈R, √ σimp k t, t 1 \" ξ(t) 21 k2 # k2 1 2 + o t2H , = ξ(t) 2 + λ(t)k + 3λ(t)2 − 1 + κt2H 1 −ξ(t) 2 ξ(t) 2 ξ(t) 2 as t tends to zero. Moreover, again for small enough t, ∂ λ(t) 2 , σBS(k, t) = + o t2H−1 ∂k k=0 √t (8.19) ∂2 2κ σBS(k, t) = 1 t2H−1 −6λ(t)21 + o t2H−1 . ∂k2 k=0 ξ(t) 2 tξ(t) 2 Figure 8.1 provides a numerical comparison between the Monte Carlo values and the asymp- totic expansion under realistic parameters. The skew and curvature formulae (8.19) are derived by combining the Edgeworth expansion of the distribution function and an expression of the de- rivative of the implied volatility in terms of a digital option price. We refer the reader to [130] for precise details. Since √ 2Hϱη λ(t) ∼ 1 3 2(H + 2)(H + 2)tH, the result is consistent to what we observed in Example 8.12. We also note that the small-time Edgeworth expansion under the rough Heston model is given by [137] using an explicit formula of the characteristic function.",
+      "dense_score": 0.7514781951904297,
+      "lexical_score": 0.38596491228070173
+    },
+    {
+      "score": 0.8295208418578432,
+      "file_name": "Rough Volatility.pdf",
+      "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+      "page_no": 22,
+      "chunk_no": 3,
+      "text": ". Indeed, the hybrid scheme is now the simulation method of choice for the rough Bergomi model, and variations on the scheme are increasingly seen as the method of choice for other rough volatility models, too. Efficient simulation of rough volatility models is no longer a challenge. Chapter 8 concerns itself with the asymptotic behavior of option prices or, equivalently, of the implied volatility surface, under rough volatility. The asymptotic regimes considered include small volatility of volatility, small times, large deviations, and moderate deviations. This exhaus- tive compilation of existing results with consistent notation will surely be welcomed by many readers. Moreover, formulae are tested numerically, and the results of these tests are presented graphically. One of the various applications of these asymptotic formulae is to facilitate intelli- gent selection of starting points for calibrating rough volatility models to option prices, leading to more efficient and effective calibration processes",
+      "dense_score": 0.7523278594017029,
+      "lexical_score": 0.3508771929824561
+    }
+  ],
+  "run_metadata": {
+    "work_dir": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\rag_ingest_state",
+    "market_db_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\data\\market_history.sqlite",
+    "formal_root": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\formal",
+    "timestamp_utc": "2026-03-27T02:09:21.246671+00:00",
+    "retrieve_k": 10,
+    "max_candidates": 3,
+    "refinement_rounds": 2,
+    "acceptance_score": 0.8
+  },
+  "lean_export": null
+}

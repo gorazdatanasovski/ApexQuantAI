@@ -1,0 +1,54 @@
+{
+  "security": "VIX3M Index",
+  "note_type": "security_regime_note",
+  "title": "VIX3M Index empirical research memory",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: VIX3M Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 29.27\n- Last daily return: 0.0748178\n- Current drawdown: -0.598931\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.114042\n- Realized vol 21: 0.288359\n- Realized vol 63: 0.387236\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.139697\n- Hurst variance scaling 63: 0.370929\n\n## OU / mean-reversion panel\n- OU speed 5: -0.0941261\n- OU speed 21: 0.539387\n- OU speed 63: 0.0379061\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0\n- Jump share 63: 0\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.315717\n- Abs-return ACF 21: -0.0393512\n- Abs-return ACF 63: 0.245278\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.145403\n- Return autocorr 21: -0.275141\n- Return autocorr 63: -0.272939\n\n## Volume anomaly panel\n- Volume z-score 5: NA\n- Volume z-score 21: NA\n- Volume z-score 63: NA\n\n## Historical coverage\n- Rows: 30465\n- Start: 2002-01-02\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "VIX3M Index",
+    "as_of_date": "2026-03-27",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "moderate_mean_reversion",
+    "realized_vol": {
+      "5": 0.11404174586680393,
+      "21": 0.28835918454362564,
+      "63": 0.387235955370569
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.13969723901839146,
+      "63": 0.37092886424617366
+    },
+    "ou_speed": {
+      "5": -0.09412610856710117,
+      "21": 0.5393873944753333,
+      "63": 0.03790612914609781
+    },
+    "jump_share": {
+      "5": 0.0,
+      "21": 0.0,
+      "63": 0.0
+    },
+    "acf_abs_return": {
+      "5": 0.31571652211815404,
+      "21": -0.03935115599513661,
+      "63": 0.24527837269130606
+    },
+    "autocorr_return": {
+      "5": 0.14540344075528175,
+      "21": -0.2751413482721112,
+      "63": -0.27293902782945584
+    },
+    "volume_z": {
+      "5": null,
+      "21": null,
+      "63": null
+    },
+    "history_span": {
+      "rows": 30465,
+      "start": "2002-01-02",
+      "end": "2026-03-27"
+    }
+  }
+}

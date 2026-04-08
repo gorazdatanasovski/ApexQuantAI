@@ -1,0 +1,53 @@
+{
+  "entry_id": "thm_b799d5af3b024d41",
+  "title": "Evidence-anchored structural conjecture",
+  "status": "speculative_candidate",
+  "score": 0.45164050249892174,
+  "statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+  "assumptions": [
+    "Empirical scope anchored to SPY US Equity."
+  ],
+  "variables": {
+    "propose": "query-driven variable",
+    "pair-linkage": "query-driven variable",
+    "theorem": "query-driven variable",
+    "spy": "query-driven variable"
+  },
+  "tags": [
+    "generic",
+    "general_quant"
+  ],
+  "securities": [
+    "SPY US Equity",
+    "VIX3M Index"
+  ],
+  "benchmark_security": "SPY US Equity",
+  "empirical_signature": [
+    "default_volatility_persistence"
+  ],
+  "symbolic_agenda": [],
+  "failure_conditions": [
+    "Retrieved evidence remains too dispersed across unrelated mathematical families.",
+    "No exact excerpt currently pins down every constant or normalization.",
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable."
+  ],
+  "next_actions": [
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Refine the candidate so the implied empirical signature is sharper and testable.",
+    "Collect stronger exact excerpts from the book-memory layer.",
+    "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+  ],
+  "source_kind": "theorem_lab",
+  "source_ref": "Propose a pair-linkage theorem for SPY US Equity and VIX3M Index. The theorem must be genuinely about the interaction between the two objects, not a reused single-name rough-variance theorem. Focus on spot-volatility coupling, variance scaling transmission, regime dependence, term-structure state, tail-risk state, cross-object linkage. State: (1) the pair-level object, (2) the predicted relationship or monotonicity, (3) empirical Bloomberg feature signatures, (4) failure conditions, and (5) symbolic structure that can be checked directly.",
+  "created_at": "2026-03-28T01:18:31+00:00",
+  "updated_at": "2026-03-28T01:18:31+00:00",
+  "artifact_hash": "555ab82674293e4c8f72889fe0f4b520b9660c56bc004498392fb840719f714c",
+  "metadata": {
+    "query": "Propose a pair-linkage theorem for SPY US Equity and VIX3M Index. The theorem must be genuinely about the interaction between the two objects, not a reused single-name rough-variance theorem. Focus on spot-volatility coupling, variance scaling transmission, regime dependence, term-structure state, tail-risk state, cross-object linkage. State: (1) the pair-level object, (2) the predicted relationship or monotonicity, (3) empirical Bloomberg feature signatures, (4) failure conditions, and (5) symbolic structure that can be checked directly.",
+    "lab_status": null,
+    "lab_score": null,
+    "selected_status": "speculative_candidate",
+    "selected_score": 0.45164050249892174
+  }
+}

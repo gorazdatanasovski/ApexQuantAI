@@ -1,0 +1,54 @@
+{
+  "security": "SPY US Equity",
+  "note_type": "security_regime_note",
+  "title": "SPY US Equity empirical research memory",
+  "as_of_date": "2026-03-26",
+  "content_markdown": "# Bloomberg Research Memory: SPY US Equity\n\n## As of\n- Date: 2026-03-26\n\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0277618\n- Realized vol 21: 0.0426373\n- Realized vol 63: 0.0627613\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.0180497\n\n## OU / mean-reversion panel\n- OU speed 5: NA\n- OU speed 21: 0.0823583\n- OU speed 63: 0.0219479\n\n## Jump / discontinuity panel\n- Jump share 5: 0.234451\n- Jump share 21: 0.114189\n- Jump share 63: 0.0863611\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.0685379\n- Abs-return ACF 21: -0.291613\n- Abs-return ACF 63: 0.0329935\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.746464\n- Return autocorr 21: -0.366119\n- Return autocorr 63: -0.209893\n\n## Volume anomaly panel\n- Volume z-score 5: -0.701767\n- Volume z-score 21: -0.0243653\n- Volume z-score 63: 0.510649\n\n## Historical coverage\n- Rows: 41730\n- Start: 1993-01-29\n- End: 2026-03-26\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SPY US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "SPY US Equity",
+    "as_of_date": "2026-03-26",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "weak_mean_reversion",
+    "realized_vol": {
+      "5": 0.027761834288204057,
+      "21": 0.04263732804924681,
+      "63": 0.06276128501831515
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.0,
+      "63": 0.018049720336195372
+    },
+    "ou_speed": {
+      "5": null,
+      "21": 0.08235834548272408,
+      "63": 0.021947888649767208
+    },
+    "jump_share": {
+      "5": 0.23445081553518893,
+      "21": 0.11418863724935152,
+      "63": 0.08636114887592183
+    },
+    "acf_abs_return": {
+      "5": -0.06853791646306502,
+      "21": -0.2916127204870938,
+      "63": 0.03299350029417972
+    },
+    "autocorr_return": {
+      "5": -0.7464639357202794,
+      "21": -0.3661193522147646,
+      "63": -0.20989332124782667
+    },
+    "volume_z": {
+      "5": -0.7017670787650189,
+      "21": -0.024365273227696032,
+      "63": 0.5106489534956211
+    },
+    "history_span": {
+      "rows": 41730,
+      "start": "1993-01-29",
+      "end": "2026-03-26"
+    }
+  }
+}

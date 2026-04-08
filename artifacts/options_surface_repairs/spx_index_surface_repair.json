@@ -1,0 +1,3620 @@
+{
+  "created_at": "2026-03-28T01:50:40+00:00",
+  "underlying": "SPX Index",
+  "n_attempts": 9,
+  "best_attempt": {
+    "attempt_name": "SPX Index|type=ALL|max=1500",
+    "underlying": "SPX Index",
+    "option_type": null,
+    "max_contracts": 1500,
+    "ok": true,
+    "n_chain_rows": 8000,
+    "n_snapshot_rows": 1500,
+    "n_surface_rows": 1500,
+    "n_expiries": 1,
+    "option_types_found": [
+      "C",
+      "P"
+    ],
+    "diagnostics": {
+      "spot": 6368.85,
+      "chain_frame_columns": [
+        "security",
+        "Security Description"
+      ],
+      "chain_candidates": 1500,
+      "rows_chain": 8000,
+      "rows_chain_meta": 1500,
+      "rows_raw": 1500,
+      "rows_surface": 1500,
+      "valuation_date": "2026-03-28",
+      "expiry_min": "2026-04-17",
+      "expiry_max": "2026-04-17",
+      "option_types": [
+        "C",
+        "P"
+      ],
+      "chain_debug": {
+        "OPT_TICKERS": {
+          "rows": 0,
+          "columns": []
+        },
+        "OPT_CHAIN": {
+          "rows": 8000,
+          "columns": [
+            "security",
+            "Security Description"
+          ]
+        }
+      },
+      "chain_preview": [
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C1400 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C1600 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C1800 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C2000 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C2200 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C2400 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C2600 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C2800 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C3000 Index"
+        },
+        {
+          "security": "SPX Index",
+          "Security Description": "SPXW US 04/17/26 C3200 Index"
+        }
+      ],
+      "raw_preview": [
+        {
+          "security": "SPXW US 04/17/26 C5000 Index",
+          "sequence_number": 40,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5000.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 55.42003,
+          "IVOL_BID": 47.74522,
+          "IVOL_ASK": 60.71939,
+          "PX_MID": 1373.05,
+          "PX_BID": 1367.2,
+          "PX_ASK": 1378.9,
+          "PX_LAST": 1392.48,
+          "VOLUME": 49.0,
+          "OPEN_INT": 159
+        },
+        {
+          "security": "SPXW US 04/17/26 C5025 Index",
+          "sequence_number": 41,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5025.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 54.80883,
+          "IVOL_BID": 47.51649,
+          "IVOL_ASK": 59.94938,
+          "PX_MID": 1348.45,
+          "PX_BID": 1342.6,
+          "PX_ASK": 1354.3,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        },
+        {
+          "security": "SPXW US 04/17/26 C5050 Index",
+          "sequence_number": 42,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5050.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 54.18231,
+          "IVOL_BID": 47.00103,
+          "IVOL_ASK": 59.09687,
+          "PX_MID": 1323.85,
+          "PX_BID": 1318.1,
+          "PX_ASK": 1329.6,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        },
+        {
+          "security": "SPXW US 04/17/26 C5075 Index",
+          "sequence_number": 43,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5075.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 53.05969,
+          "IVOL_BID": 46.69258,
+          "IVOL_ASK": 57.74715,
+          "PX_MID": 1298.75,
+          "PX_BID": 1293.5,
+          "PX_ASK": 1304.0,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        },
+        {
+          "security": "SPXW US 04/17/26 C5100 Index",
+          "sequence_number": 44,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5100.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 52.84183,
+          "IVOL_BID": 46.34342,
+          "IVOL_ASK": 57.44812,
+          "PX_MID": 1274.6,
+          "PX_BID": 1268.9,
+          "PX_ASK": 1280.3,
+          "PX_LAST": 1615.85,
+          "VOLUME": 1.0,
+          "OPEN_INT": 1
+        },
+        {
+          "security": "SPXW US 04/17/26 C5125 Index",
+          "sequence_number": 45,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5125.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 52.17126,
+          "IVOL_BID": 45.95139,
+          "IVOL_ASK": 56.65665,
+          "PX_MID": 1250.0,
+          "PX_BID": 1244.3,
+          "PX_ASK": 1255.7,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        },
+        {
+          "security": "SPXW US 04/17/26 C5150 Index",
+          "sequence_number": 46,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5150.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 51.54174,
+          "IVOL_BID": 45.66991,
+          "IVOL_ASK": 55.85739,
+          "PX_MID": 1225.45,
+          "PX_BID": 1219.8,
+          "PX_ASK": 1231.1,
+          "PX_LAST": 1244.68,
+          "VOLUME": 3.0,
+          "OPEN_INT": 6
+        },
+        {
+          "security": "SPXW US 04/17/26 C5175 Index",
+          "sequence_number": 47,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5175.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 50.47952,
+          "IVOL_BID": 45.2076,
+          "IVOL_ASK": 54.91929,
+          "PX_MID": 1200.4,
+          "PX_BID": 1195.2,
+          "PX_ASK": 1205.6,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        },
+        {
+          "security": "SPXW US 04/17/26 C5200 Index",
+          "sequence_number": 48,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5200.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 50.19542,
+          "IVOL_BID": 44.84205,
+          "IVOL_ASK": 54.23737,
+          "PX_MID": 1176.3,
+          "PX_BID": 1170.7,
+          "PX_ASK": 1181.9,
+          "PX_LAST": 1388.93,
+          "VOLUME": 1.0,
+          "OPEN_INT": 66
+        },
+        {
+          "security": "SPXW US 04/17/26 C5220 Index",
+          "sequence_number": 49,
+          "errors": null,
+          "OPT_EXPIRE_DT": "2026-04-17",
+          "OPT_STRIKE_PX": 5220.0,
+          "OPT_PUT_CALL": "Call",
+          "IVOL_MID": 49.3318,
+          "IVOL_BID": 44.1153,
+          "IVOL_ASK": 53.44222,
+          "PX_MID": 1156.25,
+          "PX_BID": 1150.5,
+          "PX_ASK": 1162.0,
+          "PX_LAST": NaN,
+          "VOLUME": 0.0,
+          "OPEN_INT": 0
+        }
+      ],
+      "surface_nulls": {
+        "valuation_date": 0,
+        "underlying": 0,
+        "option_ticker": 0,
+        "expiry": 0,
+        "tau_years": 0,
+        "option_type": 0,
+        "strike": 0,
+        "spot": 0,
+        "implied_vol": 77,
+        "mid_price": 0,
+        "volume": 0,
+        "open_interest": 0
+      }
+    },
+    "calibration": {
+      "security": "SPX Index",
+      "valuation_date": "2026-03-28",
+      "slices": [
+        {
+          "expiry": "2026-04-17",
+          "tau_years": 0.0547945205479452,
+          "n_points": 612,
+          "atm_iv": 0.2743693183837236,
+          "skew": -0.9843119659280163,
+          "intercept": 0.2743693183837236,
+          "r_squared": 0.9917850629201106,
+          "method": "iv_vs_log_moneyness"
+        }
+      ],
+      "scaling_fit": null,
+      "diagnostics": {
+        "rows_in": 1500,
+        "rows_used": 1423,
+        "atm_log_moneyness_band": 0.08,
+        "min_points_per_slice": 5
+      },
+      "surface_preview": {
+        "rows": [
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 200.0,
+            "implied_vol": 4.191854,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -3.4608568319680306
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 400.0,
+            "implied_vol": 3.316625,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -2.7677096514080852
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 600.0,
+            "implied_vol": 2.819096,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -2.362244543299921
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 800.0,
+            "implied_vol": 2.813158,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -2.07456247084814
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1000.0,
+            "implied_vol": 2.509075,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.8514189195339303
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1200.0,
+            "implied_vol": 2.2911859999999997,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.6690973627399757
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1400.0,
+            "implied_vol": 1.806497,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.5149466829127174
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1400.0,
+            "implied_vol": 2.111095,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.5149466829127174
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1400.0,
+            "implied_vol": 2.037009,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.5149466829127174
+          },
+          {
+            "expiry": "2026-04-17 00:00:00",
+            "strike": 1600.0,
+            "implied_vol": 1.901651,
+            "tau_years": 0.0547945205479452,
+            "log_moneyness": -1.3814152902881947
+          }
+        ]
+      }
+    },
+    "error_type": null,
+    "error": null
+  },
+  "attempts": [
+    {
+      "attempt_name": "SPX Index|type=P|max=300",
+      "underlying": "SPX Index",
+      "option_type": "P",
+      "max_contracts": 300,
+      "ok": false,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 300,
+      "n_surface_rows": 0,
+      "n_expiries": 0,
+      "option_types_found": [],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 300,
+        "rows_chain": 8000,
+        "rows_chain_meta": 300,
+        "rows_raw": 300,
+        "rows_surface": 0,
+        "valuation_date": "2026-03-28",
+        "expiry_min": null,
+        "expiry_max": null,
+        "option_types": [],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C5000 Index",
+            "sequence_number": 40,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5000.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 55.42003,
+            "IVOL_BID": 47.74522,
+            "IVOL_ASK": 60.71939,
+            "PX_MID": 1373.05,
+            "PX_BID": 1367.2,
+            "PX_ASK": 1378.9,
+            "PX_LAST": 1392.48,
+            "VOLUME": 49.0,
+            "OPEN_INT": 159
+          },
+          {
+            "security": "SPXW US 04/17/26 C5025 Index",
+            "sequence_number": 41,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5025.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 54.80883,
+            "IVOL_BID": 47.51649,
+            "IVOL_ASK": 59.94938,
+            "PX_MID": 1348.45,
+            "PX_BID": 1342.6,
+            "PX_ASK": 1354.3,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5050 Index",
+            "sequence_number": 42,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5050.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 54.18231,
+            "IVOL_BID": 47.00103,
+            "IVOL_ASK": 59.09687,
+            "PX_MID": 1323.85,
+            "PX_BID": 1318.1,
+            "PX_ASK": 1329.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5075 Index",
+            "sequence_number": 43,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5075.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 53.05969,
+            "IVOL_BID": 46.69258,
+            "IVOL_ASK": 57.74715,
+            "PX_MID": 1298.75,
+            "PX_BID": 1293.5,
+            "PX_ASK": 1304.0,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5100 Index",
+            "sequence_number": 44,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5100.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 52.84183,
+            "IVOL_BID": 46.34342,
+            "IVOL_ASK": 57.44812,
+            "PX_MID": 1274.6,
+            "PX_BID": 1268.9,
+            "PX_ASK": 1280.3,
+            "PX_LAST": 1615.85,
+            "VOLUME": 1.0,
+            "OPEN_INT": 1
+          },
+          {
+            "security": "SPXW US 04/17/26 C5125 Index",
+            "sequence_number": 45,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5125.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 52.17126,
+            "IVOL_BID": 45.95139,
+            "IVOL_ASK": 56.65665,
+            "PX_MID": 1250.0,
+            "PX_BID": 1244.3,
+            "PX_ASK": 1255.7,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5150 Index",
+            "sequence_number": 46,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5150.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 51.54174,
+            "IVOL_BID": 45.66991,
+            "IVOL_ASK": 55.85739,
+            "PX_MID": 1225.45,
+            "PX_BID": 1219.8,
+            "PX_ASK": 1231.1,
+            "PX_LAST": 1244.68,
+            "VOLUME": 3.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C5175 Index",
+            "sequence_number": 47,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5175.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 50.47952,
+            "IVOL_BID": 45.2076,
+            "IVOL_ASK": 54.91929,
+            "PX_MID": 1200.4,
+            "PX_BID": 1195.2,
+            "PX_ASK": 1205.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5200 Index",
+            "sequence_number": 48,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5200.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 50.19542,
+            "IVOL_BID": 44.84205,
+            "IVOL_ASK": 54.23737,
+            "PX_MID": 1176.3,
+            "PX_BID": 1170.7,
+            "PX_ASK": 1181.9,
+            "PX_LAST": 1388.93,
+            "VOLUME": 1.0,
+            "OPEN_INT": 66
+          },
+          {
+            "security": "SPXW US 04/17/26 C5220 Index",
+            "sequence_number": 49,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5220.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 49.3318,
+            "IVOL_BID": 44.1153,
+            "IVOL_ASK": 53.44222,
+            "PX_MID": 1156.25,
+            "PX_BID": 1150.5,
+            "PX_ASK": 1162.0,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          }
+        ],
+        "surface_nulls": {}
+      },
+      "calibration": null,
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=P|max=800",
+      "underlying": "SPX Index",
+      "option_type": "P",
+      "max_contracts": 800,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 800,
+      "n_surface_rows": 340,
+      "n_expiries": 1,
+      "option_types_found": [
+        "P"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 800,
+        "rows_chain": 8000,
+        "rows_chain_meta": 800,
+        "rows_raw": 800,
+        "rows_surface": 340,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "P"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C5475 Index",
+            "sequence_number": 80,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5475.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 43.29193,
+            "IVOL_BID": 40.15191,
+            "IVOL_ASK": 46.10364,
+            "PX_MID": 908.25,
+            "PX_BID": 902.7,
+            "PX_ASK": 913.8,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5480 Index",
+            "sequence_number": 81,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5480.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 43.18736,
+            "IVOL_BID": 40.18899,
+            "IVOL_ASK": 45.89492,
+            "PX_MID": 903.45,
+            "PX_BID": 898.3,
+            "PX_ASK": 908.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 5
+          },
+          {
+            "security": "SPXW US 04/17/26 C5490 Index",
+            "sequence_number": 82,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5490.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.92187,
+            "IVOL_BID": 39.8646,
+            "IVOL_ASK": 45.67694,
+            "PX_MID": 893.75,
+            "PX_BID": 888.2,
+            "PX_ASK": 899.3,
+            "PX_LAST": 1256.25,
+            "VOLUME": 5.0,
+            "OPEN_INT": 5
+          },
+          {
+            "security": "SPXW US 04/17/26 C5500 Index",
+            "sequence_number": 83,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5500.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.62755,
+            "IVOL_BID": 39.56269,
+            "IVOL_ASK": 45.38511,
+            "PX_MID": 884.0,
+            "PX_BID": 878.6,
+            "PX_ASK": 889.4,
+            "PX_LAST": 949.34,
+            "VOLUME": 1.0,
+            "OPEN_INT": 18
+          },
+          {
+            "security": "SPXW US 04/17/26 C5510 Index",
+            "sequence_number": 84,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5510.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.37081,
+            "IVOL_BID": 39.53986,
+            "IVOL_ASK": 44.8503,
+            "PX_MID": 874.1,
+            "PX_BID": 869.0,
+            "PX_ASK": 879.2,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5520 Index",
+            "sequence_number": 85,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5520.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.26072,
+            "IVOL_BID": 39.64162,
+            "IVOL_ASK": 44.89676,
+            "PX_MID": 864.95,
+            "PX_BID": 859.4,
+            "PX_ASK": 870.5,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5525 Index",
+            "sequence_number": 86,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5525.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.12172,
+            "IVOL_BID": 39.28,
+            "IVOL_ASK": 44.72142,
+            "PX_MID": 860.1,
+            "PX_BID": 854.6,
+            "PX_ASK": 865.6,
+            "PX_LAST": 1195.53,
+            "VOLUME": 6.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C5530 Index",
+            "sequence_number": 87,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5530.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 42.00791,
+            "IVOL_BID": 39.45794,
+            "IVOL_ASK": 44.5898,
+            "PX_MID": 855.3,
+            "PX_BID": 849.8,
+            "PX_ASK": 860.8,
+            "PX_LAST": 1062.13,
+            "VOLUME": 11.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C5540 Index",
+            "sequence_number": 88,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5540.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 41.7795,
+            "IVOL_BID": 39.01121,
+            "IVOL_ASK": 44.31029,
+            "PX_MID": 845.7,
+            "PX_BID": 840.2,
+            "PX_ASK": 851.2,
+            "PX_LAST": 1182.67,
+            "VOLUME": 3.0,
+            "OPEN_INT": 153
+          },
+          {
+            "security": "SPXW US 04/17/26 C5550 Index",
+            "sequence_number": 89,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5550.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 41.44857,
+            "IVOL_BID": 38.81244,
+            "IVOL_ASK": 43.78855,
+            "PX_MID": 835.7,
+            "PX_BID": 830.6,
+            "PX_ASK": 840.8,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 0,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 204,
+            "atm_iv": 0.2742799685483827,
+            "skew": -0.9928600169433772,
+            "intercept": 0.2742799685483827,
+            "r_squared": 0.9901755661089258,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 340,
+          "rows_used": 340,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.037009,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.860525,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.72703,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.587004,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.5053980000000002,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.398534,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2600.0,
+              "implied_vol": 1.2988149999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.895907474506494
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2800.0,
+              "implied_vol": 1.213394,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.821799502352772
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3000.0,
+              "implied_vol": 1.0732460000000001,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.7528066308658206
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3200.0,
+              "implied_vol": 1.015573,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.6882681097282494
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=P|max=1500",
+      "underlying": "SPX Index",
+      "option_type": "P",
+      "max_contracts": 1500,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 1500,
+      "n_surface_rows": 537,
+      "n_expiries": 1,
+      "option_types_found": [
+        "P"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 1500,
+        "rows_chain": 8000,
+        "rows_chain_meta": 1500,
+        "rows_raw": 1500,
+        "rows_surface": 537,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "P"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C5965 Index",
+            "sequence_number": 150,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5965.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.55727,
+            "IVOL_BID": 32.11054,
+            "IVOL_ASK": 34.96293,
+            "PX_MID": 456.75,
+            "PX_BID": 450.9,
+            "PX_ASK": 462.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5970 Index",
+            "sequence_number": 151,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5970.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.31547,
+            "IVOL_BID": 31.92568,
+            "IVOL_ASK": 34.6675,
+            "PX_MID": 451.65,
+            "PX_BID": 446.0,
+            "PX_ASK": 457.3,
+            "PX_LAST": 703.3,
+            "VOLUME": 1.0,
+            "OPEN_INT": 1
+          },
+          {
+            "security": "SPXW US 04/17/26 C5975 Index",
+            "sequence_number": 152,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5975.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.41054,
+            "IVOL_BID": 31.96384,
+            "IVOL_ASK": 34.81781,
+            "PX_MID": 447.75,
+            "PX_BID": 441.8,
+            "PX_ASK": 453.7,
+            "PX_LAST": 500.59,
+            "VOLUME": 5.0,
+            "OPEN_INT": 5
+          },
+          {
+            "security": "SPXW US 04/17/26 C5980 Index",
+            "sequence_number": 153,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5980.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.33479,
+            "IVOL_BID": 31.74867,
+            "IVOL_ASK": 34.64016,
+            "PX_MID": 443.95,
+            "PX_BID": 438.4,
+            "PX_ASK": 449.5,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5985 Index",
+            "sequence_number": 154,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5985.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.16311,
+            "IVOL_BID": 31.85602,
+            "IVOL_ASK": 34.48277,
+            "PX_MID": 439.55,
+            "PX_BID": 434.1,
+            "PX_ASK": 445.0,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5990 Index",
+            "sequence_number": 155,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5990.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.06879,
+            "IVOL_BID": 31.83207,
+            "IVOL_ASK": 34.27786,
+            "PX_MID": 435.1,
+            "PX_BID": 429.9,
+            "PX_ASK": 440.3,
+            "PX_LAST": 908.95,
+            "VOLUME": 11.0,
+            "OPEN_INT": 11
+          },
+          {
+            "security": "SPXW US 04/17/26 C5995 Index",
+            "sequence_number": 156,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5995.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 33.10426,
+            "IVOL_BID": 31.71197,
+            "IVOL_ASK": 34.46258,
+            "PX_MID": 431.6,
+            "PX_BID": 425.7,
+            "PX_ASK": 437.5,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6000 Index",
+            "sequence_number": 157,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6000.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 32.96737,
+            "IVOL_BID": 31.70421,
+            "IVOL_ASK": 34.20302,
+            "PX_MID": 426.6,
+            "PX_BID": 421.2,
+            "PX_ASK": 432.0,
+            "PX_LAST": 448.95,
+            "VOLUME": 33.0,
+            "OPEN_INT": 159
+          },
+          {
+            "security": "SPXW US 04/17/26 C6005 Index",
+            "sequence_number": 158,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6005.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 32.8141,
+            "IVOL_BID": 31.58071,
+            "IVOL_ASK": 34.06385,
+            "PX_MID": 422.7,
+            "PX_BID": 417.4,
+            "PX_ASK": 428.0,
+            "PX_LAST": 464.42,
+            "VOLUME": 10.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C6010 Index",
+            "sequence_number": 159,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6010.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 32.73258,
+            "IVOL_BID": 31.42703,
+            "IVOL_ASK": 34.00968,
+            "PX_MID": 418.35,
+            "PX_BID": 412.7,
+            "PX_ASK": 424.0,
+            "PX_LAST": 469.5,
+            "VOLUME": 20.0,
+            "OPEN_INT": 1
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 67,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 204,
+            "atm_iv": 0.2742799685483827,
+            "skew": -0.9928600169433772,
+            "intercept": 0.2742799685483827,
+            "r_squared": 0.9901755661089258,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 537,
+          "rows_used": 470,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 200.0,
+              "implied_vol": 4.191854,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -3.4608568319680306
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 400.0,
+              "implied_vol": 3.316625,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.7677096514080852
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 600.0,
+              "implied_vol": 2.819096,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.362244543299921
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 800.0,
+              "implied_vol": 2.813158,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.07456247084814
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1000.0,
+              "implied_vol": 2.509075,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.8514189195339303
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1200.0,
+              "implied_vol": 2.2911859999999997,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.6690973627399757
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 1.806497,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.037009,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.901651,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.860525,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=C|max=300",
+      "underlying": "SPX Index",
+      "option_type": "C",
+      "max_contracts": 300,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 300,
+      "n_surface_rows": 300,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 300,
+        "rows_chain": 8000,
+        "rows_chain_meta": 300,
+        "rows_raw": 300,
+        "rows_surface": 300,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C6315 Index",
+            "sequence_number": 220,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6315.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.67156,
+            "IVOL_BID": 28.46803,
+            "IVOL_ASK": 28.87506,
+            "PX_MID": 197.4,
+            "PX_BID": 196.2,
+            "PX_ASK": 198.6,
+            "PX_LAST": 311.4,
+            "VOLUME": 9.0,
+            "OPEN_INT": 9
+          },
+          {
+            "security": "SPXW US 04/17/26 C6320 Index",
+            "sequence_number": 221,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6320.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.60512,
+            "IVOL_BID": 28.39346,
+            "IVOL_ASK": 28.81675,
+            "PX_MID": 194.35,
+            "PX_BID": 193.1,
+            "PX_ASK": 195.6,
+            "PX_LAST": 206.85,
+            "VOLUME": 25.0,
+            "OPEN_INT": 26
+          },
+          {
+            "security": "SPXW US 04/17/26 C6325 Index",
+            "sequence_number": 222,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6325.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.53493,
+            "IVOL_BID": 28.33205,
+            "IVOL_ASK": 28.73779,
+            "PX_MID": 191.3,
+            "PX_BID": 190.1,
+            "PX_ASK": 192.5,
+            "PX_LAST": 196.32,
+            "VOLUME": 6.0,
+            "OPEN_INT": 16
+          },
+          {
+            "security": "SPXW US 04/17/26 C6330 Index",
+            "sequence_number": 223,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6330.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.46943,
+            "IVOL_BID": 28.26684,
+            "IVOL_ASK": 28.67201,
+            "PX_MID": 188.3,
+            "PX_BID": 187.1,
+            "PX_ASK": 189.5,
+            "PX_LAST": 195.5,
+            "VOLUME": 29.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C6335 Index",
+            "sequence_number": 224,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6335.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.40014,
+            "IVOL_BID": 28.19781,
+            "IVOL_ASK": 28.60247,
+            "PX_MID": 185.3,
+            "PX_BID": 184.1,
+            "PX_ASK": 186.5,
+            "PX_LAST": 243.4,
+            "VOLUME": 1.0,
+            "OPEN_INT": 15
+          },
+          {
+            "security": "SPXW US 04/17/26 C6340 Index",
+            "sequence_number": 225,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6340.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.32706,
+            "IVOL_BID": 28.12496,
+            "IVOL_ASK": 28.52915,
+            "PX_MID": 182.3,
+            "PX_BID": 181.1,
+            "PX_ASK": 183.5,
+            "PX_LAST": 194.02,
+            "VOLUME": 1.0,
+            "OPEN_INT": 8
+          },
+          {
+            "security": "SPXW US 04/17/26 C6345 Index",
+            "sequence_number": 226,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6345.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.25016,
+            "IVOL_BID": 28.04827,
+            "IVOL_ASK": 28.45204,
+            "PX_MID": 179.3,
+            "PX_BID": 178.1,
+            "PX_ASK": 180.5,
+            "PX_LAST": 213.08,
+            "VOLUME": 34.0,
+            "OPEN_INT": 11
+          },
+          {
+            "security": "SPXW US 04/17/26 C6350 Index",
+            "sequence_number": 227,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6350.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.18624,
+            "IVOL_BID": 27.98454,
+            "IVOL_ASK": 28.38794,
+            "PX_MID": 176.4,
+            "PX_BID": 175.2,
+            "PX_ASK": 177.6,
+            "PX_LAST": 183.2,
+            "VOLUME": 65.0,
+            "OPEN_INT": 84
+          },
+          {
+            "security": "SPXW US 04/17/26 C6355 Index",
+            "sequence_number": 228,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6355.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.11845,
+            "IVOL_BID": 27.9169,
+            "IVOL_ASK": 28.31999,
+            "PX_MID": 173.5,
+            "PX_BID": 172.3,
+            "PX_ASK": 174.7,
+            "PX_LAST": 184.93,
+            "VOLUME": 3.0,
+            "OPEN_INT": 3
+          },
+          {
+            "security": "SPXW US 04/17/26 C6360 Index",
+            "sequence_number": 229,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6360.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.04677,
+            "IVOL_BID": 27.84535,
+            "IVOL_ASK": 28.24819,
+            "PX_MID": 170.6,
+            "PX_BID": 169.4,
+            "PX_ASK": 171.8,
+            "PX_LAST": 185.6,
+            "VOLUME": 14.0,
+            "OPEN_INT": 16
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 0,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 167,
+            "atm_iv": 0.276546687123033,
+            "skew": -0.9252113797858021,
+            "intercept": 0.276546687123033,
+            "r_squared": 0.9953705559573333,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 300,
+          "rows_used": 300,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.854855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.895558,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.4282499999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.542249,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.474799,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2600.0,
+              "implied_vol": 1.348935,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.895907474506494
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2800.0,
+              "implied_vol": 1.225575,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.821799502352772
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3000.0,
+              "implied_vol": 1.215854,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.7528066308658206
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3200.0,
+              "implied_vol": 1.101051,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.6882681097282494
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=C|max=800",
+      "underlying": "SPX Index",
+      "option_type": "C",
+      "max_contracts": 800,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 800,
+      "n_surface_rows": 460,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 800,
+        "rows_chain": 8000,
+        "rows_chain_meta": 800,
+        "rows_raw": 800,
+        "rows_surface": 460,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C6365 Index",
+            "sequence_number": 230,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6365.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.96279,
+            "IVOL_BID": 27.76987,
+            "IVOL_ASK": 28.15572,
+            "PX_MID": 167.65,
+            "PX_BID": 166.5,
+            "PX_ASK": 168.8,
+            "PX_LAST": 170.64,
+            "VOLUME": 1.0,
+            "OPEN_INT": 25
+          },
+          {
+            "security": "SPXW US 04/17/26 C6370 Index",
+            "sequence_number": 231,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6370.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.90005,
+            "IVOL_BID": 27.69043,
+            "IVOL_ASK": 28.10968,
+            "PX_MID": 164.85,
+            "PX_BID": 163.6,
+            "PX_ASK": 166.1,
+            "PX_LAST": 171.36,
+            "VOLUME": 42.0,
+            "OPEN_INT": 23
+          },
+          {
+            "security": "SPXW US 04/17/26 C6375 Index",
+            "sequence_number": 232,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6375.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.81659,
+            "IVOL_BID": 27.62378,
+            "IVOL_ASK": 28.0094,
+            "PX_MID": 161.95,
+            "PX_BID": 160.8,
+            "PX_ASK": 163.1,
+            "PX_LAST": 167.1,
+            "VOLUME": 32.0,
+            "OPEN_INT": 34
+          },
+          {
+            "security": "SPXW US 04/17/26 C6380 Index",
+            "sequence_number": 233,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6380.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.76962,
+            "IVOL_BID": 27.58665,
+            "IVOL_ASK": 27.95546,
+            "PX_MID": 159.3,
+            "PX_BID": 158.2,
+            "PX_ASK": 160.4,
+            "PX_LAST": 161.25,
+            "VOLUME": 84.0,
+            "OPEN_INT": 36
+          },
+          {
+            "security": "SPXW US 04/17/26 C6385 Index",
+            "sequence_number": 234,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6385.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.67124,
+            "IVOL_BID": 27.47844,
+            "IVOL_ASK": 27.86403,
+            "PX_MID": 156.35,
+            "PX_BID": 155.2,
+            "PX_ASK": 157.5,
+            "PX_LAST": 157.62,
+            "VOLUME": 41.0,
+            "OPEN_INT": 12
+          },
+          {
+            "security": "SPXW US 04/17/26 C6390 Index",
+            "sequence_number": 235,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6390.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.62607,
+            "IVOL_BID": 27.43324,
+            "IVOL_ASK": 27.81889,
+            "PX_MID": 153.75,
+            "PX_BID": 152.6,
+            "PX_ASK": 154.9,
+            "PX_LAST": 160.38,
+            "VOLUME": 85.0,
+            "OPEN_INT": 22
+          },
+          {
+            "security": "SPXW US 04/17/26 C6395 Index",
+            "sequence_number": 236,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6395.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.53493,
+            "IVOL_BID": 27.33364,
+            "IVOL_ASK": 27.73621,
+            "PX_MID": 150.9,
+            "PX_BID": 149.7,
+            "PX_ASK": 152.1,
+            "PX_LAST": 166.27,
+            "VOLUME": 17.0,
+            "OPEN_INT": 13
+          },
+          {
+            "security": "SPXW US 04/17/26 C6400 Index",
+            "sequence_number": 237,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6400.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.48165,
+            "IVOL_BID": 27.29705,
+            "IVOL_ASK": 27.66625,
+            "PX_MID": 148.3,
+            "PX_BID": 147.2,
+            "PX_ASK": 149.4,
+            "PX_LAST": 148.74,
+            "VOLUME": 164.0,
+            "OPEN_INT": 259
+          },
+          {
+            "security": "SPXW US 04/17/26 C6405 Index",
+            "sequence_number": 238,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6405.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.39072,
+            "IVOL_BID": 27.1892,
+            "IVOL_ASK": 27.59222,
+            "PX_MID": 145.5,
+            "PX_BID": 144.3,
+            "PX_ASK": 146.7,
+            "PX_LAST": 148.3,
+            "VOLUME": 18.0,
+            "OPEN_INT": 8
+          },
+          {
+            "security": "SPXW US 04/17/26 C6410 Index",
+            "sequence_number": 239,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6410.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 27.31243,
+            "IVOL_BID": 27.11076,
+            "IVOL_ASK": 27.51409,
+            "PX_MID": 142.8,
+            "PX_BID": 141.6,
+            "PX_ASK": 144.0,
+            "PX_LAST": 149.17,
+            "VOLUME": 17.0,
+            "OPEN_INT": 15
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 0,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 204,
+            "atm_iv": 0.2752030849602697,
+            "skew": -0.9782740646449389,
+            "intercept": 0.2752030849602697,
+            "r_squared": 0.9930062057961722,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 460,
+          "rows_used": 460,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.854855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.895558,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.4282499999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.542249,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.474799,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2600.0,
+              "implied_vol": 1.348935,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.895907474506494
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2800.0,
+              "implied_vol": 1.225575,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.821799502352772
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3000.0,
+              "implied_vol": 1.215854,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.7528066308658206
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3200.0,
+              "implied_vol": 1.101051,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.6882681097282494
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=C|max=1500",
+      "underlying": "SPX Index",
+      "option_type": "C",
+      "max_contracts": 1500,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 1500,
+      "n_surface_rows": 963,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 1500,
+        "rows_chain": 8000,
+        "rows_chain_meta": 1500,
+        "rows_raw": 1500,
+        "rows_surface": 963,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C6465 Index",
+            "sequence_number": 250,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6465.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.47432,
+            "IVOL_BID": 26.28571,
+            "IVOL_ASK": 26.66285,
+            "PX_MID": 114.9,
+            "PX_BID": 113.8,
+            "PX_ASK": 116.0,
+            "PX_LAST": 134.45,
+            "VOLUME": 27.0,
+            "OPEN_INT": 18
+          },
+          {
+            "security": "SPXW US 04/17/26 C6470 Index",
+            "sequence_number": 251,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6470.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.395,
+            "IVOL_BID": 26.20583,
+            "IVOL_ASK": 26.58406,
+            "PX_MID": 112.5,
+            "PX_BID": 111.4,
+            "PX_ASK": 113.6,
+            "PX_LAST": 115.2,
+            "VOLUME": 87.0,
+            "OPEN_INT": 38
+          },
+          {
+            "security": "SPXW US 04/17/26 C6475 Index",
+            "sequence_number": 252,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6475.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.31112,
+            "IVOL_BID": 26.12135,
+            "IVOL_ASK": 26.50077,
+            "PX_MID": 110.1,
+            "PX_BID": 109.0,
+            "PX_ASK": 111.2,
+            "PX_LAST": 115.6,
+            "VOLUME": 56.0,
+            "OPEN_INT": 72
+          },
+          {
+            "security": "SPXW US 04/17/26 C6480 Index",
+            "sequence_number": 253,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6480.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.24857,
+            "IVOL_BID": 26.04952,
+            "IVOL_ASK": 26.44748,
+            "PX_MID": 107.85,
+            "PX_BID": 106.7,
+            "PX_ASK": 109.0,
+            "PX_LAST": 116.44,
+            "VOLUME": 12.0,
+            "OPEN_INT": 19
+          },
+          {
+            "security": "SPXW US 04/17/26 C6485 Index",
+            "sequence_number": 254,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6485.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.14678,
+            "IVOL_BID": 25.9557,
+            "IVOL_ASK": 26.33773,
+            "PX_MID": 105.4,
+            "PX_BID": 104.3,
+            "PX_ASK": 106.5,
+            "PX_LAST": 121.73,
+            "VOLUME": 8.0,
+            "OPEN_INT": 25
+          },
+          {
+            "security": "SPXW US 04/17/26 C6490 Index",
+            "sequence_number": 255,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6490.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.07502,
+            "IVOL_BID": 25.89194,
+            "IVOL_ASK": 26.25796,
+            "PX_MID": 103.15,
+            "PX_BID": 102.1,
+            "PX_ASK": 104.2,
+            "PX_LAST": 105.19,
+            "VOLUME": 47.0,
+            "OPEN_INT": 36
+          },
+          {
+            "security": "SPXW US 04/17/26 C6495 Index",
+            "sequence_number": 256,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6495.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 26.00737,
+            "IVOL_BID": 25.80605,
+            "IVOL_ASK": 26.20849,
+            "PX_MID": 100.95,
+            "PX_BID": 99.8,
+            "PX_ASK": 102.1,
+            "PX_LAST": 113.37,
+            "VOLUME": 10.0,
+            "OPEN_INT": 68
+          },
+          {
+            "security": "SPXW US 04/17/26 C6500 Index",
+            "sequence_number": 257,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6500.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 25.92627,
+            "IVOL_BID": 25.75049,
+            "IVOL_ASK": 26.1019,
+            "PX_MID": 98.7,
+            "PX_BID": 97.7,
+            "PX_ASK": 99.7,
+            "PX_LAST": 103.0,
+            "VOLUME": 640.0,
+            "OPEN_INT": 672
+          },
+          {
+            "security": "SPXW US 04/17/26 C6505 Index",
+            "sequence_number": 258,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6505.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 25.83156,
+            "IVOL_BID": 25.63732,
+            "IVOL_ASK": 26.0256,
+            "PX_MID": 96.4,
+            "PX_BID": 95.3,
+            "PX_ASK": 97.5,
+            "PX_LAST": 107.0,
+            "VOLUME": 8.0,
+            "OPEN_INT": 63
+          },
+          {
+            "security": "SPXW US 04/17/26 C6510 Index",
+            "sequence_number": 259,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6510.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 25.76734,
+            "IVOL_BID": 25.58996,
+            "IVOL_ASK": 25.94454,
+            "PX_MID": 94.3,
+            "PX_BID": 93.3,
+            "PX_ASK": 95.3,
+            "PX_LAST": 95.98,
+            "VOLUME": 377.0,
+            "OPEN_INT": 476
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 10,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 408,
+            "atm_iv": 0.27441399330139404,
+            "skew": -0.9800379404203353,
+            "intercept": 0.27441399330139404,
+            "r_squared": 0.992697849451099,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 963,
+          "rows_used": 953,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.854855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.895558,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.516164,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.4282499999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.079448,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.542249,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.35266,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.474799,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2500.0,
+              "implied_vol": 1.15855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9351281876597752
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=ALL|max=300",
+      "underlying": "SPX Index",
+      "option_type": null,
+      "max_contracts": 300,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 300,
+      "n_surface_rows": 300,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 300,
+        "rows_chain": 8000,
+        "rows_chain_meta": 300,
+        "rows_raw": 300,
+        "rows_surface": 300,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C4100 Index",
+            "sequence_number": 20,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4100.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 80.65579,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 100.9367,
+            "PX_MID": 2263.85,
+            "PX_BID": 2252.1,
+            "PX_ASK": 2275.6,
+            "PX_LAST": 2631.6,
+            "VOLUME": 26.0,
+            "OPEN_INT": 31
+          },
+          {
+            "security": "SPXW US 04/17/26 C4150 Index",
+            "sequence_number": 21,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4150.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 79.92125,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 99.02514,
+            "PX_MID": 2214.15,
+            "PX_BID": 2202.4,
+            "PX_ASK": 2225.9,
+            "PX_LAST": 2582.1,
+            "VOLUME": 26.0,
+            "OPEN_INT": 31
+          },
+          {
+            "security": "SPXW US 04/17/26 C4200 Index",
+            "sequence_number": 22,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4200.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 76.72772,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 89.63063,
+            "PX_MID": 2165.55,
+            "PX_BID": 2159.0,
+            "PX_ASK": 2172.1,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4250 Index",
+            "sequence_number": 23,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4250.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 74.88726,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 87.67267,
+            "PX_MID": 2115.7,
+            "PX_BID": 2109.0,
+            "PX_ASK": 2122.4,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4300 Index",
+            "sequence_number": 24,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4300.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 74.21504,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 85.34622,
+            "PX_MID": 2065.55,
+            "PX_BID": 2059.4,
+            "PX_ASK": 2071.7,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4350 Index",
+            "sequence_number": 25,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4350.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 72.5164,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 83.56614,
+            "PX_MID": 2016.25,
+            "PX_BID": 2009.9,
+            "PX_ASK": 2022.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4400 Index",
+            "sequence_number": 26,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4400.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 71.14075,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 81.6403,
+            "PX_MID": 1966.6,
+            "PX_BID": 1960.3,
+            "PX_ASK": 1972.9,
+            "PX_LAST": 2510.09,
+            "VOLUME": 2.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4450 Index",
+            "sequence_number": 27,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4450.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 69.87506,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 80.0441,
+            "PX_MID": 1917.25,
+            "PX_BID": 1910.8,
+            "PX_ASK": 1923.7,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C4500 Index",
+            "sequence_number": 28,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4500.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 68.44661,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 78.11444,
+            "PX_MID": 1867.6,
+            "PX_BID": 1861.2,
+            "PX_ASK": 1874.0,
+            "PX_LAST": 2111.72,
+            "VOLUME": 5.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C4550 Index",
+            "sequence_number": 29,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 4550.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 67.66126,
+            "IVOL_BID": NaN,
+            "IVOL_ASK": 76.31084,
+            "PX_MID": 1818.3,
+            "PX_BID": 1812.2,
+            "PX_ASK": 1824.4,
+            "PX_LAST": 2073.0,
+            "VOLUME": 1.0,
+            "OPEN_INT": 1
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 0,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 167,
+            "atm_iv": 0.276546687123033,
+            "skew": -0.9252113797858021,
+            "intercept": 0.276546687123033,
+            "r_squared": 0.9953705559573333,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 300,
+          "rows_used": 300,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.854855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.895558,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.4282499999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.542249,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2400.0,
+              "implied_vol": 1.474799,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.9759501821800304
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2600.0,
+              "implied_vol": 1.348935,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.895907474506494
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2800.0,
+              "implied_vol": 1.225575,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.821799502352772
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3000.0,
+              "implied_vol": 1.215854,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.7528066308658206
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 3200.0,
+              "implied_vol": 1.101051,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -0.6882681097282494
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=ALL|max=800",
+      "underlying": "SPX Index",
+      "option_type": null,
+      "max_contracts": 800,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 800,
+      "n_surface_rows": 800,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C",
+        "P"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 800,
+        "rows_chain": 8000,
+        "rows_chain_meta": 800,
+        "rows_raw": 800,
+        "rows_surface": 800,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C",
+          "P"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C6315 Index",
+            "sequence_number": 220,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6315.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.67156,
+            "IVOL_BID": 28.46803,
+            "IVOL_ASK": 28.87506,
+            "PX_MID": 197.4,
+            "PX_BID": 196.2,
+            "PX_ASK": 198.6,
+            "PX_LAST": 311.4,
+            "VOLUME": 9.0,
+            "OPEN_INT": 9
+          },
+          {
+            "security": "SPXW US 04/17/26 C6320 Index",
+            "sequence_number": 221,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6320.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.60512,
+            "IVOL_BID": 28.39346,
+            "IVOL_ASK": 28.81675,
+            "PX_MID": 194.35,
+            "PX_BID": 193.1,
+            "PX_ASK": 195.6,
+            "PX_LAST": 206.85,
+            "VOLUME": 25.0,
+            "OPEN_INT": 26
+          },
+          {
+            "security": "SPXW US 04/17/26 C6325 Index",
+            "sequence_number": 222,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6325.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.53493,
+            "IVOL_BID": 28.33205,
+            "IVOL_ASK": 28.73779,
+            "PX_MID": 191.3,
+            "PX_BID": 190.1,
+            "PX_ASK": 192.5,
+            "PX_LAST": 196.32,
+            "VOLUME": 6.0,
+            "OPEN_INT": 16
+          },
+          {
+            "security": "SPXW US 04/17/26 C6330 Index",
+            "sequence_number": 223,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6330.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.46943,
+            "IVOL_BID": 28.26684,
+            "IVOL_ASK": 28.67201,
+            "PX_MID": 188.3,
+            "PX_BID": 187.1,
+            "PX_ASK": 189.5,
+            "PX_LAST": 195.5,
+            "VOLUME": 29.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C6335 Index",
+            "sequence_number": 224,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6335.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.40014,
+            "IVOL_BID": 28.19781,
+            "IVOL_ASK": 28.60247,
+            "PX_MID": 185.3,
+            "PX_BID": 184.1,
+            "PX_ASK": 186.5,
+            "PX_LAST": 243.4,
+            "VOLUME": 1.0,
+            "OPEN_INT": 15
+          },
+          {
+            "security": "SPXW US 04/17/26 C6340 Index",
+            "sequence_number": 225,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6340.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.32706,
+            "IVOL_BID": 28.12496,
+            "IVOL_ASK": 28.52915,
+            "PX_MID": 182.3,
+            "PX_BID": 181.1,
+            "PX_ASK": 183.5,
+            "PX_LAST": 194.02,
+            "VOLUME": 1.0,
+            "OPEN_INT": 8
+          },
+          {
+            "security": "SPXW US 04/17/26 C6345 Index",
+            "sequence_number": 226,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6345.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.25016,
+            "IVOL_BID": 28.04827,
+            "IVOL_ASK": 28.45204,
+            "PX_MID": 179.3,
+            "PX_BID": 178.1,
+            "PX_ASK": 180.5,
+            "PX_LAST": 213.08,
+            "VOLUME": 34.0,
+            "OPEN_INT": 11
+          },
+          {
+            "security": "SPXW US 04/17/26 C6350 Index",
+            "sequence_number": 227,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6350.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.18624,
+            "IVOL_BID": 27.98454,
+            "IVOL_ASK": 28.38794,
+            "PX_MID": 176.4,
+            "PX_BID": 175.2,
+            "PX_ASK": 177.6,
+            "PX_LAST": 183.2,
+            "VOLUME": 65.0,
+            "OPEN_INT": 84
+          },
+          {
+            "security": "SPXW US 04/17/26 C6355 Index",
+            "sequence_number": 228,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6355.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.11845,
+            "IVOL_BID": 27.9169,
+            "IVOL_ASK": 28.31999,
+            "PX_MID": 173.5,
+            "PX_BID": 172.3,
+            "PX_ASK": 174.7,
+            "PX_LAST": 184.93,
+            "VOLUME": 3.0,
+            "OPEN_INT": 3
+          },
+          {
+            "security": "SPXW US 04/17/26 C6360 Index",
+            "sequence_number": 229,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 6360.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 28.04677,
+            "IVOL_BID": 27.84535,
+            "IVOL_ASK": 28.24819,
+            "PX_MID": 170.6,
+            "PX_BID": 169.4,
+            "PX_ASK": 171.8,
+            "PX_LAST": 185.6,
+            "VOLUME": 14.0,
+            "OPEN_INT": 16
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 0,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 408,
+            "atm_iv": 0.2747415267543263,
+            "skew": -0.985567040794158,
+            "intercept": 0.2747415267543263,
+            "r_squared": 0.9913603149220543,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 800,
+          "rows_used": 800,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.037009,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.854855,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.860525,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.895558,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1800.0,
+              "implied_vol": 1.72703,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.2636322546318113
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.4282499999999998,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2000.0,
+              "implied_vol": 1.587004,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.158271738973985
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.542249,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 2200.0,
+              "implied_vol": 1.5053980000000002,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.0629615591696602
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    },
+    {
+      "attempt_name": "SPX Index|type=ALL|max=1500",
+      "underlying": "SPX Index",
+      "option_type": null,
+      "max_contracts": 1500,
+      "ok": true,
+      "n_chain_rows": 8000,
+      "n_snapshot_rows": 1500,
+      "n_surface_rows": 1500,
+      "n_expiries": 1,
+      "option_types_found": [
+        "C",
+        "P"
+      ],
+      "diagnostics": {
+        "spot": 6368.85,
+        "chain_frame_columns": [
+          "security",
+          "Security Description"
+        ],
+        "chain_candidates": 1500,
+        "rows_chain": 8000,
+        "rows_chain_meta": 1500,
+        "rows_raw": 1500,
+        "rows_surface": 1500,
+        "valuation_date": "2026-03-28",
+        "expiry_min": "2026-04-17",
+        "expiry_max": "2026-04-17",
+        "option_types": [
+          "C",
+          "P"
+        ],
+        "chain_debug": {
+          "OPT_TICKERS": {
+            "rows": 0,
+            "columns": []
+          },
+          "OPT_CHAIN": {
+            "rows": 8000,
+            "columns": [
+              "security",
+              "Security Description"
+            ]
+          }
+        },
+        "chain_preview": [
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C1800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2200 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2400 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2600 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C2800 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3000 Index"
+          },
+          {
+            "security": "SPX Index",
+            "Security Description": "SPXW US 04/17/26 C3200 Index"
+          }
+        ],
+        "raw_preview": [
+          {
+            "security": "SPXW US 04/17/26 C5000 Index",
+            "sequence_number": 40,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5000.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 55.42003,
+            "IVOL_BID": 47.74522,
+            "IVOL_ASK": 60.71939,
+            "PX_MID": 1373.05,
+            "PX_BID": 1367.2,
+            "PX_ASK": 1378.9,
+            "PX_LAST": 1392.48,
+            "VOLUME": 49.0,
+            "OPEN_INT": 159
+          },
+          {
+            "security": "SPXW US 04/17/26 C5025 Index",
+            "sequence_number": 41,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5025.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 54.80883,
+            "IVOL_BID": 47.51649,
+            "IVOL_ASK": 59.94938,
+            "PX_MID": 1348.45,
+            "PX_BID": 1342.6,
+            "PX_ASK": 1354.3,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5050 Index",
+            "sequence_number": 42,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5050.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 54.18231,
+            "IVOL_BID": 47.00103,
+            "IVOL_ASK": 59.09687,
+            "PX_MID": 1323.85,
+            "PX_BID": 1318.1,
+            "PX_ASK": 1329.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5075 Index",
+            "sequence_number": 43,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5075.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 53.05969,
+            "IVOL_BID": 46.69258,
+            "IVOL_ASK": 57.74715,
+            "PX_MID": 1298.75,
+            "PX_BID": 1293.5,
+            "PX_ASK": 1304.0,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5100 Index",
+            "sequence_number": 44,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5100.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 52.84183,
+            "IVOL_BID": 46.34342,
+            "IVOL_ASK": 57.44812,
+            "PX_MID": 1274.6,
+            "PX_BID": 1268.9,
+            "PX_ASK": 1280.3,
+            "PX_LAST": 1615.85,
+            "VOLUME": 1.0,
+            "OPEN_INT": 1
+          },
+          {
+            "security": "SPXW US 04/17/26 C5125 Index",
+            "sequence_number": 45,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5125.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 52.17126,
+            "IVOL_BID": 45.95139,
+            "IVOL_ASK": 56.65665,
+            "PX_MID": 1250.0,
+            "PX_BID": 1244.3,
+            "PX_ASK": 1255.7,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5150 Index",
+            "sequence_number": 46,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5150.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 51.54174,
+            "IVOL_BID": 45.66991,
+            "IVOL_ASK": 55.85739,
+            "PX_MID": 1225.45,
+            "PX_BID": 1219.8,
+            "PX_ASK": 1231.1,
+            "PX_LAST": 1244.68,
+            "VOLUME": 3.0,
+            "OPEN_INT": 6
+          },
+          {
+            "security": "SPXW US 04/17/26 C5175 Index",
+            "sequence_number": 47,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5175.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 50.47952,
+            "IVOL_BID": 45.2076,
+            "IVOL_ASK": 54.91929,
+            "PX_MID": 1200.4,
+            "PX_BID": 1195.2,
+            "PX_ASK": 1205.6,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          },
+          {
+            "security": "SPXW US 04/17/26 C5200 Index",
+            "sequence_number": 48,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5200.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 50.19542,
+            "IVOL_BID": 44.84205,
+            "IVOL_ASK": 54.23737,
+            "PX_MID": 1176.3,
+            "PX_BID": 1170.7,
+            "PX_ASK": 1181.9,
+            "PX_LAST": 1388.93,
+            "VOLUME": 1.0,
+            "OPEN_INT": 66
+          },
+          {
+            "security": "SPXW US 04/17/26 C5220 Index",
+            "sequence_number": 49,
+            "errors": null,
+            "OPT_EXPIRE_DT": "2026-04-17",
+            "OPT_STRIKE_PX": 5220.0,
+            "OPT_PUT_CALL": "Call",
+            "IVOL_MID": 49.3318,
+            "IVOL_BID": 44.1153,
+            "IVOL_ASK": 53.44222,
+            "PX_MID": 1156.25,
+            "PX_BID": 1150.5,
+            "PX_ASK": 1162.0,
+            "PX_LAST": NaN,
+            "VOLUME": 0.0,
+            "OPEN_INT": 0
+          }
+        ],
+        "surface_nulls": {
+          "valuation_date": 0,
+          "underlying": 0,
+          "option_ticker": 0,
+          "expiry": 0,
+          "tau_years": 0,
+          "option_type": 0,
+          "strike": 0,
+          "spot": 0,
+          "implied_vol": 77,
+          "mid_price": 0,
+          "volume": 0,
+          "open_interest": 0
+        }
+      },
+      "calibration": {
+        "security": "SPX Index",
+        "valuation_date": "2026-03-28",
+        "slices": [
+          {
+            "expiry": "2026-04-17",
+            "tau_years": 0.0547945205479452,
+            "n_points": 612,
+            "atm_iv": 0.2743693183837236,
+            "skew": -0.9843119659280163,
+            "intercept": 0.2743693183837236,
+            "r_squared": 0.9917850629201106,
+            "method": "iv_vs_log_moneyness"
+          }
+        ],
+        "scaling_fit": null,
+        "diagnostics": {
+          "rows_in": 1500,
+          "rows_used": 1423,
+          "atm_log_moneyness_band": 0.08,
+          "min_points_per_slice": 5
+        },
+        "surface_preview": {
+          "rows": [
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 200.0,
+              "implied_vol": 4.191854,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -3.4608568319680306
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 400.0,
+              "implied_vol": 3.316625,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.7677096514080852
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 600.0,
+              "implied_vol": 2.819096,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.362244543299921
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 800.0,
+              "implied_vol": 2.813158,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -2.07456247084814
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1000.0,
+              "implied_vol": 2.509075,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.8514189195339303
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1200.0,
+              "implied_vol": 2.2911859999999997,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.6690973627399757
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 1.806497,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.111095,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1400.0,
+              "implied_vol": 2.037009,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.5149466829127174
+            },
+            {
+              "expiry": "2026-04-17 00:00:00",
+              "strike": 1600.0,
+              "implied_vol": 1.901651,
+              "tau_years": 0.0547945205479452,
+              "log_moneyness": -1.3814152902881947
+            }
+          ]
+        }
+      },
+      "error_type": null,
+      "error": null
+    }
+  ]
+}

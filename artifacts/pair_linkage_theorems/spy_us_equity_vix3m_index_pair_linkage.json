@@ -1,0 +1,1955 @@
+{
+  "created_at": "2026-03-28T01:40:49+00:00",
+  "left_security": "SPY US Equity",
+  "right_security": "VIX3M Index",
+  "family_matched": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "prompt": "Propose a pair-linkage theorem for SPY US Equity and VIX3M Index. The theorem must be genuinely about the interaction between the two objects, not a reused single-name rough-variance theorem. Focus on spot-volatility coupling, variance scaling transmission, regime dependence, term-structure state, tail-risk state, cross-object linkage. State: (1) the pair-level object, (2) the predicted relationship or monotonicity, (3) empirical Bloomberg feature signatures, (4) failure conditions, and (5) symbolic structure that can be checked directly.",
+      "selected_title": "Evidence-anchored structural conjecture",
+      "theorem_registry": {
+        "action": "existing",
+        "entry_id": "thm_b799d5af3b024d41",
+        "artifact_hash": "555ab82674293e4c8f72889fe0f4b520b9660c56bc004498392fb840719f714c",
+        "status": "speculative_candidate",
+        "title": "Evidence-anchored structural conjecture"
+      },
+      "mode_used": "theorem"
+    }
+  ],
+  "accepted_result": {
+    "mode_used": "theorem",
+    "response": "Research artifact: Evidence-anchored structural conjecture\nStatus: speculative_candidate\nScore: 0.452\n\nStatement:\nConjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=0.745\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** - Volatility regime: compressed_volatility Test whether roughness estimates co-move with realized-volatility r\n- [bloomberg_memory] VIX3M Index empirical research memory (VIX3M Index) | score=0.731\n  This note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** # Bloomberg Research Memory: VIX3M Index - Volatility regime: compressed_volatility Test whether roughness estimates co-move with realized-volatility regim\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.579\n  QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. - Securities represented: AAPL US Equity, SPY US Equity Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain. Route market-state questions to \n- [registry] Evidence-anchored structural conjecture | score=0.540\n  Statement: Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel. Failure conditions: Retrieved evidence remains too dispersed across unrelated mathematical families.; No exact excerpt currently pins down every constant or normalization.; Add explicit symbolic tasks with lhs/rhs \n- [book] NONLINEAR OPTION PRICING, GUYON .pdf | page 356 | chunk 1 | score=0.493\n  For instance, the resulting correlation may have a weird skew (dependence on the asset values), or its skew may be far from the one historically observed, or it may generate prices of other options that are far from market quotes. This family is parameterized by two functions a and b that depend on time and on the values of all the underlying assets, and may depend as well on any set of path-dependent variables. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) \n- [book] NONLINEAR OPTION PRICING, GUYON .pdf | page 356 | chunk 2 | score=0.491\n  Using the new family, one can now design one\u2019s favorite local correlation model in order to match a view on a correlation skew, and/or reproduce some features of historical data, and/or calibrate to other option prices, on top of reproducing the market smile of the basket, be it a stock index, a cross-FX rate, or an interest rate spread. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is. If for some time and asset valu\n\nAssumptions:\n- Empirical scope anchored to SPY US Equity.\n\nNext actions:\n- Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.\n- Refine the candidate so the implied empirical signature is sharper and testable.\n- Collect stronger exact excerpts from the book-memory layer.\n- Add a formal symbolic derivation or export the candidate to Lean for proof work.\n\nTheorem registry:\n- action: existing\n- entry_id: thm_b799d5af3b024d41\n- status: speculative_candidate",
+    "sources": [
+      {
+        "score": 1.1379306077303952,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 221,
+        "chunk_no": 1,
+        "text": "10.0.3. Description of main results 203 Theorem 10.2. With C \u03b5 = C \u03b5(t) as in Theorem 10.1, define the renormalized integral approxi- mation Z T Z T I\u02dc \u03b5 := I\u02dcf\u03b5 (T) := f( t )dW\u03b5t \u2212 bW\u03b5 C \u03b5(t) f \u2032( bW\u03b5t )dt, (10.14) 0 0 and also the approximate total variance \u03b5 \u03b5 Z T t )dt. V := V f (T) := f 2( bW\u03b5 0 Then the price of a European call option, under the pricing model (10.1), (10.3), struck at K with time T to maturity, is given by E[(S T \u2212K)+] = lim E \u03a8( I\u02dc \u03b5, V \u03b5) , \u03b5\u21920 where \u03a8(I , V ) := CBS S 0 exp \u03f1I \u2212\u03f12 V , K, \u00af\u03f12V . (10.15) 2 Similar results hold for more general (\u201cnonsimple\u201d) rough volatility models. Let us discuss right away how to reduce the statements of Theorems 10.1 and 10.2 to the actual convergence statements that will occupy us in Section 10.2. First, note that Z t Z t 2 S t = S 0 exp f bWs dBs \u221212 f bWs ds . (10.16) 0 0 \u03b5The approximations W\u03b5, W \u03b5, and B\u03b5 := \u03f1W\u03b5 + \u00af\u03f1W converge uniformly to the obvious limits, so that it suffices to understand the convergence of the stochastic integral. Note that bW is heavily correlated with W but independent of W",
+        "dense_score": 0.6766977310180664,
+        "lexical_score": 0.2328767123287671
+      },
+      {
+        "score": 1.1237107239684014,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 224,
+        "chunk_no": 1,
+        "text": "206 Chapter 10. Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. Remark 10.0.4. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 . \u03f1u(z) cHtH\u22121 f(z) Following the approach of [40], Theorem 10.4 allows for not only rigorous justification of these formula, but also for the computation of higher-order smile features, though this is not pursued in this chapter",
+        "dense_score": 0.6834367513656616,
+        "lexical_score": 0.273972602739726
+      },
+      {
+        "score": 1.1214064712393774,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 179,
+        "chunk_no": 1,
+        "text": "8.2. At-the-money short-time skew 161 Theorem 8.6. If Assumption 8.5 holds and limT\u21930 sups,r,u\u2208[0,T] E (vsvr \u2212v2u)2 = 0, and there exists v\u20320 \u2208F0 such that 1 Z T Z T lim E0[Dsvr]drds =: v\u20320, T\u21930 T \u03b4+2 0 s then \u2202k\u03c3imp(k, T) \u03f1v\u20320 = lim . (8.12) v0 T\u21930 T \u03b4 k=X0 Remark 8.2.1. The lim sup assumption in the theorem may not always be straightforward to check. However, it is implied by the condition that the spot volatility (vt)t\u22650 converges to v0 = \u03c30 > 0 uniformly in time and in L4. It is clear that it holds for both the rough Stein\u2013Stein and the rough Bergomi models. Example 8.7. In the rough Stein\u2013Stein model (8.6) equipped with the Riemann\u2013Liouville ker- \u221a 2 for s < r, and therefore the first bound in Assumption 8.5nel (8.4), dsvr = 2H\u03c3\u20320(r \u2212s)H\u22121 holds with \u03b4 = H \u221212 and C = 2H(\u03c3\u20320)2, and the second one holds trivially as the second deriv- ative is null. It is straightforward to compute the limit in Theorem 8.6 (it is, in fact, independent of T) as \u221a 1 Z T Z T 2H\u03c3\u20320 E0[Dsvr]drds = v\u20320 := 3 T H+ 23 0 s (H + 12)(H + 2)",
+        "dense_score": 0.6871598958969116,
+        "lexical_score": 0.2465753424657534
+      },
+      {
+        "score": 1.1190393291434197,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 231,
+        "chunk_no": 1,
+        "text": "10.2. The rough pricing regularity structure 213 Lemma 10.7. The pair (\u03a0, \u0393) as defined above defines (a.s.) a model on (T , A). Proof. The only symbol in S for which (10.31) is not straightforward is \u039eI(\u039e)m, where the statement follows by Chen\u2019s relation. The bounds (10.32) and (10.33) follow for 1 trivially and for I(\u039e)m by the H \u2212\u03ba\u2032-H\u00f6lder regularity of bW, \u03ba\u2032 \u2208(0, H). It is straightforward to check the condition (10.33) by using the rule \u0393ts\u03c4\u03c4\u2032 = \u0393ts\u03c4 \u00b7 \u0393ts\u03c4\u2032, so that we are only left with the task of bounding \u03a0s\u039eI(\u039e)m(\u03c6\u03bbs). Along the lines of the proof of [147, Theorem 3.1], it follows that |Wms,t| \u2264C|s \u2212t|mH+ 1 2 \u2212(m+1)\u03ba (where C > 0 denotes a random constant with C \u2208T p<\u221eLp), so that Z |\u03a0sI(\u039e)m\u039e(\u03c6\u03bbs)| = \u03c6\u03bbs \u2032(t)Wm(s, t) dt dt Z \u2264C \u03c6\u2032\u22121(t \u2212s))|s \u2212t|mH+ 21 \u2212(m+1)\u03ba \u03bb2 \u2264C\u03bbmH\u221212 \u2212(m+1)\u03ba = C\u03bb|I(\u039e)m\u039e|. As we will see in Section 10.2.2 this model is the toolbox from which we can build pathwise dW(r)",
+        "dense_score": 0.6787653565406799,
+        "lexical_score": 0.273972602739726
+      },
+      {
+        "score": 1.1115506362261838,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 230,
+        "chunk_no": 1,
+        "text": "212 Chapter 10. Regularity structure for rough volatility From W we now construct the fBm bW in the Riemann\u2013Liouville sense with Hurst index 1 H \u2208(0, 2] as \u221a Z t := \u02d9W \u22c6K(t) = 2H |t \u2212r|H\u221212 dWr, bWt 0 \u221a 2 denotes the Volterra kernel. We also write K(s, t) := K(t \u2212s).where K(t) = 2H 1t>0 tH\u22121 To give meaning to the product terms \u039eI(\u039e)k we follow the ideas from rough paths and define an \u201citerated integral\u201d for s, t \u2208R, s \u2264t, as Z t Wm s,t := ( bWr \u2212bWs)m dWr. (10.28) s Wm(s, t) satisfies the following modification of Chen\u2019s relation. Lemma 10.6. Wm as defined in (10.28) satisfies m m Wm s,t = Wms,u + X u,t (10.29) ( bWu \u2212bWs)lWm\u2212l l l=0 for s, u, t \u2208R, s \u2264u \u2264t. Proof. This is a direct consequence of the binomial theorem. We extend the domain of Wm to all of R2 by imposing Chen\u2019s relation for all s, u, t \u2208R, i.e., for t, s \u2208R, t \u2264s, we set m m Wm s,t := \u2212 X t,s . (10.30) (bWt \u2212bWs)lWm\u2212l l l=0 We are now in position to define a model (\u03a0, \u0393) that gives rigorous meaning to the interpre- tation we gave above for \u039e, I(\u039e), \u039eI(\u039e), . . .",
+        "dense_score": 0.680317759513855,
+        "lexical_score": 0.2328767123287671
+      },
+      {
+        "score": 1.0771521775363244,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 96,
+        "chunk_no": 1,
+        "text": "74 Chapter 3. No-arbitrage implies power-law market impact and rough volatility Finally, Z +\u221e Z t PTt = 1 + \u03c8T(v)dv dNa,Tv \u2212\u03bba,Tv dv \u2212dNb,Tv + \u03bbb,Tv dv 0 0 Z +\u221e = 1 + \u03c8T(v)dv (Ma,Tt \u2212Mb,Tt ). 0 Lemma 3.8 leads to T 1 \u2212aT Z +\u221e Pt = 1 + \u03c8T(v)dv (Ma,TtT \u2212Mb,TtT ). T\u00b5T 0 Step 3 We temporarily drop the superscripts a and b. Indeed, the results are valid for both buy and sell order flows. Consider the sequences 1 \u2212aT 1 \u2212aT Z tT r T\u00b5T XTt = NTtT, \u039bTt = \u03bbTs ds, ZTt = XTt \u2212\u039bTt (3.13) T\u00b5T T\u00b5T 0 1 \u2212aT defined for t \u2208[0, 1]. The following result is borrowed from [215]. Proposition 3.9. The sequence (\u039bT, XT, ZT) is tight. Furthermore, for any limit point (\u039b, X, Z) of (\u039bT, XT, ZT), Z is a continuous martingale, [Z, Z] = X, and \u039b = X. In addition, we have the following proposition which extends Theorem 3.1 in [215]. Proposition 3.10",
+        "dense_score": 0.6879740953445435,
+        "lexical_score": 0.1780821917808219
+      },
+      {
+        "score": 1.0475294402854083,
+        "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "page_no": 24,
+        "chunk_no": 1,
+        "text": "Part I Arbitrage Pricing Theory Overview The key results of \ufb01nance that are successfully used in practice are based on the three fundamental theorems of asset pricing. Part 1 presents these three theorems. The applications of these three theorems are also discussed, including equivalent local martingale measures (state price densities), systematic risk, multiple-factor beta models, derivatives pricing, derivatives hedging, and asset price bubbles. All of these implications are based on the existence of an equivalent local martingale measure. The three fundamental theorems of asset pricing relate to the existence of an equivalent local martingale measure, its uniqueness, and its extensions. Roughly speaking, the \ufb01rst fundamental theorem of asset pricing equates no arbitrage with the existence of an equivalent local martingale measure. The second fundamental theorem relates market completeness to the uniqueness of the equivalent local martingale measure",
+        "dense_score": 0.6793102622032166,
+        "lexical_score": 0.2191780821917808
+      },
+      {
+        "score": 0.9813396422503745,
+        "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "page_no": 55,
+        "chunk_no": 1,
+        "text": "32 2 The Fundamental Theorems from the set of trading strategies before due to the modi\ufb01ed integrability conditions needed to guarantee that the relevant integrals exist. This section presents the new notation and the evolutions for the mma and the risky assets under this change of numeraire. Let Bt = BtBt = 1 for all t \u22650, this represents the normalized value of the money market account (mma). Let St = (S1(t), . . . , Sn(t))\u2032 \u2265 0 represent the risky asset prices when normalized by the value of the mma, i.e. Si(t) = Si(t)Bt . Then, dBt = 0 and (2.5) Bt dSt dSt = \u2212rtdt. (2.6) St St Proof Using the integration by parts formula Theorem 3 in Chap. 1, one obtains (dropping the t\u2019s) d BS = BdS1 + Sd B1 = dSS BS \u2212SB dBB . The \ufb01rst equality uses d S, B1 = 0, since B is continuous and of \ufb01nite variation (use Lemmas 2 and 7 in Chap. 1). Substitution yields dS = dSS S \u2212S dBB . Algebra completes the proof. Recall that L (S) is the set of predictable processes integrable with respect to S and O is the set of optional processes",
+        "dense_score": 0.6921615600585938,
+        "lexical_score": 0.1780821917808219
+      },
+      {
+        "score": 0.9808195256533687,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 139,
+        "chunk_no": 2,
+        "text": ". A natural choice of the two would be the underlying asset and the weighted variance swap (with a fixed maturity). As a hedging instrument, the replication portfolio for the weighted variance swap is more convenient than the weighted variance swap itself because it is a local martingale. Let Z t Z S 0 dK Z \u221e dK UTt := (h\u2032(S 0) \u2212h\u2032(S u))dS u + 2 Pt(K, T) + 2 Ct(K, T) 0 0 f(K)2 S 0 f(K)2 be the time t value of the replication portfolio with maturity T initiated at time 0. We have then Z T UTt = EQ Vuudu Ft 0 Z T Z u = EQ Vu0 + Vus g(u \u2212s)dWs du Ft 0 0 Z T Z t Z T = Vu0du + dWs Vus g(u \u2212s)du. 0 0 s Therefore, dUTt = DgUTt dWt, (6.6) where Z T Z T \u2202Uut DgUTt = Vut g(u \u2212t)du = g(u \u2212t)du. t t \u2202u Proposition 6.3. For any F \u2208L2(F\u03c4, Q), \u03c4 \u2208(t, T), there exists an adapted process (HS , HU) such that Z \u03c4 Z \u03c4 F = EQ[F|Ft] + HSv dS v + HUv dUTv . t t Proof. By the martingale representation theorem, there exists (H1, H2) such that Z \u03c4 Z \u03c4 F = EQ[F|Ft] + H1vdWv + H2vdWv. t t",
+        "dense_score": 0.67958664894104,
+        "lexical_score": 0.2328767123287671
+      },
+      {
+        "score": 0.9662162680495274,
+        "file_name": "Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Continuous-Time Asset Pricing Theory, A Martingale-Based, Jarrow.pdf",
+        "page_no": 92,
+        "chunk_no": 1,
+        "text": "2.8 Finite Dimension Brownian Motion Market 69 Theorem 20 gives suf\ufb01cient conditions for the market to satisfy NFLVR. Condi- tion (1) is that the volatility matrix must be of full rank for all t. This omits risky assets that randomly change from risky to locally riskless (\ufb01nite variation) across time. Condition (2) removes redundant assets from the market (see Theorem 10). Finally, condition (3) is a necessary integrability condition for \u03b8t. For subsequent use we note that conditions (1) and (2) are true if and only if rank (\u03c3t) = n for all t a.s. P. Given Theorem 20, we can now characterize the set of local martingale measures Ml. Theorem 21 (Characterization of Ml) Assume that (1) rank (\u03c3t) = n for all t a.s. P and T \u2032 \u2032 \u22121 2(2) 0 ...\u03c3t \u03c3t\u03c3t (bt \u2212rt1) ... dy < \u221e. Then, = e\u2212 0T (\u03b8t+\u03bdt)\u00b7dWt\u221212 0T \u2225\u03b8t+\u03bdt\u22252dt > 0, Ml = {Q\u03bd : dQ\u03bddP dQ\u03bd E dP = 1, \u03bd \u2208K(\u03c3)} \u0338= \u2205 where \u2032 \u2032 \u22121 \u03b8t = \u03c3t \u03c3t\u03c3t (bt \u2212rt1) . Proof By Theorems 19 and 20, the market satis\ufb01es NFLVR and by the First Fundamental Theorem 13 of asset pricing Ml \u0338= \u2205",
+        "dense_score": 0.6919696927070618,
+        "lexical_score": 0.2465753424657534
+      }
+    ],
+    "used_context": [
+      {
+        "score": 1.1379306077303952,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 221,
+        "chunk_no": 1,
+        "text": "10.0.3. Description of main results 203 Theorem 10.2. With C \u03b5 = C \u03b5(t) as in Theorem 10.1, define the renormalized integral approxi- mation Z T Z T I\u02dc \u03b5 := I\u02dcf\u03b5 (T) := f( t )dW\u03b5t \u2212 bW\u03b5 C \u03b5(t) f \u2032( bW\u03b5t )dt, (10.14) 0 0 and also the approximate total variance \u03b5 \u03b5 Z T t )dt. V := V f (T) := f 2( bW\u03b5 0 Then the price of a European call option, under the pricing model (10.1), (10.3), struck at K with time T to maturity, is given by E[(S T \u2212K)+] = lim E \u03a8( I\u02dc \u03b5, V \u03b5) , \u03b5\u21920 where \u03a8(I , V ) := CBS S 0 exp \u03f1I \u2212\u03f12 V , K, \u00af\u03f12V . (10.15) 2 Similar results hold for more general (\u201cnonsimple\u201d) rough volatility models. Let us discuss right away how to reduce the statements of Theorems 10.1 and 10.2 to the actual convergence statements that will occupy us in Section 10.2. First, note that Z t Z t 2 S t = S 0 exp f bWs dBs \u221212 f bWs ds . (10.16) 0 0 \u03b5The approximations W\u03b5, W \u03b5, and B\u03b5 := \u03f1W\u03b5 + \u00af\u03f1W converge uniformly to the obvious limits, so that it suffices to understand the convergence of the stochastic integral. Note that bW is heavily correlated with W but independent of W",
+        "dense_score": 0.6766977310180664,
+        "lexical_score": 0.2328767123287671
+      },
+      {
+        "score": 1.1237107239684014,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 224,
+        "chunk_no": 1,
+        "text": "206 Chapter 10. Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. Remark 10.0.4. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 . \u03f1u(z) cHtH\u22121 f(z) Following the approach of [40], Theorem 10.4 allows for not only rigorous justification of these formula, but also for the computation of higher-order smile features, though this is not pursued in this chapter",
+        "dense_score": 0.6834367513656616,
+        "lexical_score": 0.273972602739726
+      },
+      {
+        "score": 1.1214064712393774,
+        "file_name": "Rough Volatility.pdf",
+        "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\Rough Volatility.pdf",
+        "page_no": 179,
+        "chunk_no": 1,
+        "text": "8.2. At-the-money short-time skew 161 Theorem 8.6. If Assumption 8.5 holds and limT\u21930 sups,r,u\u2208[0,T] E (vsvr \u2212v2u)2 = 0, and there exists v\u20320 \u2208F0 such that 1 Z T Z T lim E0[Dsvr]drds =: v\u20320, T\u21930 T \u03b4+2 0 s then \u2202k\u03c3imp(k, T) \u03f1v\u20320 = lim . (8.12) v0 T\u21930 T \u03b4 k=X0 Remark 8.2.1. The lim sup assumption in the theorem may not always be straightforward to check. However, it is implied by the condition that the spot volatility (vt)t\u22650 converges to v0 = \u03c30 > 0 uniformly in time and in L4. It is clear that it holds for both the rough Stein\u2013Stein and the rough Bergomi models. Example 8.7. In the rough Stein\u2013Stein model (8.6) equipped with the Riemann\u2013Liouville ker- \u221a 2 for s < r, and therefore the first bound in Assumption 8.5nel (8.4), dsvr = 2H\u03c3\u20320(r \u2212s)H\u22121 holds with \u03b4 = H \u221212 and C = 2H(\u03c3\u20320)2, and the second one holds trivially as the second deriv- ative is null. It is straightforward to compute the limit in Theorem 8.6 (it is, in fact, independent of T) as \u221a 1 Z T Z T 2H\u03c3\u20320 E0[Dsvr]drds = v\u20320 := 3 T H+ 23 0 s (H + 12)(H + 2)",
+        "dense_score": 0.6871598958969116,
+        "lexical_score": 0.2465753424657534
+      }
+    ],
+    "fusion_hits": [
+      {
+        "score": 0.7454890646246947,
+        "source_type": "bloomberg_memory",
+        "source_id": "SPY US Equity:security_regime_note:2026-03-26",
+        "title": "SPY US Equity empirical research memory (SPY US Equity)",
+        "excerpt": "This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** - Volatility regime: compressed_volatility Test whether roughness estimates co-move with realized-volatility regimes. Test whether jump share rises in high-volatility drawdown states. Examine whether absolute-return persistence supports rough-vol style memory. - Hurst variance scaling 63: 0.0180497",
+        "context_text": "Title: SPY US Equity empirical research memory\nSecurity: SPY US Equity\nNote type: security_regime_note\nAs of: 2026-03-26\n# Bloomberg Research Memory: SPY US Equity\n\n## As of\n- Date: 2026-03-26\n\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0277618\n- Realized vol 21: 0.0426373\n- Realized vol 63: 0.0627613\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.0180497\n\n## OU / mean-reversion panel\n- OU speed 5: NA\n- OU speed 21: 0.0823583\n- OU speed 63: 0.0219479\n\n## Jump / discontinuity panel\n- Jump share 5: 0.234451\n- Jump share 21: 0.114189\n- Jump share 63: 0.0863611\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.0685379\n- Abs-return ACF 21: -0.291613\n- Abs-return ACF 63: 0.0329935\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.746464\n- Return autocorr 21: -0.366119\n- Return autocorr 63: -0.209893\n\n## Volume anomaly panel\n- Volume z-score 5: -0.701767\n- Volume z-score 21: -0.0243653\n- Volume z-score 63: 0.510649\n\n## Historical coverage\n- Rows: 41730\n- Start: 1993-01-29\n- End: 2026-03-26\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SPY US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+        "metadata": {
+          "security": "SPY US Equity",
+          "note_type": "security_regime_note",
+          "title": "SPY US Equity empirical research memory",
+          "as_of_date": "2026-03-26",
+          "content_markdown": "# Bloomberg Research Memory: SPY US Equity\n\n## As of\n- Date: 2026-03-26\n\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0277618\n- Realized vol 21: 0.0426373\n- Realized vol 63: 0.0627613\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.0180497\n\n## OU / mean-reversion panel\n- OU speed 5: NA\n- OU speed 21: 0.0823583\n- OU speed 63: 0.0219479\n\n## Jump / discontinuity panel\n- Jump share 5: 0.234451\n- Jump share 21: 0.114189\n- Jump share 63: 0.0863611\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.0685379\n- Abs-return ACF 21: -0.291613\n- Abs-return ACF 63: 0.0329935\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.746464\n- Return autocorr 21: -0.366119\n- Return autocorr 63: -0.209893\n\n## Volume anomaly panel\n- Volume z-score 5: -0.701767\n- Volume z-score 21: -0.0243653\n- Volume z-score 63: 0.510649\n\n## Historical coverage\n- Rows: 41730\n- Start: 1993-01-29\n- End: 2026-03-26\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SPY US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+          "metadata": {
+            "security": "SPY US Equity",
+            "as_of_date": "2026-03-26",
+            "regime": "compressed_volatility",
+            "roughness": "rough_or_antipersistent",
+            "mean_reversion": "weak_mean_reversion",
+            "realized_vol": {
+              "5": 0.027761834288204057,
+              "21": 0.04263732804924681,
+              "63": 0.06276128501831515
+            },
+            "hurst": {
+              "5": null,
+              "21": 0.0,
+              "63": 0.018049720336195372
+            },
+            "ou_speed": {
+              "5": null,
+              "21": 0.08235834548272408,
+              "63": 0.021947888649767208
+            },
+            "jump_share": {
+              "5": 0.23445081553518893,
+              "21": 0.11418863724935152,
+              "63": 0.08636114887592183
+            },
+            "acf_abs_return": {
+              "5": -0.06853791646306502,
+              "21": -0.2916127204870938,
+              "63": 0.03299350029417972
+            },
+            "autocorr_return": {
+              "5": -0.7464639357202794,
+              "21": -0.3661193522147646,
+              "63": -0.20989332124782667
+            },
+            "volume_z": {
+              "5": -0.7017670787650189,
+              "21": -0.024365273227696032,
+              "63": 0.5106489534956211
+            },
+            "history_span": {
+              "rows": 41730,
+              "start": "1993-01-29",
+              "end": "2026-03-26"
+            }
+          }
+        }
+      },
+      {
+        "score": 0.7305089751274353,
+        "source_type": "bloomberg_memory",
+        "source_id": "VIX3M Index:security_regime_note:2026-03-27",
+        "title": "VIX3M Index empirical research memory (VIX3M Index)",
+        "excerpt": "This note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. Compare OU-style speeds across windows for stability or regime breaks. - Volatility regime classification: **compressed_volatility** # Bloomberg Research Memory: VIX3M Index - Volatility regime: compressed_volatility Test whether roughness estimates co-move with realized-volatility regimes. Test whether jump share rises in high-volatility drawdown states. Examine whether absolute-return persistence supports rough-vol style memory. - Hurst variance scaling 21: 0.139697",
+        "context_text": "Title: VIX3M Index empirical research memory\nSecurity: VIX3M Index\nNote type: security_regime_note\nAs of: 2026-03-27\n# Bloomberg Research Memory: VIX3M Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 29.27\n- Last daily return: 0.0748178\n- Current drawdown: -0.598931\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.114042\n- Realized vol 21: 0.288359\n- Realized vol 63: 0.387236\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.139697\n- Hurst variance scaling 63: 0.370929\n\n## OU / mean-reversion panel\n- OU speed 5: -0.0941261\n- OU speed 21: 0.539387\n- OU speed 63: 0.0379061\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0\n- Jump share 63: 0\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.315717\n- Abs-return ACF 21: -0.0393512\n- Abs-return ACF 63: 0.245278\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.145403\n- Return autocorr 21: -0.275141\n- Return autocorr 63: -0.272939\n\n## Volume anomaly panel\n- Volume z-score 5: NA\n- Volume z-score 21: NA\n- Volume z-score 63: NA\n\n## Historical coverage\n- Rows: 30465\n- Start: 2002-01-02\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+        "metadata": {
+          "security": "VIX3M Index",
+          "note_type": "security_regime_note",
+          "title": "VIX3M Index empirical research memory",
+          "as_of_date": "2026-03-27",
+          "content_markdown": "# Bloomberg Research Memory: VIX3M Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 29.27\n- Last daily return: 0.0748178\n- Current drawdown: -0.598931\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.114042\n- Realized vol 21: 0.288359\n- Realized vol 63: 0.387236\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.139697\n- Hurst variance scaling 63: 0.370929\n\n## OU / mean-reversion panel\n- OU speed 5: -0.0941261\n- OU speed 21: 0.539387\n- OU speed 63: 0.0379061\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0\n- Jump share 63: 0\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.315717\n- Abs-return ACF 21: -0.0393512\n- Abs-return ACF 63: 0.245278\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.145403\n- Return autocorr 21: -0.275141\n- Return autocorr 63: -0.272939\n\n## Volume anomaly panel\n- Volume z-score 5: NA\n- Volume z-score 21: NA\n- Volume z-score 63: NA\n\n## Historical coverage\n- Rows: 30465\n- Start: 2002-01-02\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+          "metadata": {
+            "security": "VIX3M Index",
+            "as_of_date": "2026-03-27",
+            "regime": "compressed_volatility",
+            "roughness": "rough_or_antipersistent",
+            "mean_reversion": "moderate_mean_reversion",
+            "realized_vol": {
+              "5": 0.11404174586680393,
+              "21": 0.28835918454362564,
+              "63": 0.387235955370569
+            },
+            "hurst": {
+              "5": null,
+              "21": 0.13969723901839146,
+              "63": 0.37092886424617366
+            },
+            "ou_speed": {
+              "5": -0.09412610856710117,
+              "21": 0.5393873944753333,
+              "63": 0.03790612914609781
+            },
+            "jump_share": {
+              "5": 0.0,
+              "21": 0.0,
+              "63": 0.0
+            },
+            "acf_abs_return": {
+              "5": 0.31571652211815404,
+              "21": -0.03935115599513661,
+              "63": 0.24527837269130606
+            },
+            "autocorr_return": {
+              "5": 0.14540344075528175,
+              "21": -0.2751413482721112,
+              "63": -0.27293902782945584
+            },
+            "volume_z": {
+              "5": null,
+              "21": null,
+              "63": null
+            },
+            "history_span": {
+              "rows": 30465,
+              "start": "2002-01-02",
+              "end": "2026-03-27"
+            }
+          }
+        }
+      },
+      {
+        "score": 0.5791994094522809,
+        "source_type": "bloomberg_memory",
+        "source_id": "GLOBAL:global_bloomberg_note:2026-03-26",
+        "title": "Global Bloomberg learning snapshot (GLOBAL)",
+        "excerpt": "QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. - Securities represented: AAPL US Equity, SPY US Equity Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain. Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Convert these memory notes into retrieval-ready empirical evidence.",
+        "context_text": "Title: Global Bloomberg learning snapshot\nSecurity: GLOBAL\nNote type: global_bloomberg_note\nAs of: 2026-03-26\n# Bloomberg Research Memory: Global Snapshot\n\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n## Local warehouse status\n- History rows written: 96320\n- Feature rows written: 19264\n- Securities represented: AAPL US Equity, SPY US Equity\n\n## Options diagnostics\n- Underlying attempted: SPX Index\n- Chain field used: OPT_CHAIN\n- Chain rows: 8000\n- Snapshot rows: 300\n- Surface rows: 0\n\n## Interpretation\nQuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain.\n\n## Next research actions\n1. Convert these memory notes into retrieval-ready empirical evidence.\n2. Route market-state questions to this Bloomberg memory before invoking theorem synthesis.\n3. Strengthen options contract selection so put/call filters do not collapse to zero usable rows.\n4. Build calibration-specific memory notes once surface extraction is stable.\n",
+        "metadata": {
+          "security": "GLOBAL",
+          "note_type": "global_bloomberg_note",
+          "title": "Global Bloomberg learning snapshot",
+          "as_of_date": "2026-03-26",
+          "content_markdown": "# Bloomberg Research Memory: Global Snapshot\n\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n## Local warehouse status\n- History rows written: 96320\n- Feature rows written: 19264\n- Securities represented: AAPL US Equity, SPY US Equity\n\n## Options diagnostics\n- Underlying attempted: SPX Index\n- Chain field used: OPT_CHAIN\n- Chain rows: 8000\n- Snapshot rows: 300\n- Surface rows: 0\n\n## Interpretation\nQuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain.\n\n## Next research actions\n1. Convert these memory notes into retrieval-ready empirical evidence.\n2. Route market-state questions to this Bloomberg memory before invoking theorem synthesis.\n3. Strengthen options contract selection so put/call filters do not collapse to zero usable rows.\n4. Build calibration-specific memory notes once surface extraction is stable.\n",
+          "metadata": {
+            "as_of_date": "2026-03-26",
+            "securities": [
+              "AAPL US Equity",
+              "SPY US Equity"
+            ],
+            "history_rows": 96320,
+            "feature_rows": 19264,
+            "capability_report": {
+              "blpapi_available": true,
+              "bql_available": false,
+              "options_surface_available": true,
+              "market_db_path": "data\\market_history.sqlite",
+              "notes": [
+                "BQL unavailable: Bloomberg BQL Python object model is not available in this environment. Use BQuant/Desktop or an environment where the `bql` package is installed."
+              ]
+            },
+            "options_summary": {
+              "underlying": "SPX Index",
+              "valuation_date": "2026-03-27",
+              "chain_field_used": "OPT_CHAIN",
+              "n_chain_rows": 8000,
+              "n_chain_tickers": 300,
+              "n_snapshot_rows": 300,
+              "n_surface_rows": 0,
+              "diagnostics": {
+                "spot": 6477.16,
+                "chain_frame_columns": [
+                  "security",
+                  "Security Description"
+                ],
+                "chain_candidates": 300,
+                "rows_chain": 8000,
+                "rows_chain_meta": 300,
+                "rows_raw": 300,
+                "rows_surface": 0,
+                "valuation_date": "2026-03-27",
+                "expiry_min": null,
+                "expiry_max": null,
+                "option_types": [],
+                "chain_debug": {
+                  "OPT_TICKERS": {
+                    "rows": 0,
+                    "columns": []
+                  },
+                  "OPT_CHAIN": {
+                    "rows": 8000,
+                    "columns": [
+                      "security",
+                      "Security Description"
+                    ]
+                  }
+                },
+                "chain_preview": [
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C1400 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C1600 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C1800 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C2000 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C2200 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C2400 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C2600 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C2800 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C3000 Index"
+                  },
+                  {
+                    "security": "SPX Index",
+                    "Security Description": "SPXW US 04/17/26 C3200 Index"
+                  }
+                ],
+                "raw_preview": [
+                  {
+                    "security": "SPXW US 04/17/26 C6235 Index",
+                    "sequence_number": 200,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6235.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.61242,
+                    "IVOL_BID": 26.48901,
+                    "IVOL_ASK": 30.67428,
+                    "PX_MID": 345.85,
+                    "PX_BID": 335.3,
+                    "PX_ASK": 356.4,
+                    "PX_LAST": NaN,
+                    "VOLUME": 0.0,
+                    "OPEN_INT": 0
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6240 Index",
+                    "sequence_number": 201,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6240.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.52856,
+                    "IVOL_BID": 26.42103,
+                    "IVOL_ASK": 30.58974,
+                    "PX_MID": 341.65,
+                    "PX_BID": 331.1,
+                    "PX_ASK": 352.2,
+                    "PX_LAST": 360.0,
+                    "VOLUME": 6.0,
+                    "OPEN_INT": 11
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6245 Index",
+                    "sequence_number": 202,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6245.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.5364,
+                    "IVOL_BID": 26.70422,
+                    "IVOL_ASK": 30.37213,
+                    "PX_MID": 337.95,
+                    "PX_BID": 328.5,
+                    "PX_ASK": 347.4,
+                    "PX_LAST": NaN,
+                    "VOLUME": 0.0,
+                    "OPEN_INT": 0
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6250 Index",
+                    "sequence_number": 203,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6250.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.35371,
+                    "IVOL_BID": 26.30312,
+                    "IVOL_ASK": 30.36231,
+                    "PX_MID": 333.8,
+                    "PX_BID": 323.4,
+                    "PX_ASK": 344.2,
+                    "PX_LAST": 672.48,
+                    "VOLUME": 2.0,
+                    "OPEN_INT": 2
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6255 Index",
+                    "sequence_number": 204,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6255.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.32639,
+                    "IVOL_BID": 26.64559,
+                    "IVOL_ASK": 30.12287,
+                    "PX_MID": 329.95,
+                    "PX_BID": 320.6,
+                    "PX_ASK": 339.3,
+                    "PX_LAST": NaN,
+                    "VOLUME": 0.0,
+                    "OPEN_INT": 0
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6260 Index",
+                    "sequence_number": 205,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6260.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.41379,
+                    "IVOL_BID": 26.69351,
+                    "IVOL_ASK": 30.11128,
+                    "PX_MID": 326.5,
+                    "PX_BID": 317.6,
+                    "PX_ASK": 335.4,
+                    "PX_LAST": 438.32,
+                    "VOLUME": 3.0,
+                    "OPEN_INT": 3
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6265 Index",
+                    "sequence_number": 206,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6265.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 27.94532,
+                    "IVOL_BID": 26.55776,
+                    "IVOL_ASK": 29.32072,
+                    "PX_MID": 320.55,
+                    "PX_BID": 313.0,
+                    "PX_ASK": 328.1,
+                    "PX_LAST": NaN,
+                    "VOLUME": 0.0,
+                    "OPEN_INT": 0
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6270 Index",
+                    "sequence_number": 207,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6270.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.25862,
+                    "IVOL_BID": 26.54141,
+                    "IVOL_ASK": 29.9507,
+                    "PX_MID": 318.7,
+                    "PX_BID": 309.7,
+                    "PX_ASK": 327.7,
+                    "PX_LAST": 402.41,
+                    "VOLUME": 1.0,
+                    "OPEN_INT": 1
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6275 Index",
+                    "sequence_number": 208,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6275.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.24255,
+                    "IVOL_BID": 26.48968,
+                    "IVOL_ASK": 29.97474,
+                    "PX_MID": 315.15,
+                    "PX_BID": 305.9,
+                    "PX_ASK": 324.4,
+                    "PX_LAST": 593.56,
+                    "VOLUME": 2.0,
+                    "OPEN_INT": 10
+                  },
+                  {
+                    "security": "SPXW US 04/17/26 C6280 Index",
+                    "sequence_number": 209,
+                    "errors": null,
+                    "OPT_EXPIRE_DT": "2026-04-17",
+                    "OPT_STRIKE_PX": 6280.0,
+                    "OPT_PUT_CALL": "Call",
+                    "IVOL_MID": 28.08309,
+                    "IVOL_BID": 26.43468,
+                    "IVOL_ASK": 29.71539,
+                    "PX_MID": 310.85,
+                    "PX_BID": 302.1,
+                    "PX_ASK": 319.6,
+                    "PX_LAST": 299.6,
+                    "VOLUME": 9.0,
+                    "OPEN_INT": 2
+                  }
+                ],
+                "surface_nulls": {}
+              },
+              "surface_preview": [],
+              "surface_columns": [
+                "valuation_date",
+                "underlying",
+                "option_ticker",
+                "expiry",
+                "tau_years",
+                "option_type",
+                "strike",
+                "spot",
+                "implied_vol",
+                "mid_price",
+                "volume",
+                "open_interest"
+              ]
+            },
+            "windows": [
+              5,
+              21,
+              63
+            ]
+          }
+        }
+      },
+      {
+        "score": 0.5395278006276781,
+        "source_type": "registry",
+        "source_id": "thm_b799d5af3b024d41",
+        "title": "Evidence-anchored structural conjecture",
+        "excerpt": "Statement: Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel. Failure conditions: Retrieved evidence remains too dispersed across unrelated mathematical families.; No exact excerpt currently pins down every constant or normalization.; Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.; Refine the candidate so the implied empirical signature is sharper and testable.",
+        "context_text": "Title: Evidence-anchored structural conjecture\nStatus: speculative_candidate\nStatement: Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.\nAssumptions: Empirical scope anchored to SPY US Equity.\nTags: generic, general_quant\nSecurities: SPY US Equity, VIX3M Index\nEmpirical signature: [\"default_volatility_persistence\"]",
+        "metadata": {
+          "score": 1.2248948790154957,
+          "entry_id": "thm_b799d5af3b024d41",
+          "title": "Evidence-anchored structural conjecture",
+          "status": "speculative_candidate",
+          "statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+          "assumptions": [
+            "Empirical scope anchored to SPY US Equity."
+          ],
+          "tags": [
+            "generic",
+            "general_quant"
+          ],
+          "securities": [
+            "SPY US Equity",
+            "VIX3M Index"
+          ],
+          "benchmark_security": "SPY US Equity",
+          "excerpt": "Statement: Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel. Failure conditions: Retrieved evidence remains too dispersed across unrelated mathematical families.; No exact excerpt currently pins down every constant or normalization.; Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.; Refine the candidate so the implied empirical signature is sharper and testable.",
+          "metadata": {
+            "source_kind": "theorem_lab",
+            "source_ref": "Propose a pair-linkage theorem for SPY US Equity and VIX3M Index. The theorem must be genuinely about the interaction between the two objects, not a reused single-name rough-variance theorem. Focus on spot-volatility coupling, variance scaling transmission, regime dependence, term-structure state, tail-risk state, cross-object linkage. State: (1) the pair-level object, (2) the predicted relationship or monotonicity, (3) empirical Bloomberg feature signatures, (4) failure conditions, and (5) symbolic structure that can be checked directly.",
+            "created_at": "2026-03-28T01:18:31+00:00",
+            "updated_at": "2026-03-28T01:18:31+00:00",
+            "artifact_hash": "555ab82674293e4c8f72889fe0f4b520b9660c56bc004498392fb840719f714c",
+            "variables": {
+              "propose": "query-driven variable",
+              "pair-linkage": "query-driven variable",
+              "theorem": "query-driven variable",
+              "spy": "query-driven variable"
+            },
+            "empirical_signature": [
+              "default_volatility_persistence"
+            ],
+            "symbolic_agenda": [],
+            "next_actions": [
+              "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+              "Refine the candidate so the implied empirical signature is sharper and testable.",
+              "Collect stronger exact excerpts from the book-memory layer.",
+              "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+            ]
+          }
+        }
+      },
+      {
+        "score": 0.4927006883361066,
+        "source_type": "book",
+        "source_id": "NONLINEAR OPTION PRICING, GUYON .pdf:356:1",
+        "title": "NONLINEAR OPTION PRICING, GUYON .pdf | page 356 | chunk 1",
+        "excerpt": "For instance, the resulting correlation may have a weird skew (dependence on the asset values), or its skew may be far from the one historically observed, or it may generate prices of other options that are far from market quotes. This family is parameterized by two functions a and b that depend on time and on the values of all the underlying assets, and may depend as well on any set of path-dependent variables. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is",
+        "context_text": "Introduction 317 calibrate. (The correlation candidate has more chances to be PSD in the second model; see Section 12.6). In [175], the correlation matrix is built by solving a \ufb01xed point problem that may have no solution. (Precisely, it has no solution when the correlation candidate exhibited in [122] is not PSD.) Second, even if both models are admissible, there is no reason why one would undergo either correlation structure. For instance, the resulting correlation may have a weird skew (dependence on the asset values), or its skew may be far from the one historically observed, or it may generate prices of other options that are far from market quotes. In this chapter, we build a new family of local correlation models using the particle method. This family is parameterized by two functions a and b that depend on time and on the values of all the underlying assets, and may depend as well on any set of path-dependent variables. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is",
+        "metadata": {
+          "score": 0.7585673290736055,
+          "file_name": "NONLINEAR OPTION PRICING, GUYON .pdf",
+          "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\NONLINEAR OPTION PRICING, GUYON .pdf",
+          "page_no": 356,
+          "chunk_no": 1,
+          "text": "Introduction 317 calibrate. (The correlation candidate has more chances to be PSD in the second model; see Section 12.6). In [175], the correlation matrix is built by solving a \ufb01xed point problem that may have no solution. (Precisely, it has no solution when the correlation candidate exhibited in [122] is not PSD.) Second, even if both models are admissible, there is no reason why one would undergo either correlation structure. For instance, the resulting correlation may have a weird skew (dependence on the asset values), or its skew may be far from the one historically observed, or it may generate prices of other options that are far from market quotes. In this chapter, we build a new family of local correlation models using the particle method. This family is parameterized by two functions a and b that depend on time and on the values of all the underlying assets, and may depend as well on any set of path-dependent variables. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is",
+          "dense_score": 0.6952796578407288,
+          "lexical_score": 0.2876712328767123
+        }
+      },
+      {
+        "score": 0.4913066137335354,
+        "source_type": "book",
+        "source_id": "NONLINEAR OPTION PRICING, GUYON .pdf:356:2",
+        "title": "NONLINEAR OPTION PRICING, GUYON .pdf | page 356 | chunk 2",
+        "excerpt": "Using the new family, one can now design one\u2019s favorite local correlation model in order to match a view on a correlation skew, and/or reproduce some features of historical data, and/or calibrate to other option prices, on top of reproducing the market smile of the basket, be it a stock index, a cross-FX rate, or an interest rate spread. Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is. If for some time and asset values a correlation candidate fails to be PSD, we project it onto the set of correlation matrices and carry on using the particle method",
+        "context_text": ". Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is. The two above models are just two particular points in this family: they correspond to two particular choices of (a, b). Table 12.1 helps compare the two existing models with the new family of models. Using the new family, one can now design one\u2019s favorite local correlation model in order to match a view on a correlation skew, and/or reproduce some features of historical data, and/or calibrate to other option prices, on top of reproducing the market smile of the basket, be it a stock index, a cross-FX rate, or an interest rate spread. Not all models in the family are admissible: for a given (a, b), the particle method generates an explicit local correlation candidate, and admissible models correspond to those pairs (a, b) for which the candidate is PSD at all times and for all asset values. If for some time and asset values a correlation candidate fails to be PSD, we project it onto the set of correlation matrices and carry on using the particle method",
+        "metadata": {
+          "score": 0.7551223312338737,
+          "file_name": "NONLINEAR OPTION PRICING, GUYON .pdf",
+          "file_path": "C:\\Users\\gorazd.atanasovski\\Desktop\\ApexQuantAI\\books_vault\\NONLINEAR OPTION PRICING, GUYON .pdf",
+          "page_no": 356,
+          "chunk_no": 2,
+          "text": ". Instead of assuming that the basket variance or the correlation (or equivalently \u03bb) is local in index, we assume that a + b\u03bb is. The two above models are just two particular points in this family: they correspond to two particular choices of (a, b). Table 12.1 helps compare the two existing models with the new family of models. Using the new family, one can now design one\u2019s favorite local correlation model in order to match a view on a correlation skew, and/or reproduce some features of historical data, and/or calibrate to other option prices, on top of reproducing the market smile of the basket, be it a stock index, a cross-FX rate, or an interest rate spread. Not all models in the family are admissible: for a given (a, b), the particle method generates an explicit local correlation candidate, and admissible models correspond to those pairs (a, b) for which the candidate is PSD at all times and for all asset values. If for some time and asset values a correlation candidate fails to be PSD, we project it onto the set of correlation matrices and carry on using the particle method",
+          "dense_score": 0.694848358631134,
+          "lexical_score": 0.273972602739726
+        }
+      }
+    ],
+    "llm_stats": null,
+    "theorem_result": {
+      "query": "Propose a pair-linkage theorem for SPY US Equity and VIX3M Index. The theorem must be genuinely about the interaction between the two objects, not a reused single-name rough-variance theorem. Focus on spot-volatility coupling, variance scaling transmission, regime dependence, term-structure state, tail-risk state, cross-object linkage. State: (1) the pair-level object, (2) the predicted relationship or monotonicity, (3) empirical Bloomberg feature signatures, (4) failure conditions, and (5) symbolic structure that can be checked directly.",
+      "problem_kind": "exact_statement",
+      "topics": [
+        "general_quant"
+      ],
+      "selected": {
+        "title": "Evidence-anchored structural conjecture",
+        "status": "speculative_candidate",
+        "statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+        "assumptions": [
+          "Empirical scope anchored to SPY US Equity."
+        ],
+        "variables": {
+          "propose": "query-driven variable",
+          "pair-linkage": "query-driven variable",
+          "theorem": "query-driven variable",
+          "spy": "query-driven variable"
+        },
+        "motivation": "Avoid vacuous fallback statements by tying the candidate to the actual query vocabulary.",
+        "empirical_signature": [
+          "default_volatility_persistence"
+        ],
+        "symbolic_agenda": [],
+        "failure_conditions": [
+          "Retrieved evidence remains too dispersed across unrelated mathematical families.",
+          "No exact excerpt currently pins down every constant or normalization.",
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+          "Refine the candidate so the implied empirical signature is sharper and testable."
+        ],
+        "evidence": [
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 1.1379306077303952,
+            "excerpt": "10.0.3. Description of main results 203 Theorem 10.2. With C \u03b5 = C \u03b5(t) as in Theorem 10.1, define the renormalized integral approxi- mation Z T Z T I\u02dc \u03b5 := I\u02dcf\u03b5 (T) := f( t )dW\u03b5t \u2212 bW\u03b5 C \u03b5(t) f \u2032( bW\u03b5t )dt, (10.14) 0 0 and also the approximate total variance \u03b5 \u03b5 Z T t )dt. V := V f (T) := f 2( bW\u03b5 0 Then the price of a European call option, under the pricing model (10.1), (10.3), struck at K with time T to maturity, is given by E[(S T \u2212K)+] = lim E \u03a8( I\u02dc \u03b5, V \u03b5) , \u03b5\u21920 where \u03a8(I , V ) := CBS S 0 exp \u03f1I \u2212\u03f12 V , K, \u00af\u03f12V . (10.15) 2 Similar results hold for more general (\u201cnonsimple\u201d) rough volatility models. Let us discuss right away how to reduce the statements of Theorems 10.1 and 10.2 to the actual convergence statements that will occupy us in Section 10.2. First, note that Z t Z t 2 S t = S 0 exp f bWs dBs \u221212 f bWs ds . (10.16) 0 0 \u03b5The approximations W\u03b5, W \u03b5, and B\u03b5 := \u03f1W\u03b5 + \u00af\u03f1W converge uniformly to the obvious limits, so that it suffices to understand the convergence of the stochastic integral. Note that bW is heavily correlated with W but independent of W",
+            "metadata": {
+              "page_no": 221,
+              "chunk_no": 1
+            }
+          },
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 1.1237107239684014,
+            "excerpt": "206 Chapter 10. Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. Remark 10.0.4. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 . \u03f1u(z) cHtH\u22121 f(z) Following the approach of [40], Theorem 10.4 allows for not only rigorous justification of these formula, but also for the computation of higher-order smile features, though this is not pursued in this chapter",
+            "metadata": {
+              "page_no": 224,
+              "chunk_no": 1
+            }
+          },
+          {
+            "source_type": "book",
+            "source_name": "Rough Volatility.pdf",
+            "support_score": 1.1214064712393774,
+            "excerpt": "8.2. At-the-money short-time skew 161 Theorem 8.6. If Assumption 8.5 holds and limT\u21930 sups,r,u\u2208[0,T] E (vsvr \u2212v2u)2 = 0, and there exists v\u20320 \u2208F0 such that 1 Z T Z T lim E0[Dsvr]drds =: v\u20320, T\u21930 T \u03b4+2 0 s then \u2202k\u03c3imp(k, T) \u03f1v\u20320 = lim . (8.12) v0 T\u21930 T \u03b4 k=X0 Remark 8.2.1. The lim sup assumption in the theorem may not always be straightforward to check. However, it is implied by the condition that the spot volatility (vt)t\u22650 converges to v0 = \u03c30 > 0 uniformly in time and in L4. It is clear that it holds for both the rough Stein\u2013Stein and the rough Bergomi models. Example 8.7. In the rough Stein\u2013Stein model (8.6) equipped with the Riemann\u2013Liouville ker- \u221a 2 for s < r, and therefore the first bound in Assumption 8.5nel (8.4), dsvr = 2H\u03c3\u20320(r \u2212s)H\u22121 holds with \u03b4 = H \u221212 and C = 2H(\u03c3\u20320)2, and the second one holds trivially as the second deriv- ative is null. It is straightforward to compute the limit in Theorem 8.6 (it is, in fact, independent of T) as \u221a 1 Z T Z T 2H\u03c3\u20320 E0[Dsvr]drds = v\u20320 := 3 T H+ 23 0 s (H + 12)(H + 2)",
+            "metadata": {
+              "page_no": 179,
+              "chunk_no": 1
+            }
+          }
+        ],
+        "verification": {
+          "candidate_title": "Evidence-anchored structural conjecture",
+          "verdict": "rejected_or_unverified",
+          "overall_score": 0.29940083749820284,
+          "symbolic_checks": [],
+          "empirical_checks": [
+            {
+              "name": "default_volatility_persistence",
+              "kind": "empirical",
+              "passed": true,
+              "score": 0.29940083749820284,
+              "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+              "details": {
+                "abs_return_autocorr_lag1": 0.2795988581448398,
+                "abs_return_autocorr_lag5": 0.3192028168515659
+              }
+            }
+          ],
+          "warnings": [
+            "No symbolic checks were supplied; symbolic validity remains untested."
+          ],
+          "recommended_refinements": [
+            "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+            "Refine the candidate so the implied empirical signature is sharper and testable."
+          ]
+        },
+        "tags": [
+          "generic",
+          "general_quant"
+        ],
+        "score": 0.45164050249892174,
+        "next_actions": [
+          "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+          "Refine the candidate so the implied empirical signature is sharper and testable.",
+          "Collect stronger exact excerpts from the book-memory layer.",
+          "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+        ]
+      },
+      "trials": [
+        {
+          "round_index": 0,
+          "candidate_title": "Evidence-anchored structural conjecture",
+          "candidate_statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+          "verification": {
+            "candidate_title": "Evidence-anchored structural conjecture",
+            "verdict": "rejected_or_unverified",
+            "overall_score": 0.29940083749820284,
+            "symbolic_checks": [],
+            "empirical_checks": [
+              {
+                "name": "default_volatility_persistence",
+                "kind": "empirical",
+                "passed": true,
+                "score": 0.29940083749820284,
+                "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+                "details": {
+                  "abs_return_autocorr_lag1": 0.2795988581448398,
+                  "abs_return_autocorr_lag5": 0.3192028168515659
+                }
+              }
+            ],
+            "warnings": [
+              "No symbolic checks were supplied; symbolic validity remains untested."
+            ],
+            "recommended_refinements": [
+              "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+              "Refine the candidate so the implied empirical signature is sharper and testable."
+            ]
+          },
+          "lab_score": 0.45164050249892174,
+          "notes": [
+            "Problem kind: exact_statement",
+            "Verdict: rejected_or_unverified",
+            "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+            "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+          ]
+        },
+        {
+          "round_index": 1,
+          "candidate_title": "Evidence-anchored structural conjecture",
+          "candidate_statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+          "verification": {
+            "candidate_title": "Evidence-anchored structural conjecture",
+            "verdict": "rejected_or_unverified",
+            "overall_score": 0.29940083749820284,
+            "symbolic_checks": [],
+            "empirical_checks": [
+              {
+                "name": "default_volatility_persistence",
+                "kind": "empirical",
+                "passed": true,
+                "score": 0.29940083749820284,
+                "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+                "details": {
+                  "abs_return_autocorr_lag1": 0.2795988581448398,
+                  "abs_return_autocorr_lag5": 0.3192028168515659
+                }
+              }
+            ],
+            "warnings": [
+              "No symbolic checks were supplied; symbolic validity remains untested."
+            ],
+            "recommended_refinements": [
+              "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+              "Refine the candidate so the implied empirical signature is sharper and testable."
+            ]
+          },
+          "lab_score": 0.45164050249892174,
+          "notes": [
+            "Problem kind: exact_statement",
+            "Verdict: rejected_or_unverified",
+            "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+            "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+          ]
+        },
+        {
+          "round_index": 2,
+          "candidate_title": "Evidence-anchored structural conjecture",
+          "candidate_statement": "Conjecture: the objects propose, pair-linkage, theorem admit a common structural representation in the general_quant family, and the dominant terms in that representation are exactly those that remain stable across the top retrieved excerpts and the empirical feature panel.",
+          "verification": {
+            "candidate_title": "Evidence-anchored structural conjecture",
+            "verdict": "rejected_or_unverified",
+            "overall_score": 0.29940083749820284,
+            "symbolic_checks": [],
+            "empirical_checks": [
+              {
+                "name": "default_volatility_persistence",
+                "kind": "empirical",
+                "passed": true,
+                "score": 0.29940083749820284,
+                "summary": "Absolute returns exhibit persistence consistent with volatility clustering.",
+                "details": {
+                  "abs_return_autocorr_lag1": 0.2795988581448398,
+                  "abs_return_autocorr_lag5": 0.3192028168515659
+                }
+              }
+            ],
+            "warnings": [
+              "No symbolic checks were supplied; symbolic validity remains untested."
+            ],
+            "recommended_refinements": [
+              "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+              "Refine the candidate so the implied empirical signature is sharper and testable."
+            ]
+          },
+          "lab_score": 0.45164050249892174,
+          "notes": [
+            "Problem kind: exact_statement",
+            "Verdict: rejected_or_unverified",
+            "No executable symbolic tasks were available in this round; score is driven mainly by empirical evidence.",
+            "Warning: No symbolic checks were supplied; symbolic validity remains untested."
+          ]
+        }
+      ],
+      "packet_metadata": {
+        "n_text_evidence": 3,
+        "securities": [
+          "SPY US Equity",
+          "VIX3M Index"
+        ],
+        "market_context_keys": [
+          "SPY US Equity",
+          "VIX3M Index",
+          "securities"
+        ]
+      },
+      "lab_metadata": {
+        "db_path": "data\\market_history.sqlite",
+        "n_candidates": 1,
+        "n_trials": 3,
+        "securities": [
+          "SPY US Equity",
+          "VIX3M Index"
+        ],
+        "benchmark_security": "SPY US Equity",
+        "acceptance_score": 0.84
+      }
+    },
+    "theorem_registry": {
+      "action": "existing",
+      "entry_id": "thm_b799d5af3b024d41",
+      "artifact_hash": "555ab82674293e4c8f72889fe0f4b520b9660c56bc004498392fb840719f714c",
+      "status": "speculative_candidate",
+      "title": "Evidence-anchored structural conjecture"
+    },
+    "lean_export": null,
+    "market_summary": {
+      "SPY US Equity": {
+        "security": "SPY US Equity",
+        "status": "ok",
+        "n_obs": 8346,
+        "start_date": "1993-01-29",
+        "end_date": "2026-03-26",
+        "last_price": 645.09,
+        "last_log_return": -0.018020166399113968,
+        "last_drawdown": -0.07246689384462746,
+        "hurst_proxy": 0.018049720336195372,
+        "ou_beta_21": 0.9209418841954747,
+        "ou_kappa_21": 0.08235834548272408,
+        "realized_vol_21": 0.04263732804924681,
+        "jump_share_21": 0.11418863724935152,
+        "acf_abs_return_21": -0.2916127204870938,
+        "avg_volume_21": 97006914.14285715
+      },
+      "VIX3M Index": {
+        "security": "VIX3M Index",
+        "status": "ok",
+        "n_obs": 6093,
+        "start_date": "2002-01-02",
+        "end_date": "2026-03-27",
+        "last_price": 29.27,
+        "last_log_return": 0.07481779801329935,
+        "last_drawdown": -0.5989312140312415,
+        "hurst_proxy": 0.37092886424617366,
+        "ou_beta_21": 0.5831053565437094,
+        "ou_kappa_21": 0.5393873944753333,
+        "realized_vol_21": 0.28835918454362564,
+        "jump_share_21": 0.0,
+        "acf_abs_return_21": -0.03935115599513661
+      }
+    },
+    "bloomberg_memory": [
+      {
+        "security": "SPY US Equity",
+        "note_type": "security_regime_note",
+        "title": "SPY US Equity empirical research memory",
+        "as_of_date": "2026-03-26",
+        "content_markdown": "# Bloomberg Research Memory: SPY US Equity\n\n## As of\n- Date: 2026-03-26\n\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0277618\n- Realized vol 21: 0.0426373\n- Realized vol 63: 0.0627613\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.0180497\n\n## OU / mean-reversion panel\n- OU speed 5: NA\n- OU speed 21: 0.0823583\n- OU speed 63: 0.0219479\n\n## Jump / discontinuity panel\n- Jump share 5: 0.234451\n- Jump share 21: 0.114189\n- Jump share 63: 0.0863611\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.0685379\n- Abs-return ACF 21: -0.291613\n- Abs-return ACF 63: 0.0329935\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.746464\n- Return autocorr 21: -0.366119\n- Return autocorr 63: -0.209893\n\n## Volume anomaly panel\n- Volume z-score 5: -0.701767\n- Volume z-score 21: -0.0243653\n- Volume z-score 63: 0.510649\n\n## Historical coverage\n- Rows: 41730\n- Start: 1993-01-29\n- End: 2026-03-26\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SPY US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+        "metadata": {
+          "security": "SPY US Equity",
+          "as_of_date": "2026-03-26",
+          "regime": "compressed_volatility",
+          "roughness": "rough_or_antipersistent",
+          "mean_reversion": "weak_mean_reversion",
+          "realized_vol": {
+            "5": 0.027761834288204057,
+            "21": 0.04263732804924681,
+            "63": 0.06276128501831515
+          },
+          "hurst": {
+            "5": null,
+            "21": 0.0,
+            "63": 0.018049720336195372
+          },
+          "ou_speed": {
+            "5": null,
+            "21": 0.08235834548272408,
+            "63": 0.021947888649767208
+          },
+          "jump_share": {
+            "5": 0.23445081553518893,
+            "21": 0.11418863724935152,
+            "63": 0.08636114887592183
+          },
+          "acf_abs_return": {
+            "5": -0.06853791646306502,
+            "21": -0.2916127204870938,
+            "63": 0.03299350029417972
+          },
+          "autocorr_return": {
+            "5": -0.7464639357202794,
+            "21": -0.3661193522147646,
+            "63": -0.20989332124782667
+          },
+          "volume_z": {
+            "5": -0.7017670787650189,
+            "21": -0.024365273227696032,
+            "63": 0.5106489534956211
+          },
+          "history_span": {
+            "rows": 41730,
+            "start": "1993-01-29",
+            "end": "2026-03-26"
+          }
+        }
+      },
+      {
+        "security": "VIX3M Index",
+        "note_type": "security_regime_note",
+        "title": "VIX3M Index empirical research memory",
+        "as_of_date": "2026-03-27",
+        "content_markdown": "# Bloomberg Research Memory: VIX3M Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 29.27\n- Last daily return: 0.0748178\n- Current drawdown: -0.598931\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.114042\n- Realized vol 21: 0.288359\n- Realized vol 63: 0.387236\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.139697\n- Hurst variance scaling 63: 0.370929\n\n## OU / mean-reversion panel\n- OU speed 5: -0.0941261\n- OU speed 21: 0.539387\n- OU speed 63: 0.0379061\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0\n- Jump share 63: 0\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.315717\n- Abs-return ACF 21: -0.0393512\n- Abs-return ACF 63: 0.245278\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.145403\n- Return autocorr 21: -0.275141\n- Return autocorr 63: -0.272939\n\n## Volume anomaly panel\n- Volume z-score 5: NA\n- Volume z-score 21: NA\n- Volume z-score 63: NA\n\n## Historical coverage\n- Rows: 30465\n- Start: 2002-01-02\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for VIX3M Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+        "metadata": {
+          "security": "VIX3M Index",
+          "as_of_date": "2026-03-27",
+          "regime": "compressed_volatility",
+          "roughness": "rough_or_antipersistent",
+          "mean_reversion": "moderate_mean_reversion",
+          "realized_vol": {
+            "5": 0.11404174586680393,
+            "21": 0.28835918454362564,
+            "63": 0.387235955370569
+          },
+          "hurst": {
+            "5": null,
+            "21": 0.13969723901839146,
+            "63": 0.37092886424617366
+          },
+          "ou_speed": {
+            "5": -0.09412610856710117,
+            "21": 0.5393873944753333,
+            "63": 0.03790612914609781
+          },
+          "jump_share": {
+            "5": 0.0,
+            "21": 0.0,
+            "63": 0.0
+          },
+          "acf_abs_return": {
+            "5": 0.31571652211815404,
+            "21": -0.03935115599513661,
+            "63": 0.24527837269130606
+          },
+          "autocorr_return": {
+            "5": 0.14540344075528175,
+            "21": -0.2751413482721112,
+            "63": -0.27293902782945584
+          },
+          "volume_z": {
+            "5": null,
+            "21": null,
+            "63": null
+          },
+          "history_span": {
+            "rows": 30465,
+            "start": "2002-01-02",
+            "end": "2026-03-27"
+          }
+        }
+      },
+      {
+        "security": "GLOBAL",
+        "note_type": "global_bloomberg_note",
+        "title": "Global Bloomberg learning snapshot",
+        "as_of_date": "2026-03-26",
+        "content_markdown": "# Bloomberg Research Memory: Global Snapshot\n\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n## Local warehouse status\n- History rows written: 96320\n- Feature rows written: 19264\n- Securities represented: AAPL US Equity, SPY US Equity\n\n## Options diagnostics\n- Underlying attempted: SPX Index\n- Chain field used: OPT_CHAIN\n- Chain rows: 8000\n- Snapshot rows: 300\n- Surface rows: 0\n\n## Interpretation\nQuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain.\n\n## Next research actions\n1. Convert these memory notes into retrieval-ready empirical evidence.\n2. Route market-state questions to this Bloomberg memory before invoking theorem synthesis.\n3. Strengthen options contract selection so put/call filters do not collapse to zero usable rows.\n4. Build calibration-specific memory notes once surface extraction is stable.\n",
+        "metadata": {
+          "as_of_date": "2026-03-26",
+          "securities": [
+            "AAPL US Equity",
+            "SPY US Equity"
+          ],
+          "history_rows": 96320,
+          "feature_rows": 19264,
+          "capability_report": {
+            "blpapi_available": true,
+            "bql_available": false,
+            "options_surface_available": true,
+            "market_db_path": "data\\market_history.sqlite",
+            "notes": [
+              "BQL unavailable: Bloomberg BQL Python object model is not available in this environment. Use BQuant/Desktop or an environment where the `bql` package is installed."
+            ]
+          },
+          "options_summary": {
+            "underlying": "SPX Index",
+            "valuation_date": "2026-03-27",
+            "chain_field_used": "OPT_CHAIN",
+            "n_chain_rows": 8000,
+            "n_chain_tickers": 300,
+            "n_snapshot_rows": 300,
+            "n_surface_rows": 0,
+            "diagnostics": {
+              "spot": 6477.16,
+              "chain_frame_columns": [
+                "security",
+                "Security Description"
+              ],
+              "chain_candidates": 300,
+              "rows_chain": 8000,
+              "rows_chain_meta": 300,
+              "rows_raw": 300,
+              "rows_surface": 0,
+              "valuation_date": "2026-03-27",
+              "expiry_min": null,
+              "expiry_max": null,
+              "option_types": [],
+              "chain_debug": {
+                "OPT_TICKERS": {
+                  "rows": 0,
+                  "columns": []
+                },
+                "OPT_CHAIN": {
+                  "rows": 8000,
+                  "columns": [
+                    "security",
+                    "Security Description"
+                  ]
+                }
+              },
+              "chain_preview": [
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1400 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1600 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1800 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2000 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2200 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2400 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2600 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2800 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C3000 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C3200 Index"
+                }
+              ],
+              "raw_preview": [
+                {
+                  "security": "SPXW US 04/17/26 C6235 Index",
+                  "sequence_number": 200,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6235.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.61242,
+                  "IVOL_BID": 26.48901,
+                  "IVOL_ASK": 30.67428,
+                  "PX_MID": 345.85,
+                  "PX_BID": 335.3,
+                  "PX_ASK": 356.4,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6240 Index",
+                  "sequence_number": 201,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6240.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.52856,
+                  "IVOL_BID": 26.42103,
+                  "IVOL_ASK": 30.58974,
+                  "PX_MID": 341.65,
+                  "PX_BID": 331.1,
+                  "PX_ASK": 352.2,
+                  "PX_LAST": 360.0,
+                  "VOLUME": 6.0,
+                  "OPEN_INT": 11
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6245 Index",
+                  "sequence_number": 202,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6245.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.5364,
+                  "IVOL_BID": 26.70422,
+                  "IVOL_ASK": 30.37213,
+                  "PX_MID": 337.95,
+                  "PX_BID": 328.5,
+                  "PX_ASK": 347.4,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6250 Index",
+                  "sequence_number": 203,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6250.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.35371,
+                  "IVOL_BID": 26.30312,
+                  "IVOL_ASK": 30.36231,
+                  "PX_MID": 333.8,
+                  "PX_BID": 323.4,
+                  "PX_ASK": 344.2,
+                  "PX_LAST": 672.48,
+                  "VOLUME": 2.0,
+                  "OPEN_INT": 2
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6255 Index",
+                  "sequence_number": 204,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6255.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.32639,
+                  "IVOL_BID": 26.64559,
+                  "IVOL_ASK": 30.12287,
+                  "PX_MID": 329.95,
+                  "PX_BID": 320.6,
+                  "PX_ASK": 339.3,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6260 Index",
+                  "sequence_number": 205,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6260.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.41379,
+                  "IVOL_BID": 26.69351,
+                  "IVOL_ASK": 30.11128,
+                  "PX_MID": 326.5,
+                  "PX_BID": 317.6,
+                  "PX_ASK": 335.4,
+                  "PX_LAST": 438.32,
+                  "VOLUME": 3.0,
+                  "OPEN_INT": 3
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6265 Index",
+                  "sequence_number": 206,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6265.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 27.94532,
+                  "IVOL_BID": 26.55776,
+                  "IVOL_ASK": 29.32072,
+                  "PX_MID": 320.55,
+                  "PX_BID": 313.0,
+                  "PX_ASK": 328.1,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6270 Index",
+                  "sequence_number": 207,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6270.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.25862,
+                  "IVOL_BID": 26.54141,
+                  "IVOL_ASK": 29.9507,
+                  "PX_MID": 318.7,
+                  "PX_BID": 309.7,
+                  "PX_ASK": 327.7,
+                  "PX_LAST": 402.41,
+                  "VOLUME": 1.0,
+                  "OPEN_INT": 1
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6275 Index",
+                  "sequence_number": 208,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6275.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.24255,
+                  "IVOL_BID": 26.48968,
+                  "IVOL_ASK": 29.97474,
+                  "PX_MID": 315.15,
+                  "PX_BID": 305.9,
+                  "PX_ASK": 324.4,
+                  "PX_LAST": 593.56,
+                  "VOLUME": 2.0,
+                  "OPEN_INT": 10
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6280 Index",
+                  "sequence_number": 209,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6280.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.08309,
+                  "IVOL_BID": 26.43468,
+                  "IVOL_ASK": 29.71539,
+                  "PX_MID": 310.85,
+                  "PX_BID": 302.1,
+                  "PX_ASK": 319.6,
+                  "PX_LAST": 299.6,
+                  "VOLUME": 9.0,
+                  "OPEN_INT": 2
+                }
+              ],
+              "surface_nulls": {}
+            },
+            "surface_preview": [],
+            "surface_columns": [
+              "valuation_date",
+              "underlying",
+              "option_ticker",
+              "expiry",
+              "tau_years",
+              "option_type",
+              "strike",
+              "spot",
+              "implied_vol",
+              "mid_price",
+              "volume",
+              "open_interest"
+            ]
+          },
+          "windows": [
+            5,
+            21,
+            63
+          ]
+        }
+      },
+      {
+        "security": "GLOBAL",
+        "note_type": "global_bloomberg_note",
+        "title": "Global Bloomberg learning snapshot",
+        "as_of_date": "2026-03-27",
+        "content_markdown": "# Bloomberg Research Memory: Global Snapshot\n\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n## Local warehouse status\n- History rows written: 96320\n- Feature rows written: 19264\n- Securities represented: QQQ US Equity, TSLA US Equity\n\n## Options diagnostics\n- Underlying attempted: SPX Index\n- Chain field used: OPT_CHAIN\n- Chain rows: 8000\n- Snapshot rows: 300\n- Surface rows: 0\n\n## Interpretation\nQuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. Options-surface extraction is partially wired but still requires stronger contract selection and normalization when the requested put/call subset is not represented in the sampled chain.\n\n## Next research actions\n1. Convert these memory notes into retrieval-ready empirical evidence.\n2. Route market-state questions to this Bloomberg memory before invoking theorem synthesis.\n3. Strengthen options contract selection so put/call filters do not collapse to zero usable rows.\n4. Build calibration-specific memory notes once surface extraction is stable.\n",
+        "metadata": {
+          "as_of_date": "2026-03-27",
+          "securities": [
+            "QQQ US Equity",
+            "TSLA US Equity"
+          ],
+          "history_rows": 53835,
+          "feature_rows": 10767,
+          "capability_report": {
+            "blpapi_available": true,
+            "bql_available": false,
+            "options_surface_available": true,
+            "market_db_path": "data\\market_history.sqlite",
+            "notes": [
+              "BQL unavailable: Bloomberg BQL Python object model is not available in this environment. Use BQuant/Desktop or an environment where the `bql` package is installed."
+            ]
+          },
+          "options_summary": {
+            "underlying": "SPX Index",
+            "valuation_date": "2026-03-27",
+            "chain_field_used": "OPT_CHAIN",
+            "n_chain_rows": 8000,
+            "n_chain_tickers": 300,
+            "n_snapshot_rows": 300,
+            "n_surface_rows": 0,
+            "diagnostics": {
+              "spot": 6477.16,
+              "chain_frame_columns": [
+                "security",
+                "Security Description"
+              ],
+              "chain_candidates": 300,
+              "rows_chain": 8000,
+              "rows_chain_meta": 300,
+              "rows_raw": 300,
+              "rows_surface": 0,
+              "valuation_date": "2026-03-27",
+              "expiry_min": null,
+              "expiry_max": null,
+              "option_types": [],
+              "chain_debug": {
+                "OPT_TICKERS": {
+                  "rows": 0,
+                  "columns": []
+                },
+                "OPT_CHAIN": {
+                  "rows": 8000,
+                  "columns": [
+                    "security",
+                    "Security Description"
+                  ]
+                }
+              },
+              "chain_preview": [
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1400 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1600 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C1800 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2000 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2200 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2400 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2600 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C2800 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C3000 Index"
+                },
+                {
+                  "security": "SPX Index",
+                  "Security Description": "SPXW US 04/17/26 C3200 Index"
+                }
+              ],
+              "raw_preview": [
+                {
+                  "security": "SPXW US 04/17/26 C6235 Index",
+                  "sequence_number": 200,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6235.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.61242,
+                  "IVOL_BID": 26.48901,
+                  "IVOL_ASK": 30.67428,
+                  "PX_MID": 345.85,
+                  "PX_BID": 335.3,
+                  "PX_ASK": 356.4,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6240 Index",
+                  "sequence_number": 201,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6240.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.52856,
+                  "IVOL_BID": 26.42103,
+                  "IVOL_ASK": 30.58974,
+                  "PX_MID": 341.65,
+                  "PX_BID": 331.1,
+                  "PX_ASK": 352.2,
+                  "PX_LAST": 360.0,
+                  "VOLUME": 6.0,
+                  "OPEN_INT": 11
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6245 Index",
+                  "sequence_number": 202,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6245.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.5364,
+                  "IVOL_BID": 26.70422,
+                  "IVOL_ASK": 30.37213,
+                  "PX_MID": 337.95,
+                  "PX_BID": 328.5,
+                  "PX_ASK": 347.4,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6250 Index",
+                  "sequence_number": 203,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6250.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.35371,
+                  "IVOL_BID": 26.30312,
+                  "IVOL_ASK": 30.36231,
+                  "PX_MID": 333.8,
+                  "PX_BID": 323.4,
+                  "PX_ASK": 344.2,
+                  "PX_LAST": 672.48,
+                  "VOLUME": 2.0,
+                  "OPEN_INT": 2
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6255 Index",
+                  "sequence_number": 204,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6255.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.32639,
+                  "IVOL_BID": 26.64559,
+                  "IVOL_ASK": 30.12287,
+                  "PX_MID": 329.95,
+                  "PX_BID": 320.6,
+                  "PX_ASK": 339.3,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6260 Index",
+                  "sequence_number": 205,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6260.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.41379,
+                  "IVOL_BID": 26.69351,
+                  "IVOL_ASK": 30.11128,
+                  "PX_MID": 326.5,
+                  "PX_BID": 317.6,
+                  "PX_ASK": 335.4,
+                  "PX_LAST": 438.32,
+                  "VOLUME": 3.0,
+                  "OPEN_INT": 3
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6265 Index",
+                  "sequence_number": 206,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6265.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 27.94532,
+                  "IVOL_BID": 26.55776,
+                  "IVOL_ASK": 29.32072,
+                  "PX_MID": 320.55,
+                  "PX_BID": 313.0,
+                  "PX_ASK": 328.1,
+                  "PX_LAST": NaN,
+                  "VOLUME": 0.0,
+                  "OPEN_INT": 0
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6270 Index",
+                  "sequence_number": 207,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6270.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.25862,
+                  "IVOL_BID": 26.54141,
+                  "IVOL_ASK": 29.9507,
+                  "PX_MID": 318.7,
+                  "PX_BID": 309.7,
+                  "PX_ASK": 327.7,
+                  "PX_LAST": 402.41,
+                  "VOLUME": 1.0,
+                  "OPEN_INT": 1
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6275 Index",
+                  "sequence_number": 208,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6275.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.24255,
+                  "IVOL_BID": 26.48968,
+                  "IVOL_ASK": 29.97474,
+                  "PX_MID": 315.15,
+                  "PX_BID": 305.9,
+                  "PX_ASK": 324.4,
+                  "PX_LAST": 593.56,
+                  "VOLUME": 2.0,
+                  "OPEN_INT": 10
+                },
+                {
+                  "security": "SPXW US 04/17/26 C6280 Index",
+                  "sequence_number": 209,
+                  "errors": null,
+                  "OPT_EXPIRE_DT": "2026-04-17",
+                  "OPT_STRIKE_PX": 6280.0,
+                  "OPT_PUT_CALL": "Call",
+                  "IVOL_MID": 28.08309,
+                  "IVOL_BID": 26.43468,
+                  "IVOL_ASK": 29.71539,
+                  "PX_MID": 310.85,
+                  "PX_BID": 302.1,
+                  "PX_ASK": 319.6,
+                  "PX_LAST": 299.6,
+                  "VOLUME": 9.0,
+                  "OPEN_INT": 2
+                }
+              ],
+              "surface_nulls": {}
+            },
+            "surface_preview": [],
+            "surface_columns": [
+              "valuation_date",
+              "underlying",
+              "option_ticker",
+              "expiry",
+              "tau_years",
+              "option_type",
+              "strike",
+              "spot",
+              "implied_vol",
+              "mid_price",
+              "volume",
+              "open_interest"
+            ]
+          },
+          "windows": [
+            5,
+            21,
+            63
+          ]
+        }
+      }
+    ],
+    "selected_title": "Evidence-anchored structural conjecture"
+  },
+  "symbolic_packet": {
+    "packet": {
+      "title": "Evidence-anchored structural conjecture",
+      "family": "spot_vol_linkage",
+      "securities": [
+        "SPY US Equity",
+        "VIX3M Index"
+      ],
+      "assumptions": [
+        "Empirical scope anchored to SPY US Equity.",
+        "sigma_s > 0",
+        "sigma_v > 0",
+        "-1 <= rho <= 1",
+        "Regime labels correspond to empirically observed states",
+        "Observed feature differences are mapped consistently to theorem notation"
+      ],
+      "tasks": [
+        {
+          "name": "covariance_symmetry",
+          "kind": "verify_identity",
+          "payload": {
+            "lhs": "rho*sigma_s*sigma_v",
+            "rhs": "sigma_v*sigma_s*rho"
+          },
+          "rationale": "Basic symmetry check for spot-vol covariance style terms."
+        },
+        {
+          "name": "quadratic_form_nonnegative",
+          "kind": "verify_nonnegative",
+          "payload": {
+            "expression": "(sigma_s - rho*sigma_v)**2"
+          },
+          "rationale": "Any squared coupling residual should remain nonnegative."
+        },
+        {
+          "name": "variance_of_linear_combination",
+          "kind": "verify_nonnegative",
+          "payload": {
+            "expression": "sigma_s**2 + sigma_v**2 - 2*rho*sigma_s*sigma_v"
+          },
+          "rationale": "A variance-style quadratic form should remain nonnegative under admissible coupling assumptions."
+        },
+        {
+          "name": "regime_gap_identity",
+          "kind": "verify_identity",
+          "payload": {
+            "lhs": "(rv_hi - rv_lo) + (iv_hi - iv_lo)",
+            "rhs": "(rv_hi + iv_hi) - (rv_lo + iv_lo)"
+          },
+          "rationale": "Checks algebraic coherence of regime-difference decomposition used in pair-linkage narratives."
+        },
+        {
+          "name": "zero_spread_baseline",
+          "kind": "verify_derivative_zero",
+          "payload": {
+            "expression": "x**2",
+            "variable": "x",
+            "point": 0
+          },
+          "rationale": "Provides a simple baseline zero-point regularity check for local spread/coupling expansions."
+        }
+      ],
+      "notes": [
+        "These are symbolic consistency checks for pair-linkage theorems.",
+        "Packet assumptions are threaded into symbolic execution so rho bounds and positivity can actually be used."
+      ]
+    },
+    "files": {
+      "json_path": "artifacts\\symbolic_task_packets\\spy_us_equity_vix3m_index_pair_linkage.json",
+      "markdown_path": "artifacts\\symbolic_task_packets\\spy_us_equity_vix3m_index_pair_linkage.md",
+      "bytes_json": 2178,
+      "bytes_markdown": 1766
+    }
+  },
+  "symbolic_execution": {
+    "title": "Evidence-anchored structural conjecture",
+    "family": "spot_vol_linkage",
+    "assumptions_used": [
+      "Empirical scope anchored to SPY US Equity.",
+      "sigma_s > 0",
+      "sigma_v > 0",
+      "-1 <= rho <= 1",
+      "Regime labels correspond to empirically observed states",
+      "Observed feature differences are mapped consistently to theorem notation"
+    ],
+    "n_tasks": 5,
+    "n_ok": 5,
+    "n_fail": 0,
+    "results": [
+      {
+        "task": {
+          "name": "covariance_symmetry",
+          "kind": "verify_identity",
+          "payload": {
+            "lhs": "rho*sigma_s*sigma_v",
+            "rhs": "sigma_v*sigma_s*rho"
+          },
+          "rationale": "Basic symmetry check for spot-vol covariance style terms."
+        },
+        "ok": true,
+        "assumptions_used": [
+          "Empirical scope anchored to SPY US Equity.",
+          "sigma_s > 0",
+          "sigma_v > 0",
+          "-1 <= rho <= 1",
+          "Regime labels correspond to empirically observed states",
+          "Observed feature differences are mapped consistently to theorem notation"
+        ],
+        "result": {
+          "name": "identity",
+          "kind": "identity",
+          "passed": true,
+          "result": "proved_exactly",
+          "details": {
+            "lhs": "rho*sigma_s*sigma_v",
+            "rhs": "rho*sigma_s*sigma_v",
+            "difference": "0",
+            "assumptions": [
+              "Empirical scope anchored to SPY US Equity.",
+              "sigma_s > 0",
+              "sigma_v > 0",
+              "-1 <= rho <= 1",
+              "Regime labels correspond to empirically observed states",
+              "Observed feature differences are mapped consistently to theorem notation"
+            ]
+          }
+        }
+      },
+      {
+        "task": {
+          "name": "quadratic_form_nonnegative",
+          "kind": "verify_nonnegative",
+          "payload": {
+            "expression": "(sigma_s - rho*sigma_v)**2"
+          },
+          "rationale": "Any squared coupling residual should remain nonnegative."
+        },
+        "ok": true,
+        "assumptions_used": [
+          "Empirical scope anchored to SPY US Equity.",
+          "sigma_s > 0",
+          "sigma_v > 0",
+          "-1 <= rho <= 1",
+          "Regime labels correspond to empirically observed states",
+          "Observed feature differences are mapped consistently to theorem notation"
+        ],
+        "result": {
+          "name": "nonnegative",
+          "kind": "nonnegative",
+          "passed": true,
+          "result": "proved",
+          "details": {
+            "expression": "(-rho*sigma_v + sigma_s)**2",
+            "simplified": "(rho*sigma_v - sigma_s)**2",
+            "is_nonnegative": true,
+            "assumptions": [
+              "Empirical scope anchored to SPY US Equity.",
+              "sigma_s > 0",
+              "sigma_v > 0",
+              "-1 <= rho <= 1",
+              "Regime labels correspond to empirically observed states",
+              "Observed feature differences are mapped consistently to theorem notation"
+            ]
+          }
+        }
+      },
+      {
+        "task": {
+          "name": "variance_of_linear_combination",
+          "kind": "verify_nonnegative",
+          "payload": {
+            "expression": "sigma_s**2 + sigma_v**2 - 2*rho*sigma_s*sigma_v"
+          },
+          "rationale": "A variance-style quadratic form should remain nonnegative under admissible coupling assumptions."
+        },
+        "ok": true,
+        "assumptions_used": [
+          "Empirical scope anchored to SPY US Equity.",
+          "sigma_s > 0",
+          "sigma_v > 0",
+          "-1 <= rho <= 1",
+          "Regime labels correspond to empirically observed states",
+          "Observed feature differences are mapped consistently to theorem notation"
+        ],
+        "result": {
+          "name": "nonnegative",
+          "kind": "nonnegative",
+          "passed": true,
+          "result": "proved_by_assumptions",
+          "details": {
+            "expression": "-2*rho*sigma_s*sigma_v + sigma_s**2 + sigma_v**2",
+            "simplified": "-2*rho*sigma_s*sigma_v + sigma_s**2 + sigma_v**2",
+            "is_nonnegative": null,
+            "assumptions": [
+              "Empirical scope anchored to SPY US Equity.",
+              "sigma_s > 0",
+              "sigma_v > 0",
+              "-1 <= rho <= 1",
+              "Regime labels correspond to empirically observed states",
+              "Observed feature differences are mapped consistently to theorem notation"
+            ]
+          }
+        }
+      },
+      {
+        "task": {
+          "name": "regime_gap_identity",
+          "kind": "verify_identity",
+          "payload": {
+            "lhs": "(rv_hi - rv_lo) + (iv_hi - iv_lo)",
+            "rhs": "(rv_hi + iv_hi) - (rv_lo + iv_lo)"
+          },
+          "rationale": "Checks algebraic coherence of regime-difference decomposition used in pair-linkage narratives."
+        },
+        "ok": true,
+        "assumptions_used": [
+          "Empirical scope anchored to SPY US Equity.",
+          "sigma_s > 0",
+          "sigma_v > 0",
+          "-1 <= rho <= 1",
+          "Regime labels correspond to empirically observed states",
+          "Observed feature differences are mapped consistently to theorem notation"
+        ],
+        "result": {
+          "name": "identity",
+          "kind": "identity",
+          "passed": true,
+          "result": "proved_exactly",
+          "details": {
+            "lhs": "iv_hi - iv_lo + rv_hi - rv_lo",
+            "rhs": "iv_hi - iv_lo + rv_hi - rv_lo",
+            "difference": "0",
+            "assumptions": [
+              "Empirical scope anchored to SPY US Equity.",
+              "sigma_s > 0",
+              "sigma_v > 0",
+              "-1 <= rho <= 1",
+              "Regime labels correspond to empirically observed states",
+              "Observed feature differences are mapped consistently to theorem notation"
+            ]
+          }
+        }
+      },
+      {
+        "task": {
+          "name": "zero_spread_baseline",
+          "kind": "verify_derivative_zero",
+          "payload": {
+            "expression": "x**2",
+            "variable": "x",
+            "point": 0
+          },
+          "rationale": "Provides a simple baseline zero-point regularity check for local spread/coupling expansions."
+        },
+        "ok": true,
+        "assumptions_used": [
+          "Empirical scope anchored to SPY US Equity.",
+          "sigma_s > 0",
+          "sigma_v > 0",
+          "-1 <= rho <= 1",
+          "Regime labels correspond to empirically observed states",
+          "Observed feature differences are mapped consistently to theorem notation"
+        ],
+        "result": {
+          "name": "derivative_zero",
+          "kind": "derivative_zero",
+          "passed": true,
+          "result": "proved",
+          "details": {
+            "expression": "x**2",
+            "derivative": "2*x",
+            "point": "0",
+            "value": "0",
+            "assumptions": [
+              "Empirical scope anchored to SPY US Equity.",
+              "sigma_s > 0",
+              "sigma_v > 0",
+              "-1 <= rho <= 1",
+              "Regime labels correspond to empirically observed states",
+              "Observed feature differences are mapped consistently to theorem notation"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

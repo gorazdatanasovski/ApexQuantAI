@@ -1,0 +1,54 @@
+{
+  "security": "AAPL US Equity",
+  "note_type": "security_regime_note",
+  "title": "AAPL US Equity empirical research memory",
+  "as_of_date": "2026-03-26",
+  "content_markdown": "# Bloomberg Research Memory: AAPL US Equity\n\n## As of\n- Date: 2026-03-26\n\n## Market state\n- Last price: 252.89\n- Last daily return: 0.00106823\n- Current drawdown: -0.116356\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0151082\n- Realized vol 21: 0.0545906\n- Realized vol 63: 0.117968\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.385609\n\n## OU / mean-reversion panel\n- OU speed 5: 1.34488\n- OU speed 21: 0.288881\n- OU speed 63: 0.115237\n\n## Jump / discontinuity panel\n- Jump share 5: 0.415926\n- Jump share 21: 0.192091\n- Jump share 63: 0.239424\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.36667\n- Abs-return ACF 21: -0.090562\n- Abs-return ACF 63: -0.00686491\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.779127\n- Return autocorr 21: 0.0198393\n- Return autocorr 63: 0.107809\n\n## Volume anomaly panel\n- Volume z-score 5: -0.344175\n- Volume z-score 21: 0.0337257\n- Volume z-score 63: -0.256193\n\n## Historical coverage\n- Rows: 54590\n- Start: 1982-11-30\n- End: 2026-03-26\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for AAPL US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "AAPL US Equity",
+    "as_of_date": "2026-03-26",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "moderate_mean_reversion",
+    "realized_vol": {
+      "5": 0.015108245855550536,
+      "21": 0.05459059664097301,
+      "63": 0.11796784312279741
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.0,
+      "63": 0.38560868506696255
+    },
+    "ou_speed": {
+      "5": 1.3448845497055328,
+      "21": 0.28888105244604073,
+      "63": 0.11523705839830548
+    },
+    "jump_share": {
+      "5": 0.41592613146486707,
+      "21": 0.19209103253665724,
+      "63": 0.23942419994997294
+    },
+    "acf_abs_return": {
+      "5": -0.3666695276833082,
+      "21": -0.09056199599102911,
+      "63": -0.006864909226618487
+    },
+    "autocorr_return": {
+      "5": -0.7791265456429189,
+      "21": 0.019839302880500346,
+      "63": 0.10780851316999221
+    },
+    "volume_z": {
+      "5": -0.3441753490347822,
+      "21": 0.033725703890006516,
+      "63": -0.25619285386009
+    },
+    "history_span": {
+      "rows": 54590,
+      "start": "1982-11-30",
+      "end": "2026-03-26"
+    }
+  }
+}

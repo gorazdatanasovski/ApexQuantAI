@@ -1,0 +1,580 @@
+{
+  "created_at": "2026-03-28T00:57:01+00:00",
+  "selected_actions": [
+    {
+      "priority": 1.0,
+      "category": "exploit_promoted_theorem",
+      "task_name": "exploit_spy_us_equity_skew_index_rough_variance_family",
+      "rationale": "The top theorem family is already symbolically verified. Use it as the base family and extend it into SPY/VIX linkage structure instead of re-proving the same SPY-only result.",
+      "securities": [
+        "SPY US Equity",
+        "SKEW Index"
+      ],
+      "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and SKEW Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+      "benchmark_security": "SPY US Equity"
+    },
+    {
+      "priority": 1.0,
+      "category": "exploit_promoted_theorem",
+      "task_name": "exploit_spy_us_equity_spx_index_rough_variance_family",
+      "rationale": "The top theorem family is already symbolically verified. Use it as the base family and extend it into SPY/VIX linkage structure instead of re-proving the same SPY-only result.",
+      "securities": [
+        "SPY US Equity",
+        "SPX Index"
+      ],
+      "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and SPX Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+      "benchmark_security": "SPY US Equity"
+    },
+    {
+      "priority": 1.0,
+      "category": "exploit_promoted_theorem",
+      "task_name": "exploit_spy_us_equity_vix3m_index_rough_variance_family",
+      "rationale": "The top theorem family is already symbolically verified. Use it as the base family and extend it into SPY/VIX linkage structure instead of re-proving the same SPY-only result.",
+      "securities": [
+        "SPY US Equity",
+        "VIX3M Index"
+      ],
+      "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and VIX3M Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+      "benchmark_security": "SPY US Equity"
+    },
+    {
+      "priority": 1.0,
+      "category": "exploit_promoted_theorem",
+      "task_name": "exploit_spy_us_equity_vix_index_rough_variance_family",
+      "rationale": "The top theorem family is already symbolically verified. Use it as the base family and extend it into SPY/VIX linkage structure instead of re-proving the same SPY-only result.",
+      "securities": [
+        "SPY US Equity",
+        "VIX Index"
+      ],
+      "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and VIX Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+      "benchmark_security": "SPY US Equity"
+    },
+    {
+      "priority": 1.0,
+      "category": "exploit_promoted_theorem",
+      "task_name": "exploit_spy_us_equity_vvix_index_rough_variance_family",
+      "rationale": "The top theorem family is already symbolically verified. Use it as the base family and extend it into SPY/VIX linkage structure instead of re-proving the same SPY-only result.",
+      "securities": [
+        "SPY US Equity",
+        "VVIX Index"
+      ],
+      "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and VVIX Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+      "benchmark_security": "SPY US Equity"
+    }
+  ],
+  "scoreboard_snapshot": {
+    "top_theorem": {
+      "name": "Rough-variance scaling identification theorem",
+      "score": 0.8750318148853105,
+      "details": {
+        "entry_id": "thm_a83eb68e529643ae",
+        "title": "Rough-variance scaling identification theorem",
+        "status": "symbolically_verified_candidate",
+        "native_score": 0.695599158569593,
+        "updated_at": "2026-03-28T00:40:49+00:00",
+        "securities": [
+          "SPY US Equity",
+          "VIX3M Index"
+        ],
+        "statement_head": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).",
+        "metadata": {
+          "query": "Refine the SPY-volatility linkage theorem for SPY US Equity and VIX3M Index. Replace generic structural language with a sharper theorem candidate about spot-volatility coupling, roughness transmission, regime dependence, or term-structure state. State the core object, the sign or monotonicity prediction if supported, the empirical Bloomberg feature signature, and explicit failure conditions. Avoid generic 'common structural representation' language.",
+          "lab_status": null,
+          "lab_score": null,
+          "selected_status": "research_conjecture",
+          "selected_score": 0.695599158569593,
+          "promotion_engine": {
+            "last_promotion_scan_at": "2026-03-28T00:40:49+00:00",
+            "symbolic_pass_rate": 1.0,
+            "symbolic_tasks": 5,
+            "symbolic_ok": 5,
+            "symbolic_fail": 0,
+            "source_file": "artifacts\\theorem_refinements\\rough_variance_scaling_identification_theorem_20260328T003323Z.json",
+            "rationale": "Theorem passed all symbolic tasks in the latest refinement run and should be promoted above purely empirical candidates."
+          }
+        },
+        "symbolic_pass_rate": 1.0,
+        "symbolic_tasks": 5
+      }
+    },
+    "top_runs": [
+      {
+        "name": "refresh_spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+        "score": 0.9000000000000001,
+        "details": {
+          "task_name": "refresh_spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+          "securities": [
+            "SPY US Equity",
+            "SPX Index"
+          ],
+          "core_query": "Propose a theorem linking SPY US Equity and SPX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+          "summary": {
+            "task_name": "refresh_spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+            "securities": [
+              "SPY US Equity",
+              "SPX Index"
+            ],
+            "coverage_ok": true,
+            "evidence_ok": true,
+            "theorem_ok": true,
+            "market_memory_ok": true,
+            "market_calibration_ok": true,
+            "market_live_snapshot_ok": false,
+            "selected_theorem_title": "Evidence-anchored structural conjecture",
+            "theorem_registry": {
+              "action": "existing",
+              "entry_id": "thm_04146b78e2eb455e",
+              "artifact_hash": "1e4d587632ce67e7f9c4b15486c8399b82fbbcff38828be41d9505a925a9913f",
+              "status": "speculative_candidate",
+              "title": "Evidence-anchored structural conjecture"
+            }
+          },
+          "warnings": [],
+          "path": "artifacts\\universe_research_runs\\refresh_spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ],
+          "task": {
+            "name": "refresh_spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+            "core_query": "Propose a theorem linking SPY US Equity and SPX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+            "securities": [
+              "SPY US Equity",
+              "SPX Index"
+            ],
+            "benchmark_security": "SPY US Equity",
+            "include_evidence": true,
+            "include_theorem": true,
+            "include_market_memory": true,
+            "include_market_calibration": true,
+            "include_market_live_snapshot": false,
+            "include_formal_export": false,
+            "acceptance_score": 0.82
+          }
+        }
+      },
+      {
+        "name": "refresh_spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+        "score": 0.9000000000000001,
+        "details": {
+          "task_name": "refresh_spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+          "securities": [
+            "SPY US Equity",
+            "VIX3M Index"
+          ],
+          "core_query": "Propose a theorem linking SPY US Equity and VIX3M Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+          "summary": {
+            "task_name": "refresh_spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+            "securities": [
+              "SPY US Equity",
+              "VIX3M Index"
+            ],
+            "coverage_ok": true,
+            "evidence_ok": true,
+            "theorem_ok": true,
+            "market_memory_ok": true,
+            "market_calibration_ok": true,
+            "market_live_snapshot_ok": false,
+            "selected_theorem_title": "Evidence-anchored structural conjecture",
+            "theorem_registry": {
+              "action": "existing",
+              "entry_id": "thm_91145bf65d5d4f7f",
+              "artifact_hash": "de9a223c8aab0ac055d518e65d5e5e4c6d5c21a3cc0daeb40f6f249ef687c12e",
+              "status": "speculative_candidate",
+              "title": "Evidence-anchored structural conjecture"
+            }
+          },
+          "warnings": [],
+          "path": "artifacts\\universe_research_runs\\refresh_spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ],
+          "task": {
+            "name": "refresh_spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+            "core_query": "Propose a theorem linking SPY US Equity and VIX3M Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+            "securities": [
+              "SPY US Equity",
+              "VIX3M Index"
+            ],
+            "benchmark_security": "SPY US Equity",
+            "include_evidence": true,
+            "include_theorem": true,
+            "include_market_memory": true,
+            "include_market_calibration": true,
+            "include_market_live_snapshot": false,
+            "include_formal_export": false,
+            "acceptance_score": 0.82
+          }
+        }
+      },
+      {
+        "name": "refresh_spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+        "score": 0.9000000000000001,
+        "details": {
+          "task_name": "refresh_spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+          "securities": [
+            "SPY US Equity",
+            "VIX Index"
+          ],
+          "core_query": "Propose a theorem linking SPY US Equity and VIX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+          "summary": {
+            "task_name": "refresh_spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+            "securities": [
+              "SPY US Equity",
+              "VIX Index"
+            ],
+            "coverage_ok": true,
+            "evidence_ok": true,
+            "theorem_ok": true,
+            "market_memory_ok": true,
+            "market_calibration_ok": true,
+            "market_live_snapshot_ok": false,
+            "selected_theorem_title": "Evidence-anchored structural conjecture",
+            "theorem_registry": {
+              "action": "existing",
+              "entry_id": "thm_70b866f563ec43d4",
+              "artifact_hash": "fd3f6d986bb71ccc004bcbd72664a31bf69f2635522c7212030d5e6dd7b51b3a",
+              "status": "speculative_candidate",
+              "title": "Evidence-anchored structural conjecture"
+            }
+          },
+          "warnings": [],
+          "path": "artifacts\\universe_research_runs\\refresh_spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ],
+          "task": {
+            "name": "refresh_spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+            "core_query": "Propose a theorem linking SPY US Equity and VIX Index through spot-volatility coupling, realized variance scaling, and regime transitions.",
+            "securities": [
+              "SPY US Equity",
+              "VIX Index"
+            ],
+            "benchmark_security": "SPY US Equity",
+            "include_evidence": true,
+            "include_theorem": true,
+            "include_market_memory": true,
+            "include_market_calibration": true,
+            "include_market_live_snapshot": false,
+            "include_formal_export": false,
+            "acceptance_score": 0.82
+          }
+        }
+      },
+      {
+        "name": "refresh_spy_volatility_universe_skew_index_spy_roughness_scaling",
+        "score": 0.7500000000000001,
+        "details": {
+          "task_name": "refresh_spy_volatility_universe_skew_index_spy_roughness_scaling",
+          "securities": [
+            "SKEW Index"
+          ],
+          "core_query": "Propose a theorem linking rough-volatility roughness to realized variance scaling for SKEW Index.",
+          "summary": {
+            "task_name": "refresh_spy_volatility_universe_skew_index_spy_roughness_scaling",
+            "securities": [
+              "SKEW Index"
+            ],
+            "coverage_ok": true,
+            "evidence_ok": true,
+            "theorem_ok": true,
+            "market_memory_ok": true,
+            "market_calibration_ok": false,
+            "market_live_snapshot_ok": false,
+            "selected_theorem_title": "Rough-variance scaling identification theorem",
+            "theorem_registry": {
+              "action": "existing",
+              "entry_id": "thm_47fcbcb7cf68433a",
+              "artifact_hash": "350c3cb580e30954e4c6f745fd28574f9d79c12cf6387d40007af17072ba46a6",
+              "status": "unverified_hypothesis",
+              "title": "Rough-variance scaling identification theorem"
+            }
+          },
+          "warnings": [],
+          "path": "artifacts\\universe_research_runs\\refresh_spy_volatility_universe_skew_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ],
+          "task": {
+            "name": "refresh_spy_volatility_universe_skew_index_spy_roughness_scaling",
+            "core_query": "Propose a theorem linking rough-volatility roughness to realized variance scaling for SKEW Index.",
+            "securities": [
+              "SKEW Index"
+            ],
+            "benchmark_security": "SPY US Equity",
+            "include_evidence": true,
+            "include_theorem": true,
+            "include_market_memory": true,
+            "include_market_calibration": false,
+            "include_market_live_snapshot": false,
+            "include_formal_export": false,
+            "acceptance_score": 0.82
+          }
+        }
+      },
+      {
+        "name": "refresh_spy_volatility_universe_spx_index_spy_roughness_scaling",
+        "score": 0.7500000000000001,
+        "details": {
+          "task_name": "refresh_spy_volatility_universe_spx_index_spy_roughness_scaling",
+          "securities": [
+            "SPX Index"
+          ],
+          "core_query": "Propose a theorem linking rough-volatility roughness to realized variance scaling for SPX Index.",
+          "summary": {
+            "task_name": "refresh_spy_volatility_universe_spx_index_spy_roughness_scaling",
+            "securities": [
+              "SPX Index"
+            ],
+            "coverage_ok": true,
+            "evidence_ok": true,
+            "theorem_ok": true,
+            "market_memory_ok": true,
+            "market_calibration_ok": false,
+            "market_live_snapshot_ok": false,
+            "selected_theorem_title": "Rough-variance scaling identification theorem",
+            "theorem_registry": {
+              "action": "existing",
+              "entry_id": "thm_edcb119573d44012",
+              "artifact_hash": "e7f929f2313d4f2c4ec69f1f9938815ce9497f03388e0341170c1c9dacbcbb39",
+              "status": "unverified_hypothesis",
+              "title": "Rough-variance scaling identification theorem"
+            }
+          },
+          "warnings": [],
+          "path": "artifacts\\universe_research_runs\\refresh_spy_volatility_universe_spx_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ],
+          "task": {
+            "name": "refresh_spy_volatility_universe_spx_index_spy_roughness_scaling",
+            "core_query": "Propose a theorem linking rough-volatility roughness to realized variance scaling for SPX Index.",
+            "securities": [
+              "SPX Index"
+            ],
+            "benchmark_security": "SPY US Equity",
+            "include_evidence": true,
+            "include_theorem": true,
+            "include_market_memory": true,
+            "include_market_calibration": false,
+            "include_market_live_snapshot": false,
+            "include_formal_export": false,
+            "acceptance_score": 0.82
+          }
+        }
+      }
+    ],
+    "weak_lanes": [
+      {
+        "name": "spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "SPX Index: no rows in bloomberg_daily_history.",
+            "SPX Index: no rows in bloomberg_daily_features.",
+            "SPX Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "SPY US Equity",
+            "SPX Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_spx_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "VIX3M Index: no rows in bloomberg_daily_history.",
+            "VIX3M Index: no rows in bloomberg_daily_features.",
+            "VIX3M Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "SPY US Equity",
+            "VIX3M Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix3m_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "VIX Index: no rows in bloomberg_daily_history.",
+            "VIX Index: no rows in bloomberg_daily_features.",
+            "VIX Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "SPY US Equity",
+            "VIX Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_spy_us_equity_vix_index_spy_vix_linkage.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok",
+            "market_calibration_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_skew_index_spy_roughness_scaling",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "SKEW Index: no rows in bloomberg_daily_history.",
+            "SKEW Index: no rows in bloomberg_daily_features.",
+            "SKEW Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "SKEW Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_skew_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_spx_index_spy_roughness_scaling",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "SPX Index: no rows in bloomberg_daily_history.",
+            "SPX Index: no rows in bloomberg_daily_features.",
+            "SPX Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "SPX Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_spx_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_vix3m_index_spy_roughness_scaling",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "VIX3M Index: no rows in bloomberg_daily_history.",
+            "VIX3M Index: no rows in bloomberg_daily_features.",
+            "VIX3M Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "VIX3M Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix3m_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_vix_index_spy_roughness_scaling",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "VIX Index: no rows in bloomberg_daily_history.",
+            "VIX Index: no rows in bloomberg_daily_features.",
+            "VIX Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "VIX Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_vix_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ]
+        }
+      },
+      {
+        "name": "spy_volatility_universe_vvix_index_spy_roughness_scaling",
+        "score": 2.5,
+        "details": {
+          "failed_flags": [
+            "coverage_ok"
+          ],
+          "warnings": [
+            "VVIX Index: no rows in bloomberg_daily_history.",
+            "VVIX Index: no rows in bloomberg_daily_features.",
+            "VVIX Index: no rows in bloomberg_research_memory."
+          ],
+          "warnings_stale_coverage": true,
+          "securities": [
+            "VVIX Index"
+          ],
+          "path": "artifacts\\universe_research_runs\\spy_volatility_universe_vvix_index_spy_roughness_scaling.json",
+          "requested_summary_flags": [
+            "evidence_ok",
+            "theorem_ok",
+            "market_memory_ok"
+          ]
+        }
+      }
+    ]
+  }
+}

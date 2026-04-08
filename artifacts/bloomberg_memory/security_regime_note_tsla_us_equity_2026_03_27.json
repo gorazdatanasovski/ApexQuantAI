@@ -1,0 +1,54 @@
+{
+  "security": "TSLA US Equity",
+  "note_type": "security_regime_note",
+  "title": "TSLA US Equity empirical research memory",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: TSLA US Equity\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 361.83\n- Last daily return: -0.028015\n- Current drawdown: -0.261391\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0582598\n- Realized vol 21: 0.101005\n- Realized vol 63: 0.177474\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.297641\n- Hurst variance scaling 63: 0.356958\n\n## OU / mean-reversion panel\n- OU speed 5: -0.18822\n- OU speed 21: 0.131166\n- OU speed 63: 0.077921\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0\n- Jump share 63: 0\n\n## Volatility clustering panel\n- Abs-return ACF 5: -0.130293\n- Abs-return ACF 21: 0.0771187\n- Abs-return ACF 63: 0.0137618\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.564458\n- Return autocorr 21: -0.0734288\n- Return autocorr 63: -0.0839452\n\n## Volume anomaly panel\n- Volume z-score 5: 0.05349\n- Volume z-score 21: 0.140625\n- Volume z-score 63: 0.0697684\n\n## Historical coverage\n- Rows: 19810\n- Start: 2010-06-28\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for TSLA US Equity. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "TSLA US Equity",
+    "as_of_date": "2026-03-27",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "weak_mean_reversion",
+    "realized_vol": {
+      "5": 0.058259781907922165,
+      "21": 0.1010045781681759,
+      "63": 0.17747433161538045
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.2976411970117593,
+      "63": 0.35695795916225226
+    },
+    "ou_speed": {
+      "5": -0.1882195192244598,
+      "21": 0.13116630264263657,
+      "63": 0.07792096858010839
+    },
+    "jump_share": {
+      "5": 0.0,
+      "21": 0.0,
+      "63": 0.0
+    },
+    "acf_abs_return": {
+      "5": -0.13029264986206074,
+      "21": 0.0771187015537541,
+      "63": 0.013761802965199072
+    },
+    "autocorr_return": {
+      "5": 0.564457541943609,
+      "21": -0.07342882148425499,
+      "63": -0.08394524993543322
+    },
+    "volume_z": {
+      "5": 0.05348996290727733,
+      "21": 0.14062541184743846,
+      "63": 0.06976837557226147
+    },
+    "history_span": {
+      "rows": 19810,
+      "start": "2010-06-28",
+      "end": "2026-03-27"
+    }
+  }
+}

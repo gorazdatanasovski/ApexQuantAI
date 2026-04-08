@@ -1,0 +1,67 @@
+{
+  "entry_id": "thm_9b05ee3a6e5849c6",
+  "title": "Rough-variance scaling identification theorem",
+  "status": "research_conjecture",
+  "score": 0.695599158569593,
+  "statement": "Conjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).",
+  "assumptions": [
+    "H > 0 and H < 1/2.",
+    "The volatility driver admits a Volterra representation with local singularity exponent H-1/2.",
+    "The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.",
+    "Empirical scope anchored to SPY US Equity."
+  ],
+  "variables": {
+    "H": "roughness exponent",
+    "Delta": "observation scale \u0394",
+    "K": "Volterra kernel",
+    "X": "latent log-volatility state",
+    "RV_Delta": "realized-variance proxy at scale \u0394",
+    "C_X": "latent scaling constant",
+    "a_0": "noise/intercept term",
+    "a_1": "leading realized-variance scaling coefficient"
+  },
+  "tags": [
+    "rough_volatility",
+    "variance_scaling",
+    "rfsv",
+    "empirical_identification"
+  ],
+  "securities": [
+    "SPY US Equity",
+    "SKEW Index"
+  ],
+  "benchmark_security": "SPY US Equity",
+  "empirical_signature": [
+    "roughness_from_variance_scaling",
+    "volatility_clustering_consistency",
+    "range_variance_alignment"
+  ],
+  "symbolic_agenda": [
+    "{'kind': 'positivity', 'name': 'variance_constant_nonnegative', 'expr': 'C_X'}",
+    "{'kind': 'positivity', 'name': 'realized_variance_nonnegative', 'expr': 'a_1*Delta**(2*H)'}"
+  ],
+  "failure_conditions": [
+    "Estimated scaling slope is unstable across windows or frequencies.",
+    "Jump-share dominates the short-horizon variance proxy.",
+    "No persistent roughness signal appears in the Bloomberg feature panel.",
+    "No exact excerpt currently pins down every constant or normalization.",
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints."
+  ],
+  "next_actions": [
+    "Add explicit symbolic tasks with lhs/rhs identities or qualitative constraints.",
+    "Collect stronger exact excerpts from the book-memory layer.",
+    "Add a formal symbolic derivation or export the candidate to Lean for proof work."
+  ],
+  "source_kind": "theorem_lab",
+  "source_ref": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and SKEW Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+  "created_at": "2026-03-28T00:57:50+00:00",
+  "updated_at": "2026-03-28T00:57:50+00:00",
+  "artifact_hash": "db93ee81e0afeb9fe24f2d49fe57521aa7f8f811a104370a29de83bfd7f5c479",
+  "metadata": {
+    "query": "Starting from the symbolically verified rough-variance scaling theorem for SPY US Equity, propose a sharper theorem linking SPY US Equity and SKEW Index through roughness transmission, variance scaling, and volatility-state dependence. State explicit empirical signatures, symbolic structure, and failure conditions.",
+    "lab_status": null,
+    "lab_score": null,
+    "selected_status": "research_conjecture",
+    "selected_score": 0.695599158569593
+  }
+}

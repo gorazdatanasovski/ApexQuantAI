@@ -1,0 +1,54 @@
+{
+  "security": "SPX Index",
+  "note_type": "security_regime_note",
+  "title": "SPX Index empirical research memory",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: SPX Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 6368.85\n- Last daily return: -0.0168632\n- Current drawdown: -0.0873743\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0276706\n- Realized vol 21: 0.0450225\n- Realized vol 63: 0.0649778\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.23527\n- Hurst variance scaling 63: 0.297006\n\n## OU / mean-reversion panel\n- OU speed 5: -0.320931\n- OU speed 21: 0.00885961\n- OU speed 63: -0.017272\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0.00370177\n- Jump share 63: 0.0312051\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.281503\n- Abs-return ACF 21: -0.094978\n- Abs-return ACF 63: 0.0985198\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.242006\n- Return autocorr 21: -0.210901\n- Return autocorr 63: -0.140531\n\n## Volume anomaly panel\n- Volume z-score 5: -0.0423011\n- Volume z-score 21: -0.281732\n- Volume z-score 63: -0.196134\n\n## Historical coverage\n- Rows: 123455\n- Start: 1927-12-30\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SPX Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "SPX Index",
+    "as_of_date": "2026-03-27",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "weak_mean_reversion",
+    "realized_vol": {
+      "5": 0.02767058178304134,
+      "21": 0.04502245187391723,
+      "63": 0.06497776691769638
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.23527033231402472,
+      "63": 0.29700639697357123
+    },
+    "ou_speed": {
+      "5": -0.3209313200749912,
+      "21": 0.008859614344210398,
+      "63": -0.017271990015967274
+    },
+    "jump_share": {
+      "5": 0.0,
+      "21": 0.003701772428760409,
+      "63": 0.031205072450173652
+    },
+    "acf_abs_return": {
+      "5": 0.28150295452141166,
+      "21": -0.0949780050223257,
+      "63": 0.09851980561686118
+    },
+    "autocorr_return": {
+      "5": 0.24200618715047076,
+      "21": -0.2109006727992414,
+      "63": -0.14053056254400484
+    },
+    "volume_z": {
+      "5": -0.042301092509735246,
+      "21": -0.2817321555384074,
+      "63": -0.19613421089131622
+    },
+    "history_span": {
+      "rows": 123455,
+      "start": "1927-12-30",
+      "end": "2026-03-27"
+    }
+  }
+}

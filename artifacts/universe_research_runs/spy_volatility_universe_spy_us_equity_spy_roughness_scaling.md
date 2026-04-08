@@ -1,0 +1,148 @@
+# spy_volatility_universe_spy_us_equity_spy_roughness_scaling
+
+- Created at: 2026-03-27T23:01:41+00:00
+- Securities: SPY US Equity
+- Core query: Propose a theorem linking rough-volatility roughness to realized variance scaling for SPY US Equity.
+
+## Summary
+```json
+{
+  "task_name": "spy_volatility_universe_spy_us_equity_spy_roughness_scaling",
+  "securities": [
+    "SPY US Equity"
+  ],
+  "coverage_ok": true,
+  "evidence_ok": true,
+  "theorem_ok": true,
+  "market_memory_ok": true,
+  "market_calibration_ok": false,
+  "market_live_snapshot_ok": false,
+  "selected_theorem_title": "Rough-variance scaling identification theorem",
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_dea68dae778b423d",
+    "artifact_hash": "14b0cb4f1415b71a2f6ff53b3b09f10d3aa0af1003d6dd65d319ad36f3625f80",
+    "status": "speculative_candidate",
+    "title": "Rough-variance scaling identification theorem"
+  }
+}
+```
+
+## Coverage
+```json
+{
+  "db_exists": true,
+  "securities": {
+    "SPY US Equity": {
+      "history_rows": 41730,
+      "feature_rows": 8346,
+      "memory_rows": 1
+    }
+  }
+}
+```
+
+## Evidence
+```json
+{
+  "ok": true,
+  "mode_used": "evidence",
+  "selected_title": null,
+  "response": "Best supported answer:\nRegularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ). (The blow-up tH\u221212 as t \u21920 is a desired feature, in agreement with steep skews seen in the market.) from which one obtains a skewTo first order, Zt \u2248z + u(z) R 0t K(s, t)dWs = z + u(z) bW =: \u03c3( bW), formula in the nonsimple rough volatility case of the form f \u2032(z) 2 .\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=1.009\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. Test whether roughness estimates co-move with realized-volatility regimes. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. - Hurst variance scaling 63: 0.0180497 - Hurst variance scaling 5: NA - Hurst variance scaling 21: 0 ## Realized volatility panel - Volatility regime classification: **\n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.505\n  We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options.\n- [book] Rough Volatility.pdf | page 282 | chunk 1 | score=0.504\n  According to this perspective, volatility behaves as a fractional Brownian motion with a small Hurst parameter.privacy The first book to offer a comprehensive exploration of the subject, Rough Volatility contributes to the understanding and application of rough volatility models by \u2022 equipping readers with the tools and insights needed to delve into the topic, ROUGH \u2022 exploring the motivation for rough volatility modeling and providing a toolbox for computation and practical implementation, and \n- [book] Rough Volatility.pdf | page 77 | chunk 1 | score=0.498\n  Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX.\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.498\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [registry] Rough-variance scaling identification theorem | score=0.482\n  Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}). Assumptions: H > 0 and H < 1/2.; The volatility driver admits a Volterra representation with local singularity exponent H-1/2.; The observed realized-variance proxy is asymptotically consistent up \n\nSupporting excerpts:\n[S1] Rough Volatility.pdf p.224: Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ).\n[S2] Rough Volatility.pdf p.194: We should emphasize that both Theorem 8.15 and Corollary 8.16 are not restricted to the class of rough volatility models from Section 8.1.2, including rough Bergomi, but hold in much greater generality to models that admit a robust form; this allows for the use of rough paths and regularity structures which was pivotal to the analysis. With some preliminary localization this could also be applied to rough Heston, though in this case other methods are available.\n[S3] Rough Volatility.pdf p.119: Computing I is greatly simplified by the scaling relation \u039b(p, 1) = |p|2H/(H+ 12 )\u039b sgn(p), |p|1/(H+ 12 ) , which shows that it suffices to solve (4.28) for p = \u00b11 only and not for all p E h S t \u2212S 0 exp n xt + t2H 2 \u2212H satisfiesThe implied volatility for log-strike X0 + xt 1 1 |x| lim \u03c3imp xt 2 \u2212H, t = x , 0.\n\nNote: this answer is limited to the retrieved evidence and fused research memory, and avoids unsupported extrapolation.",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": null,
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Theorem
+```json
+{
+  "ok": true,
+  "mode_used": "theorem",
+  "selected_title": "Rough-variance scaling identification theorem",
+  "response": "Research artifact: Rough-variance scaling identification theorem\nStatus: speculative_candidate\nScore: 0.502\n\nStatement:\nConjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).\n\nFused research memory:\n- [bloomberg_memory] SPY US Equity empirical research memory (SPY US Equity) | score=1.009\n  This note summarizes the local Bloomberg-derived empirical state for SPY US Equity. Test whether roughness estimates co-move with realized-volatility regimes. # Bloomberg Research Memory: SPY US Equity It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI. - Hurst variance scaling 63: 0.0180497 - Hurst variance scaling 5: NA - Hurst variance scaling 21: 0 ## Realized volatility panel - Volatility regime classification: **\n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.505\n  We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options.\n- [book] Rough Volatility.pdf | page 282 | chunk 1 | score=0.504\n  According to this perspective, volatility behaves as a fractional Brownian motion with a small Hurst parameter.privacy The first book to offer a comprehensive exploration of the subject, Rough Volatility contributes to the understanding and application of rough volatility models by \u2022 equipping readers with the tools and insights needed to delve into the topic, ROUGH \u2022 exploring the motivation for rough volatility modeling and providing a toolbox for computation and practical implementation, and \n- [book] Rough Volatility.pdf | page 77 | chunk 1 | score=0.498\n  Summary and conclusions 55 2.9 Summary and conclusions The rough fractional stochastic volatility (RFSV) model of [166] is remarkably consistent with the time series of realized variance for a wide range of different underlying assets. In this chapter, we have shown that this model written under the physical measure P leads naturally to an op- tions pricing model under Q that is remarkably consistent with the observed shape of the implied volatility surface in the particular case of SPX.\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.498\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [registry] Rough-variance scaling identification theorem | score=0.482\n  Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for SPY US Equity inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}). Assumptions: H > 0 and H < 1/2.; The volatility driver admits a Volterra representation with local singularity exponent H-1/2.; The observed realized-variance proxy is asymptotically consistent up \n\nAssumptions:\n- H > 0 and H < 1/2.\n- The volatility driver admits a Volterra representation with local singularity exponent H-1/2.\n- The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.\n- Empirical scope anchored to SPY US Equity.\n\nNext actions:\n- Strengthen or revise the symbolic assumptions before trusting the conjecture.\n- Resolve failed symbolic check: variance_constant_nonnegative.\n- Resolve failed symbolic check: realized_variance_nonnegative.\n- Collect stronger exact excerpts from the book-memory layer.\n- Add a formal symbolic derivation or export the candidate to Lean for proof work.\n\nTheorem registry:\n- action: inserted\n- entry_id: thm_dea68dae778b423d\n- status: speculative_candidate",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_dea68dae778b423d",
+    "artifact_hash": "14b0cb4f1415b71a2f6ff53b3b09f10d3aa0af1003d6dd65d319ad36f3625f80",
+    "status": "speculative_candidate",
+    "title": "Rough-variance scaling identification theorem"
+  },
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPY US Equity": {
+      "security": "SPY US Equity",
+      "status": "ok",
+      "n_obs": 8346,
+      "start_date": "1993-01-29",
+      "end_date": "2026-03-26",
+      "last_price": 645.09,
+      "last_log_return": -0.018020166399113968,
+      "last_drawdown": -0.07246689384462746,
+      "hurst_proxy": 0.018049720336195372,
+      "ou_beta_21": 0.9209418841954747,
+      "ou_kappa_21": 0.08235834548272408,
+      "realized_vol_21": 0.04263732804924681,
+      "jump_share_21": 0.11418863724935152,
+      "acf_abs_return_21": -0.2916127204870938,
+      "avg_volume_21": 97006914.14285715
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market memory
+```json
+{
+  "ok": true,
+  "mode_used": "market_memory",
+  "selected_title": null,
+  "response": "Bloomberg empirical memory summary\n\nSecurities:\n- SPY US Equity\n\n[SPY US Equity] SPY US Equity empirical research memory (2026-03-26)\n## Market state\n- Last price: 645.09\n- Last daily return: -0.0180202\n- Current drawdown: -0.0724669\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-26)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-27)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\nFeature-store summaries:\n- SPY US Equity: {\"security\": \"SPY US Equity\", \"status\": \"ok\", \"n_obs\": 8346, \"start_date\": \"1993-01-29\", \"end_date\": \"2026-03-26\", \"last_price\": 645.09, \"last_log_return\": -0.018020166399113968, \"last_drawdown\": -0.07246689384462746, \"hurst_proxy\": 0.018049720336195372, \"ou_beta_21\": 0.9209418841954747, \"ou_kappa_21\": 0.08235834548272408, \"realized_vol_21\": 0.04263732804924681, \"jump_share_21\": 0.11418863724935152, \"acf_abs_return_21\": -0.2916127204870938, \"avg_volume_21\": 97006914.14285715}\n\nUse theorem mode for new conjectures. Use evidence mode for exact book statements.",
+  "n_sources": 0,
+  "n_fusion_hits": 0,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "SPY US Equity": {
+      "security": "SPY US Equity",
+      "status": "ok",
+      "n_obs": 8346,
+      "start_date": "1993-01-29",
+      "end_date": "2026-03-26",
+      "last_price": 645.09,
+      "last_log_return": -0.018020166399113968,
+      "last_drawdown": -0.07246689384462746,
+      "hurst_proxy": 0.018049720336195372,
+      "ou_beta_21": 0.9209418841954747,
+      "ou_kappa_21": 0.08235834548272408,
+      "realized_vol_21": 0.04263732804924681,
+      "jump_share_21": 0.11418863724935152,
+      "acf_abs_return_21": -0.2916127204870938,
+      "avg_volume_21": 97006914.14285715
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market calibration
+None
+
+## Market live snapshot
+None

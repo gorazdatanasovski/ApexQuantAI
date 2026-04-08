@@ -1,0 +1,127 @@
+# spy_volatility_universe_vvix_index_spy_roughness_scaling
+
+- Created at: 2026-03-27T23:01:58+00:00
+- Securities: VVIX Index
+- Core query: Propose a theorem linking rough-volatility roughness to realized variance scaling for VVIX Index.
+
+## Summary
+```json
+{
+  "task_name": "spy_volatility_universe_vvix_index_spy_roughness_scaling",
+  "securities": [
+    "VVIX Index"
+  ],
+  "coverage_ok": false,
+  "evidence_ok": true,
+  "theorem_ok": true,
+  "market_memory_ok": true,
+  "market_calibration_ok": false,
+  "market_live_snapshot_ok": false,
+  "selected_theorem_title": "Rough-variance scaling identification theorem",
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_b4bdbb0eceee4565",
+    "artifact_hash": "5be2a87d5d9711264395a3675185bae6d1117ede3a43342a7014cbf74667e26c",
+    "status": "unverified_hypothesis",
+    "title": "Rough-variance scaling identification theorem"
+  }
+}
+```
+
+## Coverage
+```json
+{
+  "db_exists": true,
+  "securities": {
+    "VVIX Index": {
+      "history_rows": 0,
+      "feature_rows": 0,
+      "memory_rows": 0
+    }
+  }
+}
+```
+
+## Warnings
+- VVIX Index: no rows in bloomberg_daily_history.
+- VVIX Index: no rows in bloomberg_daily_features.
+- VVIX Index: no rows in bloomberg_research_memory.
+
+## Evidence
+```json
+{
+  "ok": true,
+  "mode_used": "evidence",
+  "selected_title": null,
+  "response": "Best supported answer:\nRegularity structure for rough volatility From W we now construct the fBm bW in the Riemann\u2013Liouville sense with Hurst index 1 H \u2208(0, 2] as \u221a Z t := \u02d9W \u22c6K(t) = 2H |t \u2212r|H\u221212 dWr, bWt 0 \u221a 2 denotes the Volterra kernel. We also write K(s, t) := K(t \u2212s).where K(t) = 2H 1t>0 tH\u22121 To give meaning to the product terms \u039eI(\u039e)k we follow the ideas from rough paths and define an \u201citerated integral\u201d for s, t \u2208R, s \u2264t, as Z t Wm s,t := ( bWr \u2212bWs)m dWr. We extend the domain of Wm to all of R2 by imposing Chen\u2019s relation for all s, u, t \u2208R, i.e., for t, s \u2208R, t \u2264s, we set m m Wm s,t := \u2212 X t,s .\n\nFused research memory:\n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.509\n  We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options.\n- [book] Rough Volatility.pdf | page 78 | chunk 1 | score=0.509\n  Pricing under rough volatility (for more details see www.cboe.com and, for example, Chapter 11 of [163]). Analogously, the CBOE VVIX index approximates the square-root of the fair strike of a one-month variance swap on the VIX index. Finally, implied volatility is the value of the volatility parameter in the Black- Scholes formula required to match the market price of a European option. 2.10.2 Computation of Bergomi\u2013Guyon autocorrelation functionals in the rBergomi model Computation of Cx\u03be \u03be Z T\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.503\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [book] Rough Volatility.pdf | page 53 | chunk 1 | score=0.500\n  The following stationary rough fractional stochastic volatility (RFSV) model was proposed: dS t = \u00b5tdt + VtdZt, S t Vt = exp{Xt}, t \u2208[0, T], (2.1) where \u00b5t is a suitable drift term, Zt is a standard Brownian motion, Xt is a fractional Ornstein\u2013 Uhlenbeck process (fOU process for short) satisfying dXt = \u03bddWHt \u2212\u03b1(Xt \u2212m)dt, where m \u2208R, and \u03bd and \u03b1 are positive parameters (see [92]), with Z and WH correlated in general\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.326\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Underlying attempted: SPX Index - Securities represented: QQQ US Equity, TSLA US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.326\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Underlying attempted: SPX Index - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n\nSupporting excerpts:\n[S1] Rough Volatility.pdf p.230: Regularity structure for rough volatility From W we now construct the fBm bW in the Riemann\u2013Liouville sense with Hurst index 1 H \u2208(0, 2] as \u221a Z t := \u02d9W \u22c6K(t) = 2H |t \u2212r|H\u221212 dWr, bWt 0 \u221a 2 denotes the Volterra kernel. We also write K(s, t) := K(t \u2212s).where K(t) = 2H 1t>0 tH\u22121 To give meaning to the product terms \u039eI(\u039e)k we follow the ideas from rough paths and define an \u201citerated integral\u201d for s, t \u2208R, s \u2264t, as Z t Wm s,t := ( bWr \u2212bWs)m dWr.\n[S2] Rough Volatility.pdf p.224: Regularity structure for rough volatility Theorem 10.4 will be proved as Corollary 10.28. We showed in [40, Corollary 11]\u2014but see related results by Al\u00f2s, Le\u00f3n, and Vives [11] and Fukasawa [151, 153]\u2014that in the previously considered simple rough volatility models, now writing \u03c3(.) instead of f(.), the implied volatility skew behaves, in the short-time 1 2 3limit, as \u223c\u03f1 \u03c3\u2032(0)\u03c3(0) \u27e8K1, 1\u27e9tH\u22121 1 )(H+ 2 , where \u27e8K1, 1\u27e9in our setting computes to cH := (H+(2H)2 2 ).\n[S3] Rough Volatility.pdf p.245: Rough Volterra dynamics for volatility 227 with speed \u03b42, and with rate function given by 1 (y \u2212I1(h1))2 , (10.51) I(y) := L2 + inf 2\u2225h1\u22252 h1\u2208L2([0,1]) 2I2(h1) where Z 1 Z s I1(h1) = \u03f1 f K(u, s)h1(u)du h1(s)ds, 0 0 Z 1 Z s 2 I2(h1) = f K(u, s)h1(u)du ds. In fact, we now cover functions f of exponential form, as required in rough volatility modeling [166, 39, 40].\n\nNote: this answer is limited to the retrieved evidence and fused research memory, and avoids unsupported extrapolation.",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": null,
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Theorem
+```json
+{
+  "ok": true,
+  "mode_used": "theorem",
+  "selected_title": "Rough-variance scaling identification theorem",
+  "response": "Research artifact: Rough-variance scaling identification theorem\nStatus: unverified_hypothesis\nScore: 0.283\n\nStatement:\nConjecture: Assume the latent log-volatility process X admits a Volterra representation X_t = X_0 + \u222b_0^t K(t,s) dW_s with local kernel singularity K(t,s) ~ c (t-s)^{H-1/2} for H in (0,1/2). Then, as \u0394 \u2193 0, the increment variance satisfies E[(X_{t+\u0394}-X_t)^2] = C_X \u0394^{2H} + o(\u0394^{2H}), and any realized-variance proxy constructed from sufficiently fine observations for VVIX Index inherits the same scaling exponent after lower-order noise correction: E[RV_\u0394] = a_0 + a_1 \u0394^{2H} + o(\u0394^{2H}).\n\nFused research memory:\n- [book] Rough Volatility.pdf | page 137 | chunk 2 | score=0.509\n  We discuss the role of the forward variance curve in establishing (perfect) hedging in rough models and present a hands-on empirical study illustrating the role of the Hurst parameter (driving the roughness of the paths) in the hedging performance for hedging VIX options.\n- [book] Rough Volatility.pdf | page 78 | chunk 1 | score=0.509\n  Pricing under rough volatility (for more details see www.cboe.com and, for example, Chapter 11 of [163]). Analogously, the CBOE VVIX index approximates the square-root of the fair strike of a one-month variance swap on the VIX index. Finally, implied volatility is the value of the volatility parameter in the Black- Scholes formula required to match the market price of a European option. 2.10.2 Computation of Bergomi\u2013Guyon autocorrelation functionals in the rBergomi model Computation of Cx\u03be \u03be Z T\n- [book] Rough Volatility.pdf | page 23 | chunk 2 | score=0.503\n  While simplified versions of rough volatility models may be more relevant for certain specific tasks, and although more complex versions tailored to precise objectives may be required in other applications, the core concept of rough volatility remains fundamental. For instance, classical stochastic volatility models can be rejected based on historical data due to their inherent stationarity over longer time scales necessary to compensate for Brownian scaling. In other words, regardless of the sp\n- [book] Rough Volatility.pdf | page 53 | chunk 1 | score=0.500\n  The following stationary rough fractional stochastic volatility (RFSV) model was proposed: dS t = \u00b5tdt + VtdZt, S t Vt = exp{Xt}, t \u2208[0, T], (2.1) where \u00b5t is a suitable drift term, Zt is a standard Brownian motion, Xt is a fractional Ornstein\u2013 Uhlenbeck process (fOU process for short) satisfying dXt = \u03bddWHt \u2212\u03b1(Xt \u2212m)dt, where m \u2208R, and \u03bd and \u03b1 are positive parameters (see [92]), with Z and WH correlated in general\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.326\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Underlying attempted: SPX Index - Securities represented: QQQ US Equity, TSLA US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n- [bloomberg_memory] Global Bloomberg learning snapshot (GLOBAL) | score=0.326\n  Route market-state questions to this Bloomberg memory before invoking theorem synthesis. Strengthen options contract selection so put/call filters do not collapse to zero usable rows. - Underlying attempted: SPX Index - Securities represented: AAPL US Equity, SPY US Equity QuantAI currently has a working Bloomberg historical warehouse and a working empirical feature layer. BQL is environment-dependent and currently unavailable unless the local environment includes Bloomberg's BQL object model. O\n\nAssumptions:\n- H > 0 and H < 1/2.\n- The volatility driver admits a Volterra representation with local singularity exponent H-1/2.\n- The observed realized-variance proxy is asymptotically consistent up to lower-order noise distortion.\n- Empirical scope anchored to VVIX Index.\n\nNext actions:\n- Strengthen or revise the symbolic assumptions before trusting the conjecture.\n- Refine the candidate so the implied empirical signature is sharper and testable.\n- Resolve failed symbolic check: variance_constant_nonnegative.\n- Resolve failed symbolic check: realized_variance_nonnegative.\n- Resolve failed empirical check: roughness_from_variance_scaling.\n- Resolve failed empirical check: volatility_clustering_consistency.\n\nTheorem registry:\n- action: inserted\n- entry_id: thm_b4bdbb0eceee4565\n- status: unverified_hypothesis",
+  "n_sources": 10,
+  "n_fusion_hits": 6,
+  "theorem_registry": {
+    "action": "inserted",
+    "entry_id": "thm_b4bdbb0eceee4565",
+    "artifact_hash": "5be2a87d5d9711264395a3675185bae6d1117ede3a43342a7014cbf74667e26c",
+    "status": "unverified_hypothesis",
+    "title": "Rough-variance scaling identification theorem"
+  },
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "VVIX Index": {
+      "security": "VVIX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market memory
+```json
+{
+  "ok": true,
+  "mode_used": "market_memory",
+  "selected_title": null,
+  "response": "Bloomberg empirical memory summary\n\nSecurities:\n- VVIX Index\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-26)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\n[GLOBAL] Global Bloomberg learning snapshot (2026-03-27)\n## Capabilities\n- blpapi available: True\n- BQL available: False\n- options surface builder available: True\n\nFeature-store summaries:\n- VVIX Index: {\"security\": \"VVIX Index\", \"status\": \"no_data\"}\n\nUse theorem mode for new conjectures. Use evidence mode for exact book statements.",
+  "n_sources": 0,
+  "n_fusion_hits": 0,
+  "theorem_registry": null,
+  "execution_parameter_calibration": null,
+  "execution_trajectory": null,
+  "calibration": null,
+  "market_summary": {
+    "VVIX Index": {
+      "security": "VVIX Index",
+      "status": "no_data"
+    }
+  },
+  "live_market": null,
+  "resolved_snapshot": null
+}
+```
+
+## Market calibration
+None
+
+## Market live snapshot
+None

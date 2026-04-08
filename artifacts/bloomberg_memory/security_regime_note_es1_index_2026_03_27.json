@@ -1,0 +1,54 @@
+{
+  "security": "ES1 Index",
+  "note_type": "security_regime_note",
+  "title": "ES1 Index empirical research memory",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: ES1 Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 6412.25\n- Last daily return: -0.0174307\n- Current drawdown: -0.0861184\n- Volatility regime: compressed_volatility\n- Roughness signature: rough_or_antipersistent\n- Mean-reversion signature: weak_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.0263856\n- Realized vol 21: 0.041838\n- Realized vol 63: 0.0627932\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0\n- Hurst variance scaling 63: 0.318991\n\n## OU / mean-reversion panel\n- OU speed 5: -0.343047\n- OU speed 21: 0.0164434\n- OU speed 63: -0.0117339\n\n## Jump / discontinuity panel\n- Jump share 5: 0\n- Jump share 21: 0.0163082\n- Jump share 63: 0.0458597\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.562971\n- Abs-return ACF 21: 0.0289351\n- Abs-return ACF 63: 0.113029\n\n## Return autocorrelation panel\n- Return autocorr 5: 0.203634\n- Return autocorr 21: -0.102695\n- Return autocorr 63: -0.103816\n\n## Volume anomaly panel\n- Volume z-score 5: -0.303283\n- Volume z-score 21: 0.257928\n- Volume z-score 63: 0.56713\n\n## Historical coverage\n- Rows: 36230\n- Start: 1997-09-09\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for ES1 Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **rough_or_antipersistent**\n- Mean-reversion classification: **weak_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "ES1 Index",
+    "as_of_date": "2026-03-27",
+    "regime": "compressed_volatility",
+    "roughness": "rough_or_antipersistent",
+    "mean_reversion": "weak_mean_reversion",
+    "realized_vol": {
+      "5": 0.02638558532179865,
+      "21": 0.041837956583557254,
+      "63": 0.06279324602877603
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.0,
+      "63": 0.3189911865066001
+    },
+    "ou_speed": {
+      "5": -0.3430470917038825,
+      "21": 0.016443403128849263,
+      "63": -0.011733927834006713
+    },
+    "jump_share": {
+      "5": 0.0,
+      "21": 0.016308203674831108,
+      "63": 0.04585970141574863
+    },
+    "acf_abs_return": {
+      "5": 0.562971216296974,
+      "21": 0.028935058279250078,
+      "63": 0.11302882552311276
+    },
+    "autocorr_return": {
+      "5": 0.20363414746263794,
+      "21": -0.10269470087362349,
+      "63": -0.10381554528794135
+    },
+    "volume_z": {
+      "5": -0.30328326886436346,
+      "21": 0.25792809071000317,
+      "63": 0.5671299492150761
+    },
+    "history_span": {
+      "rows": 36230,
+      "start": "1997-09-09",
+      "end": "2026-03-27"
+    }
+  }
+}

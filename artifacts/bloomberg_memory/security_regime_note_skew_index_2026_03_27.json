@@ -1,0 +1,54 @@
+{
+  "security": "SKEW Index",
+  "note_type": "security_regime_note",
+  "title": "SKEW Index empirical research memory",
+  "as_of_date": "2026-03-27",
+  "content_markdown": "# Bloomberg Research Memory: SKEW Index\n\n## As of\n- Date: 2026-03-27\n\n## Market state\n- Last price: 139\n- Last daily return: -0.0352699\n- Current drawdown: -0.240935\n- Volatility regime: compressed_volatility\n- Roughness signature: near_brownian\n- Mean-reversion signature: moderate_mean_reversion\n\n## Realized volatility panel\n- Realized vol 5: 0.048137\n- Realized vol 21: 0.137097\n- Realized vol 63: 0.207153\n\n## Roughness / Hurst-style panel\n- Hurst variance scaling 5: NA\n- Hurst variance scaling 21: 0.60064\n- Hurst variance scaling 63: 0.509079\n\n## OU / mean-reversion panel\n- OU speed 5: NA\n- OU speed 21: 0.229229\n- OU speed 63: 0.301356\n\n## Jump / discontinuity panel\n- Jump share 5: 0.112659\n- Jump share 21: 0.221788\n- Jump share 63: 0.239059\n\n## Volatility clustering panel\n- Abs-return ACF 5: 0.280755\n- Abs-return ACF 21: -0.0818515\n- Abs-return ACF 63: -0.12375\n\n## Return autocorrelation panel\n- Return autocorr 5: -0.697333\n- Return autocorr 21: -0.07666\n- Return autocorr 63: -0.0390767\n\n## Volume anomaly panel\n- Volume z-score 5: NA\n- Volume z-score 21: NA\n- Volume z-score 63: NA\n\n## Historical coverage\n- Rows: 45560\n- Start: 1990-01-02\n- End: 2026-03-27\n\n## Research interpretation\nThis note summarizes the local Bloomberg-derived empirical state for SKEW Index. It is intended to support theorem generation, empirical falsification, calibration design, and hypothesis ranking inside QuantAI.\n\nPrimary current interpretations:\n- Volatility regime classification: **compressed_volatility**\n- Roughness classification: **near_brownian**\n- Mean-reversion classification: **moderate_mean_reversion**\n\n## Research prompts QuantAI can pursue\n1. Test whether roughness estimates co-move with realized-volatility regimes.\n2. Test whether jump share rises in high-volatility drawdown states.\n3. Compare OU-style speeds across windows for stability or regime breaks.\n4. Examine whether absolute-return persistence supports rough-vol style memory.\n\n## Snapshot linkage\n- Feature table present: yes\n- Options snapshot attempted: yes\n",
+  "metadata": {
+    "security": "SKEW Index",
+    "as_of_date": "2026-03-27",
+    "regime": "compressed_volatility",
+    "roughness": "near_brownian",
+    "mean_reversion": "moderate_mean_reversion",
+    "realized_vol": {
+      "5": 0.04813698143865021,
+      "21": 0.13709702273232474,
+      "63": 0.2071529176504369
+    },
+    "hurst": {
+      "5": null,
+      "21": 0.600640214771591,
+      "63": 0.5090794836247785
+    },
+    "ou_speed": {
+      "5": null,
+      "21": 0.2292288050442086,
+      "63": 0.3013556365231877
+    },
+    "jump_share": {
+      "5": 0.11265907301602503,
+      "21": 0.2217883886243865,
+      "63": 0.2390587528345799
+    },
+    "acf_abs_return": {
+      "5": 0.28075538326401706,
+      "21": -0.08185147362008262,
+      "63": -0.12375038740269106
+    },
+    "autocorr_return": {
+      "5": -0.6973331087514669,
+      "21": -0.07666004263731288,
+      "63": -0.03907671531270427
+    },
+    "volume_z": {
+      "5": null,
+      "21": null,
+      "63": null
+    },
+    "history_span": {
+      "rows": 45560,
+      "start": "1990-01-02",
+      "end": "2026-03-27"
+    }
+  }
+}
