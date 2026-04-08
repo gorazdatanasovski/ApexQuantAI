@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -55,7 +55,7 @@ def infer_mode(query: str, selected_mode: str) -> str:
     return "auto"
 
 
-def _load_engine_class() -> Any:
+def _load_engine_class():
     module = importlib.import_module("quantai.reasoning.engine")
     return getattr(module, "ApexReasoningCore")
 
@@ -83,23 +83,43 @@ if STATIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def root() -> Response:
     index_path = STATIC_DIR / "index.html"
     if index_path.exists():
         return FileResponse(index_path)
 
-    return Response(
-        content=(
-            "<!doctype html><html><head><meta charset='utf-8'>"
-            "<meta name='viewport' content='width=device-width,initial-scale=1'>"
-            "<title>QuantAI</title></head>"
-            "<body style='background:#212121;color:#ececec;font-family:system-ui;"
-            "display:grid;place-items:center;min-height:100vh'>"
-            "<div><h1>QuantAI</h1><p>Frontend files not found.</p></div>"
-            "</body></html>"
-        ),
-        media_type="text/html",
+    return HTMLResponse(
+        """
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <title>QuantAI</title>
+          <style>
+            body{
+              margin:0;
+              min-height:100vh;
+              display:grid;
+              place-items:center;
+              background:#212121;
+              color:#ececec;
+              font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+            }
+            .wrap{text-align:center}
+            h1{margin:0 0 10px 0;font-weight:600}
+            p{margin:0;color:#b5b5b5}
+          </style>
+        </head>
+        <body>
+          <div class="wrap">
+            <h1>QuantAI</h1>
+            <p>Frontend files not found in this deploy.</p>
+          </div>
+        </body>
+        </html>
+        """
     )
 
 
