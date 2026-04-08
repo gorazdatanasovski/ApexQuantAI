@@ -1,10 +1,9 @@
 """
-Apex Quantitative Artificial Intelligence
-Initialization Matrix.
-"""
-from .memory.memory_matrix import CognitiveIngestionEngine
+QuantAI package.
 
-# The Reasoning Core and Autonomous Agent are intentionally severed from the root namespace 
-# during the ingestion phase to guarantee absolute zero-latency hardware execution.
+Keep this file minimal for cloud deploys.
+Do not import heavy submodules here.
+"""
+
 __all__ = []
-__version__ = "1.0.0"
+__version__ = "1.1.0"

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import importlib
 import os
-import sys
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from functools import lru_cache
 from pathlib import Path
@@ -13,18 +12,13 @@ from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-ROOT = Path(__file__).resolve().parents[3]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
-
 APP_DIR = Path(__file__).resolve().parent
 STATIC_DIR = APP_DIR / "static"
 
 DEFAULT_WORK_DIR = os.getenv("QUANTAI_WORK_DIR", "rag_ingest_state")
 DEFAULT_DB_PATH = os.getenv("QUANTAI_DB_PATH", "data/market_history.sqlite")
 DEFAULT_SECURITIES = ["SPX Index"]
-BACKEND_TIMEOUT_SECONDS = int(os.getenv("QUANTAI_BACKEND_TIMEOUT_SECONDS", "75"))
+BACKEND_TIMEOUT_SECONDS = int(os.getenv("QUANTAI_BACKEND_TIMEOUT_SECONDS", "45"))
 
 
 class QueryRequest(BaseModel):
